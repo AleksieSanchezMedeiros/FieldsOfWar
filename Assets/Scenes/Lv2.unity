@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 618446122}
   - component: {fileID: 618446121}
   m_Layer: 0
-  m_Name: BreakableBarrier
+  m_Name: PlayerBreakableBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1565,11 +1565,11 @@ Transform:
   m_GameObject: {fileID: 618446119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4272, y: 1.6139655, z: -0.06178544}
-  m_LocalScale: {x: 0.004286925, y: 2.004398, z: 0.653335}
+  m_LocalPosition: {x: -0.42719996, y: 1.6139652, z: -0.06178546}
+  m_LocalScale: {x: 0.004286925, y: 2.0043983, z: 0.6533351}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2064511317}
+  m_Father: {fileID: 1599467284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &618446121
 MeshCollider:
@@ -3147,7 +3147,7 @@ GameObject:
   - component: {fileID: 1306431439}
   - component: {fileID: 1306431438}
   m_Layer: 0
-  m_Name: BreakableBarrier (1)
+  m_Name: 'EnemyBreakableBarrier '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3302,7 +3302,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 233.2
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -3329,13 +3329,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321298208}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.26581684, y: 0, z: 0, w: 0.96402353}
+  m_LocalPosition: {x: -442, y: 163, z: -161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.831, y: 0, z: 0}
 --- !u!114 &1321298212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3799,8 +3799,8 @@ Transform:
   m_GameObject: {fileID: 1599467283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 221.4, y: 0, z: 0.000002224}
-  m_LocalScale: {x: 1400, y: 17.236923, z: 236.86978}
+  m_LocalPosition: {x: 221.4, y: 0, z: -7.3395}
+  m_LocalScale: {x: 1400, y: 17.236923, z: 271.0879}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1175208709}
@@ -3808,10 +3808,10 @@ Transform:
   - {fileID: 1610344868}
   - {fileID: 1389899875}
   - {fileID: 634710709}
-  - {fileID: 2064511317}
   - {fileID: 1306431437}
   - {fileID: 1948577544}
   - {fileID: 139757654}
+  - {fileID: 618446120}
   m_Father: {fileID: 724303169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1599467285
@@ -4164,8 +4164,8 @@ Transform:
   m_GameObject: {fileID: 1816033900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 221.4, y: 98.5, z: 0.000002224}
-  m_LocalScale: {x: 1400, y: 17.236923, z: 236.86978}
+  m_LocalPosition: {x: 221.4, y: 98.5, z: -7.3395}
+  m_LocalScale: {x: 1400, y: 17.236923, z: 271.0879}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1214926741}
@@ -4725,38 +4725,6 @@ Transform:
   - {fileID: 353368234}
   - {fileID: 500039577}
   m_Father: {fileID: 1816033901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2064511316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2064511317}
-  m_Layer: 0
-  m_Name: PlayerBreakableBarrier
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2064511317
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064511316}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 618446120}
-  m_Father: {fileID: 1599467284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085158620
 GameObject:
