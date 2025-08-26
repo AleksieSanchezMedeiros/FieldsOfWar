@@ -31,7 +31,7 @@ public class CombatUnit : Unit
             //attack nearby enemy
             targetEnemy.GetComponent<Unit>().TakeDamage(damage);
             //play animation
-            StartCoroutine("reloadAttack");
+            StartCoroutine(reloadAttack());
         }
 
         //move towards checkpoint
