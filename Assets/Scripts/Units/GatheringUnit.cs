@@ -1,16 +1,20 @@
+using System;
 using System.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class GatheringUnit : Unit
 {
+
     [SerializeField] GameObject resourceNode, castle;
     Transform target;
-    bool goGather = true;
+    bool goGather = true, loadingCargo = false;
+    ResourceNode nodeLogic;
 
     //Move ignoring key path and instead goes to and fro the nearest resource node 
     void Update()
     {
-        if (goGather)
+        if (goGather && !loadingCargo)
         {
             target = resourceNode.transform;
         }
@@ -25,6 +29,12 @@ public class GatheringUnit : Unit
             return;
         }
 
+
+        if (loadingCargo && CalculateDistanceToTarget(castle.transform) > shortRange)
+        {
+            resourceNode.GetComponent<ResourceNode>().sendResource(faction);
+        }
+
         if (goGather)
         {
             StartCoroutine(startGather());
@@ -36,6 +46,15 @@ public class GatheringUnit : Unit
     IEnumerator startGather()
     {
         yield return new WaitForSeconds(attackCooldown);
-        resourceNode.GetComponent<ResourceNode>().sendResource(faction);
+        loadingCargo = true;
+    }
+
+    public void setGatherNode(GameObject node)
+    {
+        resourceNode = node;
+        if (!resourceNode.TryGetComponent(out nodeLogic))
+        {
+            throw new System.Exception(resourceNode + " is not a valid resource node");
+        }
     }
 }

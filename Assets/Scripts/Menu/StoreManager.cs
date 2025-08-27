@@ -6,6 +6,7 @@ using UnityEngine;
 public class StoreManager : MonoBehaviour
 {
     [SerializeField] string faction;
+    Transform topTrackSpawn, bottomTrackSpawn;
     MenuUnitObject[] listOfUnits;
     int funds;
 
@@ -14,22 +15,34 @@ public class StoreManager : MonoBehaviour
         CommunicationEvents.GatherResource += increaseFunds;
     }
 
-
-    public bool trySpawnUnit(int val, Transform spawnLocation)
+    public bool trySpawnUnit(int val, bool spawnOnTop)
     {
         if (funds < listOfUnits[val].GetCost())
         {
             return false;
         }
-        StartCoroutine(spawnUnit(val, spawnLocation));
+        StartCoroutine(spawnUnit(val, spawnOnTop));
         funds -= listOfUnits[val].GetCost();
         return true;
     }
 
-    IEnumerator spawnUnit(int val, Transform spawnLocation)
+    IEnumerator spawnUnit(int val, bool spawnOnTop)
     {
+        GameObject spawnee;
         yield return new WaitForSeconds(listOfUnits[val].GetTimeUntilSpawn());
-        Instantiate(listOfUnits[val].GetUnit(), spawnLocation);
+
+        if (spawnOnTop)
+        {
+            spawnee = Instantiate(listOfUnits[val].GetUnit(), topTrackSpawn);
+        }
+        else
+        {
+            spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
+
+        }
+
+        spawnee.GetComponent<Unit>().isOnTopTrack = spawnOnTop;
+
     }
 
     void increaseFunds(string _faction, int value)

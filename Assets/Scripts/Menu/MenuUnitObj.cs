@@ -10,8 +10,7 @@ public class MenuUnitObject : ScriptableObject
 
     void Awake()
     {
-        Unit uniTry;
-        if (!unit.TryGetComponent<Unit>(out uniTry))
+        if (!unit.TryGetComponent<Unit>(out _))
         {
             throw new System.Exception(unit.gameObject + " is not a valid unit type!");
         }
@@ -28,15 +27,4 @@ public class MenuUnitObject : ScriptableObject
     }
 
     public float GetTimeUntilSpawn(){ return timeUntilSpawn; }
-}
-
-public class UnitInfo {
-    float timeUntilSpawn;
-    Unit unitToSpawn;
-
-    public UnitInfo(float time, Unit unit)
-    {
-        timeUntilSpawn = time;
-        unitToSpawn = unit;
-    }
 }
