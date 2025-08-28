@@ -5,19 +5,15 @@ public class CombatUnit : Unit
 {
     [SerializeField] LayerMask detection;
     GameObject targetEnemy;
-    
+    [SerializeField] float visionAngle;
 
     void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
         // detect if enemy unit or building is nearby, if so set closest enemy unit to target
         if (CalculateDistanceToTarget(targetEnemy.transform) > longRange) targetEnemy = null;
         if (!targetEnemy)
         {
-            if (Physics.Raycast(ray, out RaycastHit Hit, longRange, detection))
-            {
-                targetEnemy = Hit.collider.gameObject;
-            }
+            targetEnemy = FindEnemyInVision(); 
         }
 
         //move towards enemy
@@ -40,6 +36,27 @@ public class CombatUnit : Unit
     {
         Spawn(_faction);
         canAttack = true;
+    }
+
+    private GameObject FindEnemyInVision()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, longRange);
+        foreach (var hit in hits) {
+            if (hit.CompareTag("Enemy")) {
+                if (IsInVision(hit.gameObject)) {
+                    return hit.gameObject;
+                }
+            }
+        }
+        return null;
+    }
+
+    private bool IsInVision(GameObject obj)
+    {
+        Vector3 dirToTarget = (obj.transform.position - transform.position).normalized;
+        float angle = Vector3.Angle(transform.forward, dirToTarget);
+
+        return angle < visionAngle * 0.5f;
     }
 
     IEnumerator reloadAttack()
