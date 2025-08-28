@@ -42,6 +42,7 @@ public class StoreManager : MonoBehaviour
         }
 
         spawnee.GetComponent<Unit>().isOnTopTrack = spawnOnTop;
+        spawnee.GetComponent<Unit>().Spawn(faction);
 
     }
 

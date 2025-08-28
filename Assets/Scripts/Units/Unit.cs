@@ -33,10 +33,23 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         }
     }
 
-    public virtual void Spawn()
+    public virtual void Spawn(string _faction)
     {
-        faction = this.gameObject.tag;
+        gameObject.tag = _faction;
+        gameObject.layer = LayerMask.NameToLayer(_faction);
         CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this);
+        if (faction == "Player")
+        {
+            transform.Find("player-graphics").gameObject.SetActive(true);
+            transform.Find("enemy-graphics").gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.Find("enemy-graphics").gameObject.SetActive(true);
+            transform.Find("player-graphics").gameObject.SetActive(false);
+        }
+
+        health = maxHealth;
     }
 
     public void Die()

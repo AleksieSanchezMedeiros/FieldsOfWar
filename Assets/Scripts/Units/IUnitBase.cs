@@ -6,5 +6,5 @@ public interface IUnitBase
     abstract void TakeDamage(int dmg);
     abstract void Move();
     abstract void Die();
-    abstract void Spawn();
+    abstract void Spawn(string _faction);
 }

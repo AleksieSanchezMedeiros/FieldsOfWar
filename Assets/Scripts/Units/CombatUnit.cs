@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CombatUnit : Unit
 {
@@ -37,9 +36,9 @@ public class CombatUnit : Unit
         //move towards checkpoint
     }
 
-    public void spawn()
+    public override void Spawn(string _faction)
     {
-        Spawn();
+        Spawn(_faction);
         canAttack = true;
     }
 

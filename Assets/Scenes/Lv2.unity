@@ -2530,9 +2530,9 @@ GameObject:
   - component: {fileID: 775276308}
   - component: {fileID: 775276307}
   - component: {fileID: 775276306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyCastle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3039,9 +3039,9 @@ GameObject:
   - component: {fileID: 1020618603}
   - component: {fileID: 1020618602}
   - component: {fileID: 1020618601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Castle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
