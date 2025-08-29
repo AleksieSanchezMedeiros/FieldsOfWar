@@ -2,6 +2,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "MenuUnit", menuName = "Menu/Unit", order = 0)]
 public class MenuUnitObject : ScriptableObject
 {
     [SerializeField] GameObject unit;
