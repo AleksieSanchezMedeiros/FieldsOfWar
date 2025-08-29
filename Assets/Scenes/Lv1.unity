@@ -3194,6 +3194,8 @@ MonoBehaviour:
   selectedTrack: {fileID: 0}
   nodes: []
   maxNumberOfTroops: 30
+  ActiveUnits:
+  - {fileID: 0}
 --- !u!114 &1130990844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3209,7 +3211,8 @@ MonoBehaviour:
   faction: Enemy
   topTrackSpawn: {fileID: 1632441060}
   bottomTrackSpawn: {fileID: 2042662768}
-  listOfUnits: []
+  listOfUnits:
+  - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
 --- !u!4 &1130990845
 Transform:
   m_ObjectHideFlags: 0
@@ -4603,8 +4606,10 @@ MonoBehaviour:
   topTrack: {fileID: 1101781101}
   bottomTrack: {fileID: 1034886712}
   selectedTrack: {fileID: 0}
-  nodes: []
+  nodes:
+  - {fileID: 0}
   maxNumberOfTroops: 0
+  ActiveUnits: []
 --- !u!4 &1655698517
 Transform:
   m_ObjectHideFlags: 0
@@ -4658,7 +4663,7 @@ MonoBehaviour:
   bottomSpawnPoints:
   - {fileID: 1034886712}
   maxNumOfUnits: 25
-  currentGoldAmount: 0
+  currentGoldAmount: 1000
   flipSpawnPointsText: {fileID: 2083760880}
 --- !u!4 &1698139994
 Transform:
