@@ -8,7 +8,7 @@ public abstract class BaseController : MonoBehaviour
     [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack;
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] int maxNumberOfTroops;
-    List<Unit> ActiveUnits;
+    [SerializeField] protected List<Unit> ActiveUnits;
 
     void Start()
     {
