@@ -5,7 +5,6 @@ using System;
 
 public class EnemyAIController : BaseController
 {
-    List<Unit> activeUnits;
     int maxArmySize,
     topArmyCount,
     bottomArmyCount,
@@ -16,7 +15,7 @@ public class EnemyAIController : BaseController
 
     void Update()
     {
-        if (activeUnits.Count < maxArmySize)
+        if (ActiveUnits.Count < maxArmySize)
         {
             if (randSpawnNumber <= 0)
             {
