@@ -10,7 +10,7 @@ public class CombatUnit : Unit
     void Update()
     {
         // detect if enemy unit or building is nearby, if so set closest enemy unit to target
-        if (CalculateDistanceToTarget(targetEnemy.transform) > longRange) targetEnemy = null;
+        if (CalculateDistanceToTarget(targetEnemy.transform) > longRange && targetEnemy != null) targetEnemy = null;
         if (!targetEnemy)
         {
             targetEnemy = FindEnemyInVision(); 
