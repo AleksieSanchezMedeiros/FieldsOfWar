@@ -6,8 +6,8 @@ using UnityEngine;
 public class StoreManager : MonoBehaviour
 {
     [SerializeField] string faction;
-    Transform topTrackSpawn, bottomTrackSpawn;
-    MenuUnitObject[] listOfUnits;
+    [SerializeField] Transform topTrackSpawn, bottomTrackSpawn;
+    [SerializeField] MenuUnitObject[] listOfUnits;
     int funds;
 
     void Start()
