@@ -322,6 +322,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2809851871174237694, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
+      propertyPath: enemyGraphics
+      value: 
+      objectReference: {fileID: 1523823999}
+    - target: {fileID: 2809851871174237694, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
+      propertyPath: playerGraphics
+      value: 
+      objectReference: {fileID: 245421456}
     - target: {fileID: 8823196419603950312, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
       propertyPath: m_Name
       value: Melee Unit
@@ -746,6 +754,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1511139588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &245421456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1372689289839029810, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
+  m_PrefabInstance: {fileID: 170292203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &250394911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3159,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1511139588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130990842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130990845}
+  - component: {fileID: 1130990844}
+  - component: {fileID: 1130990843}
+  m_Layer: 0
+  m_Name: Enemy Controller
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1130990843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130990842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a96f5bf3c0c4346b7208062d7342f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTrack: {fileID: 1632441059}
+  bottomTrack: {fileID: 2042662767}
+  selectedTrack: {fileID: 0}
+  nodes: []
+  maxNumberOfTroops: 30
+--- !u!114 &1130990844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130990842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33708a5a55a54fe49893c5f12dd8d932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: Enemy
+  topTrackSpawn: {fileID: 1632441060}
+  bottomTrackSpawn: {fileID: 2042662768}
+  listOfUnits: []
+--- !u!4 &1130990845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130990842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 890.6892, y: 31.212852, z: -143.17125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157871237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,6 +4216,11 @@ Transform:
   - {fileID: 1632441060}
   m_Father: {fileID: 1609865121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1523823999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7115621228509576993, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
+  m_PrefabInstance: {fileID: 170292203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525518441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,6 +4553,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1511139588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1655698514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655698517}
+  - component: {fileID: 1655698516}
+  - component: {fileID: 1655698515}
+  m_Layer: 0
+  m_Name: Player Controller
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1655698515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655698514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33708a5a55a54fe49893c5f12dd8d932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: Player
+  topTrackSpawn: {fileID: 1034886713}
+  bottomTrackSpawn: {fileID: 1034886713}
+  listOfUnits:
+  - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
+--- !u!114 &1655698516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655698514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTrack: {fileID: 1101781101}
+  bottomTrack: {fileID: 1034886712}
+  selectedTrack: {fileID: 0}
+  nodes: []
+  maxNumberOfTroops: 0
+--- !u!4 &1655698517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655698514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 890.6892, y: 31.212852, z: -143.17125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698139992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,8 +4653,10 @@ MonoBehaviour:
   goldAmountText: {fileID: 2083760880}
   unitCosts: 3200000096000000c8000000
   spawnOnTop: 1
-  topSpawnPoints: []
-  bottomSpawnPoints: []
+  topSpawnPoints:
+  - {fileID: 1101781101}
+  bottomSpawnPoints:
+  - {fileID: 1034886712}
   maxNumOfUnits: 25
   currentGoldAmount: 0
   flipSpawnPointsText: {fileID: 2083760880}
@@ -5404,14 +5557,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2025996482}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnUnit
+      - m_Target: {fileID: 1655698516}
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: purchaseUnit
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6190,3 +6343,5 @@ SceneRoots:
   - {fileID: 2025996487}
   - {fileID: 1973223140}
   - {fileID: 170292203}
+  - {fileID: 1655698517}
+  - {fileID: 1130990845}
