@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,18 +15,23 @@ public class NavigationAgent : MonoBehaviour
     private static float controlDuration = 30f;
     private static int requiredUnits = 20;
     private static float proximityThreshold = 1.5f;
-   void Start()
-{
-    if (agent == null)
-        agent = GetComponent<NavMeshAgent>();
-
-    if (waypoints.Length > 0)
+    void Start()
     {
-        agent.SetDestination(waypoints[currentWaypointIndex].position);
-    }
-}
+        if (agent == null)
+            agent = GetComponent<NavMeshAgent>();
 
-void Update()
+        if (waypoints.Length > 0)
+        {
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+    }
+
+    public void setWaypoints(List<Transform> _waypoints)
+    {
+        waypoints = _waypoints.ToArray();
+    }
+
+    void Update()
 {
     int action = GameManager.currrentAction;
     if (action != lastAction)

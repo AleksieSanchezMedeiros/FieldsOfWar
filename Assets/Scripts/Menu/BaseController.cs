@@ -10,6 +10,7 @@ public abstract class BaseController : MonoBehaviour
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
+    [SerializeField] protected List<Transform> waypointsTop, waypointsBottom;
 
     void Awake()
     {
@@ -49,13 +50,23 @@ public abstract class BaseController : MonoBehaviour
 
     public virtual void addUnitToUnitList(string _faction, Unit unit, bool isOnTopTrack)
     {
-        Debug.Log($"{_faction},  {faction}");
         if (faction == _faction)
         {
             ActiveUnits.Add(unit);
             if (unit is GatheringUnit)
             {
                 ((GatheringUnit)unit).setCastleAndGatherNode(castle, activeResourceNode);
+            }
+            else
+            {
+                if (isOnTopTrack)
+                {
+                    unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsTop);
+                }
+                else
+                {
+                    unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsBottom);
+                }
             }
         }
 

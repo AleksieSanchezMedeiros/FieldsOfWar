@@ -10,11 +10,6 @@ public abstract class Unit : MonoBehaviour, IUnitBase
 
     //NAVIGATIONaGENTsTANDiN agentStandIn 
 
-    void Awake()
-    {
-
-    }
-
     public void Move() //either <= or =>
     {
         //agentStandIn.move() //either <= or =>
