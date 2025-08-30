@@ -6,9 +6,14 @@ public class Building : MonoBehaviour
     public int HP;
     protected bool hasBeenDestroyed = false;
 
+    public static string price;
+
+    [SerializeField] protected BaseController factionController;
+
     public void Build()
     {
-        if (!hasBeenDestroyed) {
+        if (!hasBeenDestroyed)
+        {
             gameObject.SetActive(true);
         }
     }
@@ -22,7 +27,8 @@ public class Building : MonoBehaviour
     public void TakeDamage(int incomingDamage)
     {
         HP -= incomingDamage;
-        if (HP <= 0) {
+        if (HP <= 0)
+        {
             DestroyBuilding();
         }
     }

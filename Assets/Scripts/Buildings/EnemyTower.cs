@@ -7,7 +7,8 @@ public class EnemyTower : Tower
 
     public void AllyEnters(GameObject ally)
     {
-        if (garrison < maxGarrison) {
+        if (garrison < maxGarrison)
+        {
             garrison++;
             Stop(ally);
         }

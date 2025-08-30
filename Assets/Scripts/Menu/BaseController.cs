@@ -34,7 +34,7 @@ public abstract class BaseController : MonoBehaviour
         }
     }
 
-    public virtual void addUnitToUnitList(string _faction, Unit unit)
+    public virtual void addUnitToUnitList(string _faction, Unit unit, bool isOnTopTrack)
     {
         if (faction == _faction)
         {

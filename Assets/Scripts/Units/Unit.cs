@@ -33,11 +33,12 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         }
     }
 
-    public virtual void Spawn(string _faction)
+    public virtual void Spawn(string _faction, bool _isOnTopTrack)
     {
         gameObject.tag = _faction;
+        isOnTopTrack = _isOnTopTrack;
         gameObject.layer = LayerMask.NameToLayer(_faction);
-        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this);
+        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this, _isOnTopTrack);
         if (faction == "Player")
         {
             transform.Find("player-graphics").gameObject.SetActive(true);

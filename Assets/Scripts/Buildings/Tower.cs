@@ -5,14 +5,17 @@ public class Tower : Building
     public float attackFrequency = 1f;
     public int damage = 10;
     private float attackTimer;
+    [SerializeField] LayerMask opposingLayer;
 
     private void Update()
     {
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= attackFrequency) {
+        if (attackTimer >= attackFrequency)
+        {
             GameObject enemy = FindEnemyInRange();
-            if (enemy != null) {
+            if (enemy != null)
+            {
                 Attack(enemy);
                 attackTimer = 0f;
             }
@@ -21,9 +24,9 @@ public class Tower : Building
 
     private GameObject FindEnemyInRange()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, range);
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer.value);
         foreach (var hit in hits) {
-            if (hit.CompareTag("Soldier")) {
+            if (!hit.CompareTag(tag)) {
                 return hit.gameObject;
             }
         }
@@ -31,11 +34,10 @@ public class Tower : Building
     }
 
     private void Attack(GameObject target)
-    {
-        // Uncomment when we have the code for the soliders
-        //Soldier s = target.GetComponent<Soldier>();
-        //if (s != null) {
-        //    s.TakeDamage(damage);
-        //}
+    {        
+        CombatUnit s = target.GetComponent<CombatUnit>();
+        if (s != null) {
+            s.TakeDamage(damage);
+        }
     }
 }
