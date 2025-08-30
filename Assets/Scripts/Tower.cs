@@ -4,7 +4,7 @@ public class Tower : Building
 {
     public float attackFrequency = 1f;
     public int damage = 10;
-    private float attackTimer;
+    protected float attackTimer;
 
     private void Update()
     {
@@ -30,7 +30,7 @@ public class Tower : Building
         return null;
     }
 
-    private void Attack(GameObject target)
+    protected void Attack(GameObject target)
     {
         // Uncomment when we have the code for the soliders
         //Soldier s = target.GetComponent<Soldier>();
