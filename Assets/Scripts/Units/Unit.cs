@@ -12,7 +12,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
 
     void Awake()
     {
-        
+
     }
 
     public void Move() //either <= or =>
@@ -20,7 +20,8 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         //agentStandIn.move() //either <= or =>
     }
 
-    public void MoveTowardsTarget(Transform targetPosition) {
+    public void MoveTowardsTarget(Transform targetPosition)
+    {
         //navAgent.move()
     }
 
@@ -65,8 +66,15 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         Destroy(this);
     }
 
-    public float CalculateDistanceToTarget(Transform target) {
-        
+    public float CalculateDistanceToTarget(Transform target)
+    {
+
         return Vector3.Distance(transform.position, target.position);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, shortRange);
+        Gizmos.DrawWireSphere(transform.position, longRange);
     }
 }

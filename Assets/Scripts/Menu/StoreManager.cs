@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -38,16 +40,18 @@ public class StoreManager : MonoBehaviour
     {
         GameObject spawnee;
         yield return new WaitForSeconds(listOfUnits[val].GetTimeUntilSpawn());
+        UnityEngine.Vector3 spawnPos;
 
         if (spawnOnTop)
         {
-            spawnee = Instantiate(listOfUnits[val].GetUnit(), topTrackSpawn);
+            spawnPos = new UnityEngine.Vector3(topTrackSpawn.position.x, topTrackSpawn.position.y, topTrackSpawn.position.z);
+            spawnee = Instantiate(listOfUnits[val].GetUnit(), spawnPos, new quaternion(0,0,0,0));
         }
         else
         {
             spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
         }
-        spawnee.GetComponent<Unit>().Spawn(this.faction, spawnOnTop);
+        spawnee.GetComponent<Unit>().Spawn(faction, spawnOnTop);
     }
 
     void increaseFunds(string _faction, int value)

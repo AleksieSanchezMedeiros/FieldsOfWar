@@ -137,8 +137,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 205.85658, y: 75.18034, z: 811.49304}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 11.103, y: 11.103, z: 11.103}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1917282583633178894}
   - {fileID: 2550016132229854833}
@@ -156,14 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d78c66b1940d6449ae5b4ff524832a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  shortRange: 0
-  longRange: 0
+  speed: 4
+  shortRange: 7
+  longRange: 14
   distanceToTarget: 0
-  attackCooldown: 0
-  damage: 2
+  attackCooldown: 1.5
+  damage: 1
   health: 0
-  maxHealth: 4
+  maxHealth: 6
   type: 0
   canAttack: 0
   isOnTopTrack: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   detection:
     serializedVersion: 2
     m_Bits: 0
+  visionAngle: 0
 --- !u!1 &4913205237113194893
 GameObject:
   m_ObjectHideFlags: 0
