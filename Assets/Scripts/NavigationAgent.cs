@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class NavigationAgent : MonoBehaviour
 {
-
     public NavMeshAgent agent;
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
@@ -32,28 +31,27 @@ public class NavigationAgent : MonoBehaviour
     }
 
     void Update()
-{
-    int action = GameManager.currrentAction;
-    if (action != lastAction)
     {
-        HandleAction(action);
-        lastAction = action;
-    }
-
-    CheckIfReachedDestination();
-    if (timerRunning)
-    {
-        timerCountdown -= Time.deltaTime;
-        FindObjectOfType<UIManager>().UpdateTimerDisplay(timerCountdown);
-
-        if (timerCountdown <= 0f)
+        int action = GameManager.currrentAction;
+        if (action != lastAction)
         {
-            timerRunning = false;
-            // win / lose screen
+            HandleAction(action);
+            lastAction = action;
+        }
+
+        CheckIfReachedDestination();
+        if (timerRunning)
+        {
+            timerCountdown -= Time.deltaTime;
+            FindObjectOfType<UIManager>().UpdateTimerDisplay(timerCountdown);
+
+            if (timerCountdown <= 0f)
+            {
+                timerRunning = false;
+                // win / lose screen
+            }
         }
     }
-
-}
 
 private void HandleAction(int action)
 {
