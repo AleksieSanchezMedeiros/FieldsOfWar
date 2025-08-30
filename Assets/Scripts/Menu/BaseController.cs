@@ -7,13 +7,15 @@ public abstract class BaseController : MonoBehaviour
     protected StoreManager storeManager;
     [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack;
     [SerializeField] protected ResourceNode[] nodes;
-    [SerializeField] int maxNumberOfTroops;
+    [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
 
     void Start()
     {
         faction = gameObject.tag;
         storeManager = GetComponent<StoreManager>();//get store component on own GameObject
+        selectedTrack = topTrack;
+        Debug.Log($"{storeManager.gameObject}");
         CommunicationEvents.AddUnitToFactionList += addUnitToUnitList;
         CommunicationEvents.RemoveUnitFromFactionList += removeUnitFromList;
     }

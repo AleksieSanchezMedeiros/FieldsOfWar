@@ -13,12 +13,18 @@ public class EnemyAIController : BaseController
     List<Unit> topUnits, bottomUnits;
     EnemyAIController Instance;
     void Awake()
-    {        
-        if (Instance == null) {
+    {
+        if (Instance == null)
+        {
             Instance = this;
-        } else if (Instance != this) {
+        }
+        else if (Instance != this)
+        {
             Destroy(gameObject);
         }
+        topUnits = new List<Unit>();
+        bottomUnits = new List<Unit>();
+        buildings = new List<Building>();
     }
 
     void Update()
@@ -31,25 +37,25 @@ public class EnemyAIController : BaseController
         if (topUnits.Count >= maxArmySize / 3)
         {
             //issue command attack on top
-            CommunicationEvents.moveTowardsTarget(1, true);
+            CommunicationEvents.moveTowardsTarget?.Invoke(1, true);
         }
 
         if (bottomUnits.Count >= maxArmySize / 3)
         {
             //issue command attack on bottom
-            CommunicationEvents.moveTowardsTarget(1, false);
+            CommunicationEvents.moveTowardsTarget?.Invoke(1, false);
         }
 
         if (topUnits.Count <= maxArmySize / 6)
         {
             //issue command retreat on top
-            CommunicationEvents.moveTowardsTarget(2, true);
+            CommunicationEvents.moveTowardsTarget?.Invoke(2, true);
         }
 
         if (bottomUnits.Count <= maxArmySize / 6)
         {
             //issue command retreat on bottom
-            CommunicationEvents.moveTowardsTarget(2, false);
+            CommunicationEvents.moveTowardsTarget?.Invoke(2, false);
         }
     }
 

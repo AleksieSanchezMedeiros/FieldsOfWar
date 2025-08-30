@@ -8,6 +8,13 @@ public class UIManager : MonoBehaviour
     public TMP_Text numberOfUnitsText;
     public TMP_Text goldAmountText;
     public GameManager gameManager;
+
+    void Awake()
+    {
+        CommunicationEvents.updateFunds += UpdateCurrentGoldAmount;
+        CommunicationEvents.updateUnitCount += UpdateCurrentNumOfUnits;
+    }
+
     void Start()
     {
         //PMR = getComponent<playerManagerReference>();

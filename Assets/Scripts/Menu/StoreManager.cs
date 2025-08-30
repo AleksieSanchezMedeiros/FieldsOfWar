@@ -9,18 +9,26 @@ public class StoreManager : MonoBehaviour
     [SerializeField] Transform topTrackSpawn, bottomTrackSpawn;
     [SerializeField] MenuUnitObject[] listOfUnits;
     int funds;
+    [SerializeField] int startingFunds = 100;
+
+    void Awake()
+    {
+        CommunicationEvents.GatherResource += increaseFunds;
+    }
 
     void Start()
     {
-        CommunicationEvents.GatherResource += increaseFunds;
+        changeUI();
     }
 
     public bool trySpawnUnit(int val, bool spawnOnTop)
     {
         if (funds < listOfUnits[val].GetCost())
         {
+
             return false;
         }
+        Debug.Log($"{val} {listOfUnits[val].GetUnit().GetComponent<Unit>().GetType()} THE THING WASN'T THINGING");
         StartCoroutine(spawnUnit(val, spawnOnTop));
         funds -= listOfUnits[val].GetCost();
         return true;
@@ -49,5 +57,11 @@ public class StoreManager : MonoBehaviour
         if (_faction != faction) return;
 
         funds += value;
+        changeUI();
+    }
+
+    void changeUI()
+    {
+        CommunicationEvents.updateFunds(funds);
     }
 }
