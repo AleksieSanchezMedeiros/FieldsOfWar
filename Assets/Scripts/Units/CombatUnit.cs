@@ -15,26 +15,24 @@ public class CombatUnit : Unit
         {
             targetEnemy = FindEnemyInVision();
         }
-        
+        //move towards checkpoint
+
         if (targetEnemy != null)
         {
             if (CalculateDistanceToTarget(targetEnemy.transform) > longRange) targetEnemy = null;
+            if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
+            {
+                MoveTowardsTarget(targetEnemy.transform);
+            }
+            else if (canAttack)
+            {
+                //attack nearby enemy
+                targetEnemy.GetComponent<Unit>().TakeDamage(damage);
+                //play animation
+                StartCoroutine(reloadAttack());
+            }
+            //move towards enemy
         }
-
-        //move towards enemy
-        if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
-        {
-            MoveTowardsTarget(targetEnemy.transform);
-        }
-        else if (canAttack)
-        {
-            //attack nearby enemy
-            targetEnemy.GetComponent<Unit>().TakeDamage(damage);
-            //play animation
-            StartCoroutine(reloadAttack());
-        }
-
-        //move towards checkpoint
     }
 
     public override void Spawn(string _faction)
