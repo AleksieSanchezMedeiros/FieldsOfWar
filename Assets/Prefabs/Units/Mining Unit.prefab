@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1183167194185024238}
   - component: {fileID: 6892017593882376284}
   - component: {fileID: 5661494772832569568}
+  - component: {fileID: 4250875194654731237}
   m_Layer: 0
   m_Name: Mining Unit
   m_TagString: Untagged
@@ -130,6 +131,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6892017593882376284}
   waypoints: []
+--- !u!136 &4250875194654731237
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219725527528226214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.67478365
+  m_Height: 1.8802022
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95425016, z: 0}
 --- !u!1 &2359151775174757298
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +165,6 @@ GameObject:
   - component: {fileID: 1991990422968205498}
   - component: {fileID: 2222142842853646551}
   - component: {fileID: 6389083937619729282}
-  - component: {fileID: 2782668882504330182}
   m_Layer: 0
   m_Name: player-graphics
   m_TagString: Untagged
@@ -217,29 +240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2782668882504330182
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2359151775174757298}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8195791422625165086
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,6 @@ GameObject:
   - component: {fileID: 8698797833732372544}
   - component: {fileID: 4598098791415733829}
   - component: {fileID: 741636840256415735}
-  - component: {fileID: 2129624427931212064}
   m_Layer: 0
   m_Name: enemy-graphics
   m_TagString: Untagged
@@ -327,26 +326,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2129624427931212064
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8195791422625165086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

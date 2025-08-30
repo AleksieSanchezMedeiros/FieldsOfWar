@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     //storeManagerReference SMR; //This is a stand in for a class being worked on, final names won't necesarily reflect what's written here.
     public TMP_Text numberOfUnitsText;
     public TMP_Text goldAmountText;
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     void Awake()
     {
@@ -24,7 +24,8 @@ public class UIManager : MonoBehaviour
 
     private void UpdateCurrentGoldAmount(int currentGoldAmount)
     {
-        goldAmountText.text = currentGoldAmount.ToString("000");
+        Debug.Log(currentGoldAmount);
+        goldAmountText.text = currentGoldAmount.ToString();
     }
 
     private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)

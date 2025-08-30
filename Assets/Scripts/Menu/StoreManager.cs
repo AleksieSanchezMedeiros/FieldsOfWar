@@ -10,7 +10,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] string faction;
     [SerializeField] Transform topTrackSpawn, bottomTrackSpawn;
     [SerializeField] MenuUnitObject[] listOfUnits;
-    int funds;
+    [SerializeField] int funds;
     [SerializeField] int startingFunds = 100;
 
     void Awake()
@@ -28,7 +28,6 @@ public class StoreManager : MonoBehaviour
     {
         if (funds < listOfUnits[val].GetCost())
         {
-
             return false;
         }
         StartCoroutine(spawnUnit(val, spawnOnTop));

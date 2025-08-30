@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         public void ChangeCurrentAction(int action) //0 = retreat, 1 = defend, 2 = attack
         {
             currrentAction = action;
-            Debug.Log("Current action changed to: " + (action == 0 ? "Retreat" : action == 1 ? "Defend" : "Attack"));
+            //Debug.Log("Current action changed to: " + (action == 0 ? "Retreat" : action == 1 ? "Defend" : "Attack"));
         }
 
 

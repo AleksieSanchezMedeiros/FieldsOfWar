@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class NavigationAgent : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class NavigationAgent : MonoBehaviour
 
     void Update()
     {
+        if (!agent.isOnNavMesh) return;
         int action = GameManager.currrentAction;
         if (action != lastAction)
         {

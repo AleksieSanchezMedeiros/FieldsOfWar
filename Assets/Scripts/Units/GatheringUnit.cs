@@ -51,7 +51,6 @@ public class GatheringUnit : Unit
 
     public void setCastleAndGatherNode(GameObject _castle, GameObject node)
     {
-        Debug.Log($"{_castle}, {node}, {resourceNode}, {castle}");
         resourceNode = node;
         castle = _castle;
         if (!resourceNode.TryGetComponent(out nodeLogic))
