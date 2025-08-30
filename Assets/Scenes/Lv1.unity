@@ -323,6 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 197484912}
+  - component: {fileID: 197484913}
   m_Layer: 0
   m_Name: Enemy Resource nodes (1)
   m_TagString: Untagged
@@ -346,6 +347,20 @@ Transform:
   - {fileID: 357503164}
   m_Father: {fileID: 548456707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197484913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197484911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623bf04a2b289734f94c6600c27bba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceYield: 15
+  faction: Enemy
 --- !u!1 &209097476
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331069573}
+  - component: {fileID: 331069574}
   m_Layer: 0
   m_Name: Enemy Resource nodes (1)
   m_TagString: Untagged
@@ -897,6 +913,20 @@ Transform:
   - {fileID: 289823340}
   m_Father: {fileID: 1609865121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331069574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331069572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623bf04a2b289734f94c6600c27bba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceYield: 15
+  faction: Enemy
 --- !u!1 &357503163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 438086324}
+  - component: {fileID: 438086325}
   m_Layer: 0
   m_Name: Player Resource nodes
   m_TagString: Untagged
@@ -1337,6 +1368,20 @@ Transform:
   - {fileID: 1368247217}
   m_Father: {fileID: 1609865121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438086325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438086323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623bf04a2b289734f94c6600c27bba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceYield: 15
+  faction: Player
 --- !u!1 &485527765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,10 +3096,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a96f5bf3c0c4346b7208062d7342f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faction: 
   topTrack: {fileID: 1632441059}
   bottomTrack: {fileID: 2042662767}
   selectedTrack: {fileID: 0}
-  nodes: []
+  activeResourceNode: {fileID: 0}
+  castle: {fileID: 0}
+  nodes:
+  - {fileID: 331069574}
+  - {fileID: 197484913}
   maxNumberOfTroops: 30
   ActiveUnits:
   - {fileID: 0}
@@ -3077,6 +3127,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c80a5e55e27fb2543861f99358d2d4e3, type: 2}
   - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
   - {fileID: 11400000, guid: 9f99a07f6b1a0c3498735858be85413c, type: 2}
+  startingFunds: 100
 --- !u!4 &1130990845
 Transform:
   m_ObjectHideFlags: 0
@@ -3852,6 +3903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381191474}
+  - component: {fileID: 1381191475}
   m_Layer: 0
   m_Name: Player Resource nodes (1)
   m_TagString: Untagged
@@ -3875,6 +3927,20 @@ Transform:
   - {fileID: 1285376732}
   m_Father: {fileID: 548456707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1381191475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381191473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623bf04a2b289734f94c6600c27bba86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceYield: 15
+  faction: Player
 --- !u!1 &1487388310
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,6 +4518,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c80a5e55e27fb2543861f99358d2d4e3, type: 2}
   - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
   - {fileID: 11400000, guid: 9f99a07f6b1a0c3498735858be85413c, type: 2}
+  startingFunds: 100
 --- !u!114 &1655698516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4464,12 +4531,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faction: Player
   topTrack: {fileID: 1101781101}
   bottomTrack: {fileID: 1034886712}
   selectedTrack: {fileID: 0}
+  activeResourceNode: {fileID: 0}
+  castle: {fileID: 595318625}
   nodes:
-  - {fileID: 0}
-  maxNumberOfTroops: 0
+  - {fileID: 438086325}
+  - {fileID: 1381191475}
+  maxNumberOfTroops: 25
   ActiveUnits: []
 --- !u!4 &1655698517
 Transform:

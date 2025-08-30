@@ -18,6 +18,7 @@ public class StoreManager : MonoBehaviour
 
     void Start()
     {
+        funds = startingFunds;
         changeUI();
     }
 
@@ -28,7 +29,6 @@ public class StoreManager : MonoBehaviour
 
             return false;
         }
-        Debug.Log($"{val} {listOfUnits[val].GetUnit().GetComponent<Unit>().GetType()} THE THING WASN'T THINGING");
         StartCoroutine(spawnUnit(val, spawnOnTop));
         funds -= listOfUnits[val].GetCost();
         return true;
@@ -46,10 +46,8 @@ public class StoreManager : MonoBehaviour
         else
         {
             spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
-
         }
-        spawnee.GetComponent<Unit>().Spawn(faction, spawnOnTop);
-
+        spawnee.GetComponent<Unit>().Spawn(this.faction, spawnOnTop);
     }
 
     void increaseFunds(string _faction, int value)

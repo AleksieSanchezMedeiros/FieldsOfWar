@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour
 {
-    int resourceYield;
+    [SerializeField] int resourceYield;
+    [SerializeField] string faction;
 
     public void sendResource(string teamTag)
     {

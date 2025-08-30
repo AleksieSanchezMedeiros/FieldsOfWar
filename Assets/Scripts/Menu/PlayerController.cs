@@ -5,13 +5,10 @@ public class PlayerController : BaseController
 {
     StoreManager store;
     List<ResourceNode> factionResourceNodes;
-    void Awake()
+
+    public override void Start()
     {
-
-    }
-
-    void Start()
-    {        
+        base.Start();
         CommunicationEvents.updateUnitCount?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
     }
 

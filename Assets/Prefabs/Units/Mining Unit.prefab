@@ -58,10 +58,12 @@ MonoBehaviour:
   canAttack: 0
   isOnTopTrack: 0
   faction: 
-  playerGraphics: {fileID: 0}
-  enemyGraphics: {fileID: 0}
+  playerGraphics: {fileID: 2359151775174757298}
+  enemyGraphics: {fileID: 8195791422625165086}
   resourceNode: {fileID: 0}
   castle: {fileID: 0}
+  goGather: 1
+  loadingCargo: 0
 --- !u!1 &2359151775174757298
 GameObject:
   m_ObjectHideFlags: 0
