@@ -4,7 +4,7 @@ public class Tower : Building
 {
     public float attackFrequency = 1f;
     public int damage = 10;
-    private float attackTimer;
+    protected float attackTimer;
     [SerializeField] LayerMask opposingLayer;
 
     private void Update()
@@ -33,7 +33,7 @@ public class Tower : Building
         return null;
     }
 
-    private void Attack(GameObject target)
+    protected void Attack(GameObject target)
     {        
         CombatUnit s = target.GetComponent<CombatUnit>();
         if (s != null) {

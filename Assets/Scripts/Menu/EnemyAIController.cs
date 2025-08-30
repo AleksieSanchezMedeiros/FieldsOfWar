@@ -11,6 +11,15 @@ public class EnemyAIController : BaseController
     spawnType;// 0: miner; 1: melee; 2: ranged;
     List<Building> buildings;
     List<Unit> topUnits, bottomUnits;
+    EnemyAIController Instance;
+    void Awake()
+    {        
+        if (Instance == null) {
+            Instance = this;
+        } else if (Instance != this) {
+            Destroy(gameObject);
+        }
+    }
 
     void Update()
     {
