@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class UIManager : MonoBehaviour
     public TMP_Text goldAmountText;
     //public GameManager gameManager;
     public static UIManager Instance;
+    AudioSource audioSource;
+    AudioClip music;
+    bool paused = false;
+    LevelManager levelManager;
 
     void instantiate()
     {
@@ -26,8 +31,12 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         instantiate();
+        levelManager = LevelManager.Instance;
         CommunicationEvents.updateFunds += UpdateCurrentGoldAmount;
         CommunicationEvents.updateUnitCount += UpdateCurrentNumOfUnits;
+        audioSource.loop = true;
+        audioSource.clip = music;
+        audioSource.Play();
     }
 
     void Start()
@@ -47,16 +56,16 @@ public class UIManager : MonoBehaviour
         numberOfUnitsText.text = currentNumOfUnits.ToString("00") + "/" + maxNumOfUnits;
     }
 
-   // public void issueCommand() // 0: Advance; 1: Halt; 2: Retreat;
-   // {
-        //send out an event to all subscriptors with the selected command
-   // }
-   
+    // public void issueCommand() // 0: Advance; 1: Halt; 2: Retreat;
+    // {
+    //send out an event to all subscriptors with the selected command
+    // }
+
     //0 = retreat, 1 = defend, 2 = attack
     public void AttackCommand()
     {
         GameManager.currrentAction = 2;
-    } 
+    }
     public void DefendCommand()
     {
         GameManager.currrentAction = 1;
@@ -83,4 +92,28 @@ public class UIManager : MonoBehaviour
         timerText.text = Mathf.Ceil(timeLeft).ToString("00") + "s";
     }
 
+    public void pause()
+    {
+        if (paused)
+        {
+            Time.timeScale = 1f;
+            return;
+        }
+        Time.timeScale = 0f;
+    }
+
+    public void retryLevel()
+    {
+        
+    }
+
+    public void goToNextLevel()
+    {
+
+    }
+
+    public void gotToMainMenu()
+    {
+        
+    }
 }

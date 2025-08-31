@@ -8,6 +8,8 @@ public class CombatUnit : Unit
     Unit targetEnemyUnit;
     Building targetEnemyBuilding;
     [SerializeField] float visionAngle;
+    [SerializeField] protected AudioClip attackSound;
+    [SerializeField] protected AudioSource audioSource;
 
     void Update()
     {
@@ -26,12 +28,13 @@ public class CombatUnit : Unit
                 targetEnemy = null;
                 targetEnemyUnit = null;
                 targetEnemyBuilding = null;
-            } 
+            }
 
             if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
             {
                 MoveTowardsTarget(targetEnemy.transform);
             }
+
             else if (canAttack)
             {
                 if (targetEnemyBuilding == null || targetEnemyUnit == null)
@@ -45,6 +48,8 @@ public class CombatUnit : Unit
                         targetEnemyUnit.TakeDamage(damage);
                     }
                 }
+                audioSource.PlayOneShot(attackSound);
+                StartCoroutine(reloadAttack());
             }
             //move towards enemy
         }
