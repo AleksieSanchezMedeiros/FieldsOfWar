@@ -5,6 +5,8 @@ public class CombatUnit : Unit
 {
     [SerializeField] LayerMask detection, obstacles;
     GameObject targetEnemy;
+    Unit targetEnemyUnit;
+    Building targetEnemyBuilding;
     [SerializeField] float visionAngle;
 
     void Update()
@@ -19,17 +21,30 @@ public class CombatUnit : Unit
 
         if (targetEnemy != null)
         {
-            if (CalculateDistanceToTarget(targetEnemy.transform) > longRange) targetEnemy = null;
+            if (CalculateDistanceToTarget(targetEnemy.transform) > longRange)
+            {
+                targetEnemy = null;
+                targetEnemyUnit = null;
+                targetEnemyBuilding = null;
+            } 
+
             if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
             {
                 MoveTowardsTarget(targetEnemy.transform);
             }
             else if (canAttack)
             {
-                //attack nearby enemy
-                targetEnemy.GetComponent<Unit>().TakeDamage(damage);
-                //play animation
-                StartCoroutine(reloadAttack());
+                if (targetEnemyBuilding == null || targetEnemyUnit == null)
+                {
+                    if (targetEnemy.TryGetComponent<Building>(out targetEnemyBuilding))
+                    {
+                        targetEnemyBuilding.TakeDamage(damage);
+                    }
+                    else if (targetEnemy.TryGetComponent<Unit>(out targetEnemyUnit))
+                    {
+                        targetEnemyUnit.TakeDamage(damage);
+                    }
+                }
             }
             //move towards enemy
         }

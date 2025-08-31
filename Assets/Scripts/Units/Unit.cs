@@ -7,6 +7,12 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
+    RouteLog routes;
+
+    void Awake()
+    {
+        routes = RouteLog.Instance;
+    }
 
     //NAVIGATIONaGENTsTANDiN agentStandIn 
 
