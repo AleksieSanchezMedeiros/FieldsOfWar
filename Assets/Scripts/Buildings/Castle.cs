@@ -28,7 +28,7 @@ public class Castle : Tower
     private List<GameObject> FindEnemiesInRange()
     {
         List<GameObject> enemies = new List<GameObject>();
-        Collider[] hits = Physics.OverlapSphere(transform.position, range);
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer << obstacleLayer);
 
         foreach (var hit in hits) {
             if (!hit.CompareTag(gameObject.tag)) {

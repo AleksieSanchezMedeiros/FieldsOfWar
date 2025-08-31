@@ -239,6 +239,9 @@ MonoBehaviour:
   detection:
     serializedVersion: 2
     m_Bits: 0
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 256
   visionAngle: 0
 --- !u!54 &-3548914316215502464
 Rigidbody:

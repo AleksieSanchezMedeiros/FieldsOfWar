@@ -78,6 +78,9 @@ MonoBehaviour:
   opposingLayer:
     serializedVersion: 2
     m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
   maxTargets: 3
 --- !u!114 &6887485639751846888
 MonoBehaviour:

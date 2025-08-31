@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 9192222511985220675}
   - component: {fileID: 2407764460860113651}
   - component: {fileID: 4983669934106089924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Castle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,9 @@ MonoBehaviour:
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
   maxTargets: 5
 --- !u!114 &2407764460860113651
 MonoBehaviour:
@@ -137,7 +140,7 @@ GameObject:
   - component: {fileID: 5254309663017652268}
   - component: {fileID: 2722659014904631193}
   - component: {fileID: 8352523949052530342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CombatUnit : Unit
 {
-    [SerializeField] LayerMask detection;
+    [SerializeField] LayerMask detection, obstacles;
     GameObject targetEnemy;
     [SerializeField] float visionAngle;
 
@@ -43,7 +43,7 @@ public class CombatUnit : Unit
 
     private GameObject FindEnemyInVision()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, longRange);
+        Collider[] hits = Physics.OverlapSphere(transform.position, longRange, detection << obstacles);
         foreach (var hit in hits) {
             if (hit.CompareTag("Enemy")) {
                 if (IsInVision(hit.gameObject)) {

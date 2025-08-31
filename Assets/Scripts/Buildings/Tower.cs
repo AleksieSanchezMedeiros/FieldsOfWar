@@ -5,7 +5,7 @@ public class Tower : Building
     public float attackFrequency = 1f;
     public int damage = 10;
     protected float attackTimer;
-    [SerializeField] LayerMask opposingLayer;
+    [SerializeField] protected LayerMask opposingLayer, obstacleLayer;
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class Tower : Building
 
     private GameObject FindEnemyInRange()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer.value);
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer << obstacleLayer);
         foreach (var hit in hits) {
             if (!hit.CompareTag(tag)) {
                 return hit.gameObject;
