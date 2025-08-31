@@ -31,7 +31,7 @@ public class Castle : Tower
         Collider[] hits = Physics.OverlapSphere(transform.position, range);
 
         foreach (var hit in hits) {
-            if (hit.CompareTag("Soldier")) {
+            if (!hit.CompareTag(gameObject.tag)) {
                 enemies.Add(hit.gameObject);
             }
         }

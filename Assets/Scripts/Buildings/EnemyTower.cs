@@ -23,7 +23,8 @@ public class EnemyTower : Tower
     private void Stop(GameObject ally)
     {
         // Uncomment when we have the movement for the soliders
-        //var move = ally.GetComponent<Movement>();
+        //var move = ally.GetComponent<NavigationAgent>();
+        //
         //if (move != null) {
         //    move.Stop();
         //}

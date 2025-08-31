@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -8,9 +9,23 @@ public class UIManager : MonoBehaviour
     public TMP_Text numberOfUnitsText;
     public TMP_Text goldAmountText;
     //public GameManager gameManager;
+    public static UIManager Instance;
+
+    void instantiate()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Awake()
     {
+        instantiate();
         CommunicationEvents.updateFunds += UpdateCurrentGoldAmount;
         CommunicationEvents.updateUnitCount += UpdateCurrentNumOfUnits;
     }

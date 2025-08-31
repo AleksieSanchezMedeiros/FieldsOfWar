@@ -4,10 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
 
+/* 
+Remove references to deprecated Scripts 
+    - GameManager
+*/
+
 public class NavigationAgent : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform[] waypoints;
+    UIManager ins;
     private int currentWaypointIndex = 0;
     private int lastAction = -1;
     private static bool timerRunning = false;
@@ -45,7 +51,7 @@ public class NavigationAgent : MonoBehaviour
         if (timerRunning)
         {
             timerCountdown -= Time.deltaTime;
-            FindObjectOfType<UIManager>().UpdateTimerDisplay(timerCountdown);
+            UIManager.Instance.UpdateTimerDisplay(timerCountdown);
 
             if (timerCountdown <= 0f)
             {
@@ -55,98 +61,98 @@ public class NavigationAgent : MonoBehaviour
         }
     }
 
-private void HandleAction(int action)
-{
-    switch (action) //0 = retreat, 1 = defend, 2 = attack
+    private void HandleAction(int action)
     {
-        case 0: // Retreat 
-            MoveToPreviousWaypoint();
-            break;
-        case 1: // Defend- hold position
-            StopMoving();
-            break;
-        case 2: // attack
-            MoveToNextWaypoint();
-            break;
-    }
-}
-
-private void MoveToNextWaypoint()
-{
-    if (waypoints.Length == 0) return;
-
-    if (currentWaypointIndex < waypoints.Length - 1)
-    {
-        currentWaypointIndex++;
-        agent.SetDestination(waypoints[currentWaypointIndex].position);
-    }
-    else
-    {
-        StopMoving(); 
-    }
-}
-
-private void MoveToPreviousWaypoint()
-{
-    if (waypoints.Length == 0) return;
-
-    currentWaypointIndex = 0;
-    agent.SetDestination(waypoints[currentWaypointIndex].position);
-}
-
-
-private void StopMoving()
-{
-    agent.ResetPath();
-}
-
-private void CheckIfReachedDestination()
-{
-    if (!agent.pathPending && agent.remainingDistance < 0.5f)
-    {
-        if (GameManager.currrentAction == 2)
+        switch (action) //0 = retreat, 1 = defend, 2 = attack
         {
-            MoveToNextWaypoint();
+            case 0: // Retreat 
+                MoveToPreviousWaypoint();
+                break;
+            case 1: // Defend- hold position
+                StopMoving();
+                break;
+            case 2: // attack
+                MoveToNextWaypoint();
+                break;
         }
     }
-}
 
-private void MonitorGroupAtWaypointZero()
-{
-    if (waypoints.Length == 0 || timerRunning) return;
-
-    NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>();
-    int count = 0;
-
-    foreach (var unit in allAgents)
+    private void MoveToNextWaypoint()
     {
-        if (unit.CompareTag("Player")) 
+        if (waypoints.Length == 0) return;
+
+        if (currentWaypointIndex < waypoints.Length - 1)
         {
-            float dist = Vector3.Distance(unit.transform.position, waypoints[0].position);
-            if (dist < proximityThreshold)
+            currentWaypointIndex++;
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+        else
+        {
+            StopMoving();
+        }
+    }
+
+    private void MoveToPreviousWaypoint()
+    {
+        if (waypoints.Length == 0) return;
+
+        currentWaypointIndex = 0;
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
+    }
+
+
+    private void StopMoving()
+    {
+        agent.ResetPath();
+    }
+
+    private void CheckIfReachedDestination()
+    {
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            if (GameManager.currrentAction == 2)
             {
-                count++;
+                MoveToNextWaypoint();
             }
         }
     }
 
-    if (count == requiredUnits) 
+    private void MonitorGroupAtWaypointZero()
     {
-        timerRunning = true;
-        timerCountdown = controlDuration;
-    }
-}
+        if (waypoints.Length == 0 || timerRunning) return;
 
-private void RunGroupTimer()
-{
-    if (timerRunning)
-    {
-        timerCountdown -= Time.deltaTime;
-        if (timerCountdown <= 0f)
+        NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>(); 
+        int count = 0;
+
+        foreach (var unit in allAgents)
         {
-            timerRunning = false;
-           //lose/win screen 
+            if (unit.CompareTag("Player"))
+            {
+                float dist = Vector3.Distance(unit.transform.position, waypoints[0].position);
+                if (dist < proximityThreshold)
+                {
+                    count++;
+                }
+            }
+        }
+
+        if (count == requiredUnits)
+        {
+            timerRunning = true;
+            timerCountdown = controlDuration;
         }
     }
-}
+
+    private void RunGroupTimer()
+    {
+        if (timerRunning)
+        {
+            timerCountdown -= Time.deltaTime;
+            if (timerCountdown <= 0f)
+            {
+                timerRunning = false;
+                //lose/win screen 
+            }
+        }
+    }
 }

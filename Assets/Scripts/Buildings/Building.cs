@@ -5,9 +5,8 @@ public class Building : MonoBehaviour
     public float range;
     public int HP;
     protected bool hasBeenDestroyed = false;
-
     public static string price;
-
+    [SerializeField] GameObject buildingBody;
     [SerializeField] protected BaseController factionController;
 
     public void Build()
@@ -20,7 +19,7 @@ public class Building : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        gameObject.SetActive(false);
+        buildingBody.SetActive(false);
         hasBeenDestroyed = true;
     }
 
@@ -31,5 +30,10 @@ public class Building : MonoBehaviour
         {
             DestroyBuilding();
         }
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
