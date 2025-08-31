@@ -1,11 +1,10 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] sceneCodes _controlScene, activeScene, nextScene, mainMenu;
-    public sceneCodes[] scenes;
+    [SerializeField] sceneCodes[] scenes;
 
     public static LevelManager Instance;
     void Awake()
@@ -18,6 +17,27 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        for (int i = 0; i < scenes.Length; i++)
+        {
+            string pathToScene = SceneUtility.GetScenePathByBuildIndex(i);
+            string sceneName = System.IO.Path.GetFileNameWithoutExtension(pathToScene);
+            if (sceneName.Length <= 0)
+            {
+                return;
+            }
+            else
+            {
+                scenes[i] = new sceneCodes(i, sceneName);
+            }
+        }
+
+        _controlScene = scenes[0];
+        if (activeScene != scenes[1])
+        {
+            changeScene("Main Menu");
+        }
+        
     }
 
     public void changeScene(string sceneName)

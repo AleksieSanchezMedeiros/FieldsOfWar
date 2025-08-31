@@ -409,7 +409,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 1102298978}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -470,6 +470,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1289,7 +1293,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 1408001877}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1313,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.1
+      value: 20.100002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1350,6 +1354,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1399,8 +1407,7 @@ Transform:
   - {fileID: 1341839297}
   - {fileID: 2083330032}
   - {fileID: 351515781}
-  - {fileID: 1222880154}
-  - {fileID: 1713062687}
+  - {fileID: 1040765032}
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &295938480
@@ -1725,7 +1732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfUnitsText: {fileID: 0}
   goldAmountText: {fileID: 0}
-  gameManager: {fileID: 0}
   timerText: {fileID: 0}
 --- !u!114 &393337548
 MonoBehaviour:
@@ -1836,6 +1842,8 @@ MonoBehaviour:
   bottomTrackSpawn: {fileID: 0}
   listOfUnits:
   - {fileID: 0}
+  funds: 0
+  startingFunds: 100
 --- !u!1 &396133980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,7 +2061,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1974485461}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -2069,15 +2077,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.0000124
+      value: 0.000012397766
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.0999985
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.45889
+      value: -62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2120,6 +2128,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
+--- !u!4 &406139171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
+  m_PrefabInstance: {fileID: 406139170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466924397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2266,7 +2279,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 606417437}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -2328,6 +2341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VeggieBarrier 1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2372,6 +2389,58 @@ Transform:
   - {fileID: 1365779598}
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &505162499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 505162500}
+  - component: {fileID: 505162501}
+  m_Layer: 7
+  m_Name: VeggieBarrier
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &505162500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505162499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 789848645}
+  - {fileID: 710846723}
+  m_Father: {fileID: 2054452676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505162501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505162499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  HP: 0
+  buildingBody: {fileID: 0}
+  factionController: {fileID: 0}
+  garrison: 0
+  maxGarrison: 10
 --- !u!1 &525822820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2628,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 251e34ebfbad8fa499d51c33b763ffba, type: 3}
   m_PrefabInstance: {fileID: 577150564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &606417436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 606417437}
+  - component: {fileID: 606417438}
+  m_Layer: 7
+  m_Name: VeggieBarrier
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &606417437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606417436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1340721801}
+  - {fileID: 482313310}
+  m_Father: {fileID: 2054452676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &606417438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606417436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  HP: 0
+  buildingBody: {fileID: 0}
+  factionController: {fileID: 0}
+  garrison: 0
+  maxGarrison: 10
 --- !u!1 &633741094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,7 +2875,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 1408001877}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -2815,6 +2936,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2965,7 +3090,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 505162500}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3026,6 +3151,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3393,7 +3522,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 505162500}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3417,7 +3546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.1
+      value: 20.100002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3454,6 +3583,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4731,6 +4864,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57d70e77f6849ae4bad76d7880d83bec, type: 3}
   m_PrefabInstance: {fileID: 1031226348}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1040765031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040765032}
+  - component: {fileID: 1040765033}
+  m_Layer: 0
+  m_Name: EnemyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040765032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040765031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1222880154}
+  - {fileID: 1713062687}
+  m_Father: {fileID: 295938479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040765033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040765031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a96f5bf3c0c4346b7208062d7342f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 
+  topTrack: {fileID: 1713062688}
+  bottomTrack: {fileID: 1222880155}
+  selectedTrack: {fileID: 0}
+  activeResourceNode: {fileID: 0}
+  castle: {fileID: 1040765031}
+  nodes: []
+  maxNumberOfTroops: 0
+  ActiveUnits: []
+  waypointsTop: []
+  waypointsBottom: []
 --- !u!1 &1097356312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4864,13 +5054,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097356312}
   m_CullTransparentMesh: 1
+--- !u!1 &1102298977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1102298978}
+  - component: {fileID: 1102298979}
+  m_Layer: 7
+  m_Name: VeggieBarrier
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1102298978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102298977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2035584650}
+  - {fileID: 85347824}
+  m_Father: {fileID: 2054452676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102298979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102298977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  HP: 0
+  buildingBody: {fileID: 0}
+  factionController: {fileID: 0}
+  garrison: 0
+  maxGarrison: 10
 --- !u!1001 &1222880153
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 295938479}
+    m_TransformParent: {fileID: 1040765032}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -4882,7 +5124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.551026
+      value: 4.5510263
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4894,7 +5136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.11359557
+      value: 0.113595575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4940,6 +5182,11 @@ PrefabInstance:
 --- !u!4 &1222880154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
+  m_PrefabInstance: {fileID: 1222880153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1222880155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
   m_PrefabInstance: {fileID: 1222880153}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1280213240
@@ -5018,7 +5265,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 606417437}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -5042,7 +5289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.1
+      value: 20.100002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5079,6 +5326,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5201,7 +5452,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1974485461}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -5217,15 +5468,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.541111
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5268,6 +5519,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
+--- !u!4 &1359654397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da21c96b95fdef64590dd2ae8b4315ba, type: 3}
+  m_PrefabInstance: {fileID: 1359654396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1365779597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5348,6 +5604,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
   m_PrefabInstance: {fileID: 1365779597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1408001876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408001877}
+  - component: {fileID: 1408001878}
+  m_Layer: 7
+  m_Name: VeggieBarrier
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408001877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408001876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 278951720}
+  - {fileID: 669921025}
+  m_Father: {fileID: 2054452676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1408001878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408001876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  HP: 0
+  buildingBody: {fileID: 0}
+  factionController: {fileID: 0}
+  garrison: 0
+  maxGarrison: 10
 --- !u!1 &1482307919
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,7 +6859,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 295938479}
+    m_TransformParent: {fileID: 1040765032}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -6563,7 +6871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.551026
+      value: 4.5510263
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6621,6 +6929,11 @@ PrefabInstance:
 --- !u!4 &1713062687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
+  m_PrefabInstance: {fileID: 1713062686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1713062688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 84c88679e9af74a4e8ae6da85a3ed8fc, type: 3}
   m_PrefabInstance: {fileID: 1713062686}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1734765072
@@ -6813,7 +7126,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 2053366276}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -6837,7 +7150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.1
+      value: 20.100002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6874,6 +7187,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6969,7 +7286,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 2053366276}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -7030,6 +7347,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7259,6 +7580,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941441017}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1974485460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974485461}
+  m_Layer: 0
+  m_Name: FruitBarrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1974485461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974485460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 6.1, z: 22.541111}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 406139171}
+  - {fileID: 1359654397}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1979521945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7438,7 +7792,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2054452676}
+    m_TransformParent: {fileID: 1102298978}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalScale.x
@@ -7462,7 +7816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.1
+      value: 20.100002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7499,6 +7853,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
       propertyPath: m_Name
       value: VeggieBarrier 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19df0df0292e1864b81ba86eee869b4a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7646,6 +8004,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038585018}
   m_CullTransparentMesh: 1
+--- !u!1 &2053366275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053366276}
+  - component: {fileID: 2053366277}
+  m_Layer: 7
+  m_Name: VeggieBarrier
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2053366276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053366275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1792989132}
+  - {fileID: 1811550745}
+  m_Father: {fileID: 2054452676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053366277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053366275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  HP: 0
+  buildingBody: {fileID: 0}
+  factionController: {fileID: 0}
+  garrison: 0
+  maxGarrison: 10
 --- !u!1 &2054452675
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,16 +8087,11 @@ Transform:
   m_Children:
   - {fileID: 1941441018}
   - {fileID: 295938479}
-  - {fileID: 1792989132}
-  - {fileID: 2035584650}
-  - {fileID: 789848645}
-  - {fileID: 1340721801}
-  - {fileID: 278951720}
-  - {fileID: 669921025}
-  - {fileID: 482313310}
-  - {fileID: 710846723}
-  - {fileID: 85347824}
-  - {fileID: 1811550745}
+  - {fileID: 1102298978}
+  - {fileID: 606417437}
+  - {fileID: 1408001877}
+  - {fileID: 505162500}
+  - {fileID: 2053366276}
   - {fileID: 577150565}
   - {fileID: 640594331}
   - {fileID: 977998414}
@@ -8053,7 +8458,6 @@ SceneRoots:
   - {fileID: 1496284853}
   - {fileID: 1734765072}
   - {fileID: 1611086558}
-  - {fileID: 1359654396}
   - {fileID: 1821003702}
   - {fileID: 254872292}
-  - {fileID: 406139170}
+  - {fileID: 1974485461}
