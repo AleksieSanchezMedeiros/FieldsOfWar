@@ -2120,6 +2120,65 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &685237198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 137.63531
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.100094
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -168.84814
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_Name
+      value: PumpkinTower (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -5686471317970145436, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+    - {fileID: 5769484663829117588, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 991671182c3807c4c982002a915e9e83, type: 3}
 --- !u!1 &750938221
 GameObject:
   m_ObjectHideFlags: 0
@@ -6068,6 +6127,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1975584689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 157.43497
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.020753384
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -166.7682
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Name
+      value: CornTower (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
 --- !u!1001 &1978756161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7018,3 +7134,5 @@ SceneRoots:
   - {fileID: 2025996487}
   - {fileID: 1973223140}
   - {fileID: 170292203}
+  - {fileID: 1975584689}
+  - {fileID: 685237198}
