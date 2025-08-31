@@ -21,6 +21,7 @@ public class StoreManager : MonoBehaviour
     void Start()
     {
         funds = startingFunds;
+        Debug.Log(funds);
         changeUI();
     }
 
@@ -32,6 +33,7 @@ public class StoreManager : MonoBehaviour
         }
         StartCoroutine(spawnUnit(val, spawnOnTop));
         funds -= listOfUnits[val].GetCost();
+        changeUI();
         return true;
     }
 
@@ -63,6 +65,7 @@ public class StoreManager : MonoBehaviour
 
     void changeUI()
     {
-        CommunicationEvents.updateFunds(funds);
+        if (tag != "Player") return;
+        CommunicationEvents.updateFunds?.Invoke(funds);
     }
 }

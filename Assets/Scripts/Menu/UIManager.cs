@@ -39,8 +39,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateCurrentGoldAmount(int currentGoldAmount)
     {
-        Debug.Log(currentGoldAmount);
-        goldAmountText.text = currentGoldAmount.ToString();
+        goldAmountText.text = currentGoldAmount.ToString("0000");
     }
 
     private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)
