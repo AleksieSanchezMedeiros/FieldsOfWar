@@ -9,12 +9,15 @@ public class Castle : Tower
     {
         attackTimer += Time.deltaTime;
 
-        if (attackTimer >= attackFrequency) {
+        if (attackTimer >= attackFrequency)
+        {
             List<GameObject> enemies = FindEnemiesInRange();
 
             int shotsFired = 0;
-            foreach (GameObject enemy in enemies) {
-                if (shotsFired >= maxTargets) {
+            foreach (GameObject enemy in enemies)
+            {
+                if (shotsFired >= maxTargets)
+                {
                     break;
                 }
 
@@ -30,8 +33,10 @@ public class Castle : Tower
         List<GameObject> enemies = new List<GameObject>();
         Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer << obstacleLayer);
 
-        foreach (var hit in hits) {
-            if (!hit.CompareTag(gameObject.tag)) {
+        foreach (var hit in hits)
+        {
+            if (!hit.CompareTag(gameObject.tag))
+            {
                 enemies.Add(hit.gameObject);
             }
         }
@@ -42,5 +47,10 @@ public class Castle : Tower
     public void Die()
     {
 
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

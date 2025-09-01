@@ -21,7 +21,6 @@ public class StoreManager : MonoBehaviour
     void Start()
     {
         funds = startingFunds;
-        Debug.Log(funds);
         changeUI();
     }
 
@@ -65,7 +64,7 @@ public class StoreManager : MonoBehaviour
 
     void changeUI()
     {
-        if (tag != "Player") return;
+        if (gameObject.tag != "Player") return;
         CommunicationEvents.updateFunds?.Invoke(funds);
     }
 }

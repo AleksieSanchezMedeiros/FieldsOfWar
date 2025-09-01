@@ -4,7 +4,7 @@ public class Building : MonoBehaviour
 {
     public float range;
     public int HP;
-    protected bool hasBeenDestroyed = false;
+    [SerializeField]protected bool hasBeenDestroyed = false, isIndestructible = false;
     public static string price;
     [SerializeField] GameObject buildingBody;
     [SerializeField] protected BaseController factionController;
@@ -25,6 +25,7 @@ public class Building : MonoBehaviour
 
     public void TakeDamage(int incomingDamage)
     {
+        if (isIndestructible) return;
         HP -= incomingDamage;
         if (HP <= 0)
         {

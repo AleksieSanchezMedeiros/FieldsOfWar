@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         instantiate();
+        audioSource = GetComponent<AudioSource>();
         levelManager = LevelManager.Instance;
         CommunicationEvents.updateFunds += UpdateCurrentGoldAmount;
         CommunicationEvents.updateUnitCount += UpdateCurrentNumOfUnits;
@@ -48,7 +49,8 @@ public class UIManager : MonoBehaviour
 
     private void UpdateCurrentGoldAmount(int currentGoldAmount)
     {
-        goldAmountText.text = currentGoldAmount.ToString("0000");
+        string currentGoldAmountStr = currentGoldAmount.ToString();
+        goldAmountText.text = currentGoldAmountStr;
     }
 
     private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)

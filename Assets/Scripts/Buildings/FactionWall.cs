@@ -1,14 +1,20 @@
+using System;
 using UnityEngine;
 
 public class FactionWall : Building
 {
     //protected List<GameObject> allies = new List<GameObject>();
-    public void OnAllyCreated(GameObject obj)
+
+    void Awake()
     {
-        if (obj.CompareTag(tag))
+        CommunicationEvents.AddUnitToFactionList += OnAllyCreated;
+    }
+    public void OnAllyCreated(string _faction, Unit u, bool top)
+    {
+        if (u.CompareTag(tag))
         {
             //allies.Add(obj);
-            Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
+            Physics.IgnoreCollision(u.GetComponent<Collider>(), GetComponent<Collider>());
         }
     }
 }

@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         public void ChangeCurrentAction(int action) //0 = retreat, 1 = defend, 2 = attack
         {
             currrentAction = action;
-            //Debug.Log("Current action changed to: " + (action == 0 ? "Retreat" : action == 1 ? "Defend" : "Attack"));
+            //Debug.Log("Current action changed to: " + (action == 0 ? "Retreat" : action == 1 ? "Defend" : "Attack"));|
         }
 
 
@@ -115,13 +115,13 @@ public class GameManager : MonoBehaviour
             UpdateCurrentNumOfUnits();
         }
 
-        private void Start()
+        /* private void Start()
         {
             // Initialize the number of units text
             UpdateCurrentNumOfUnits();
             UpdateCurrentGoldAmount();
             ChangeCurrentAction(1); // Default action set to defend
-        }
+        } */
         
         
     }
