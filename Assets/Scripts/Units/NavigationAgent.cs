@@ -76,7 +76,7 @@ public class NavigationAgent : MonoBehaviour
         switch (action) //0 = retreat, 1 = defend, 2 = attack
         {
             case -1: //go after enemy
-                pursueEnemy();
+                pursueTarget();
                 break;
             case 0: // Retreat 
                 MoveToPreviousWaypoint();
@@ -90,7 +90,7 @@ public class NavigationAgent : MonoBehaviour
         }
     }
 
-    void pursueEnemy()
+    void pursueTarget()
     {
         agent.SetDestination(myUnit.getTarget().position);
     }

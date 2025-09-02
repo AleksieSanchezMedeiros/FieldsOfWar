@@ -5,7 +5,6 @@ public class GatheringUnit : Unit
 {
 
     [SerializeField] GameObject resourceNode, castle;
-    Transform target;
     [SerializeField] bool goGather = true, loadingCargo = false;
     ResourceNode nodeLogic;
 
@@ -40,7 +39,18 @@ public class GatheringUnit : Unit
             StartCoroutine(startGather());
             return;
         }
+    }
 
+    public override void Move(int move)
+    {
+        if (move != 0)//if unit isn't set to retreat then keep mining
+        {
+            command = -1;
+            target = resourceNode.transform;
+            MoveTowardsTarget(target);
+            return;
+        }
+        base.Move(move);
     }
 
     IEnumerator startGather()

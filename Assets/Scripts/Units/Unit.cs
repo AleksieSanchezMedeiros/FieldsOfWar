@@ -3,27 +3,30 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour, IUnitBase
 {
     public float speed, shortRange, longRange, distanceToTarget, attackCooldown;
-    public int damage, health, maxHealth, type, command;
+    public int damage, health, maxHealth, type, command, previousCommand;
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
     NavigationAgent agent;
     HealthBar healthBar;
-
-    Transform target;
+    protected Transform target;
 
     void Awake()
     {
+        CommunicationEvents.setUnitOrders += setCommand;
         healthBar = GetComponentInChildren<HealthBar>();
         agent = GetComponent<NavigationAgent>();
+
     }
 
-    public void Move(int move) //either <= or =>
+    public virtual void Move(int move) //either <= or =>
     {
+        if (previousCommand == move) return;
         command = move;
+        previousCommand = command;
     }
 
-    public void MoveTowardsTarget(Transform targetPosition)
+    public virtual void MoveTowardsTarget(Transform targetPosition)
     {
         command = -1;
         agent.setTarget(targetPosition);
@@ -74,6 +77,13 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     {
         CommunicationEvents.RemoveUnitFromFactionList(this);
         Destroy(this);
+    }
+
+    void setCommand(int _command, bool _isOnTop, string _faction)
+    {
+        if (_faction != faction) return;
+        if (_isOnTop != isOnTopTrack) return;
+        command = _command;
     }
 
     public float CalculateDistanceToTarget(Transform target)

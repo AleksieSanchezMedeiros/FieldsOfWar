@@ -14,44 +14,47 @@ public class CombatUnit : Unit
     void Update()
     {
         // detect if enemy unit or building is nearby, if so set closest enemy unit to target
-        
+
         if (!targetEnemy)
         {
             targetEnemy = FindEnemyInVision();
         }
         //move towards checkpoint
 
-        if (targetEnemy != null)
+        //move towards enemy
+        if (command == 1 || command == 2)
         {
-            if (CalculateDistanceToTarget(targetEnemy.transform) > longRange)
+            if (targetEnemy != null)
             {
-                targetEnemy = null;
-                targetEnemyUnit = null;
-                targetEnemyBuilding = null;
-            }
-
-            if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
-            {
-                MoveTowardsTarget(targetEnemy.transform);
-            }
-
-            else if (canAttack)
-            {
-                if (targetEnemyBuilding == null || targetEnemyUnit == null)
+                if (CalculateDistanceToTarget(targetEnemy.transform) > longRange)
                 {
-                    if (targetEnemy.TryGetComponent<Building>(out targetEnemyBuilding))
-                    {
-                        targetEnemyBuilding.TakeDamage(damage);
-                    }
-                    else if (targetEnemy.TryGetComponent<Unit>(out targetEnemyUnit))
-                    {
-                        targetEnemyUnit.TakeDamage(damage);
-                    }
+                    targetEnemy = null;
+                    targetEnemyUnit = null;
+                    targetEnemyBuilding = null;
                 }
-                audioSource.PlayOneShot(attackSound);
-                StartCoroutine(reloadAttack());
+
+                if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
+                {
+                    MoveTowardsTarget(targetEnemy.transform);
+                }
+
+                else if (canAttack)
+                {
+                    if (targetEnemyBuilding != null || targetEnemyUnit != null)
+                    {
+                        if (targetEnemy.TryGetComponent(out targetEnemyBuilding))
+                        {
+                            targetEnemyBuilding.TakeDamage(damage);
+                        }
+                        else if (targetEnemy.TryGetComponent(out targetEnemyUnit))
+                        {
+                            targetEnemyUnit.TakeDamage(damage);
+                        }
+                    }
+                    audioSource.PlayOneShot(attackSound);
+                    StartCoroutine(reloadAttack());
+                }
             }
-            //move towards enemy
         }
     }
 
