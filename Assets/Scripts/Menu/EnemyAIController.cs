@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using UnityEngine;
 using System;
 using System.Collections;
@@ -12,7 +11,7 @@ public class EnemyAIController : BaseController
     List<Building> buildings;
     List<Unit> topUnits, bottomUnits;
     EnemyAIController Instance;
-    [SerializeField] bool spawningInProcess = true;
+    [SerializeField] bool spawningInProcess;
     [SerializeField] float askForSpawnCooldown = 15f;
     public override void Awake()
     {
@@ -32,12 +31,11 @@ public class EnemyAIController : BaseController
         buildings = new List<Building>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (ActiveUnits.Count < maxNumberOfTroops && !spawningInProcess)
+        if (ActiveUnits.Count < maxNumberOfTroops && spawningInProcess == false)
         {
             expandArmy();
-            StartCoroutine("waitToBuyUnits");
         }
 
         if (topUnits.Count >= maxNumberOfTroops / 3)
@@ -68,7 +66,14 @@ public class EnemyAIController : BaseController
     void expandArmy()
     {
         //StartCoroutine(waitToBuyUnits());
-        if (spawningInProcess) return;
+        if (spawningInProcess)
+        {
+            Debug.Log("I respect the spawning process");
+            return;
+        }
+        
+        spawningInProcess = true;
+        StartCoroutine("waitToBuyUnits");
         if (randSpawnNumber <= 0)
         {
             System.Random rnd = new System.Random(DateTime.Now.Millisecond);
@@ -125,7 +130,7 @@ public class EnemyAIController : BaseController
 
     IEnumerator waitToBuyUnits()
     {
-        spawningInProcess = true;
+        Debug.Log(Time.timeScale);
         yield return new WaitForSeconds(askForSpawnCooldown);
         spawningInProcess = false;
     }

@@ -88,7 +88,6 @@ public class GatheringUnit : Unit
 
     public void setCastleAndGatherNode(GameObject _castle, GameObject node)
     {
-        Debug.Log(node.name + _castle.name + "Curse it all");
         resourceNode = node;
         castle = _castle;
         if (!resourceNode.TryGetComponent(out nodeLogic))

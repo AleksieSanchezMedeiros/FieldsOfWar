@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: Enemy
-  topTrackSpawn: {fileID: 0}
-  bottomTrackSpawn: {fileID: 0}
+  topTrackSpawn: {fileID: 7685686361118553535}
+  bottomTrackSpawn: {fileID: 5037110665642692659}
   listOfUnits:
   - {fileID: 11400000, guid: c80a5e55e27fb2543861f99358d2d4e3, type: 2}
   - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
@@ -75,23 +75,13 @@ MonoBehaviour:
   activeResourceNode: {fileID: 0}
   castleTop: {fileID: 6612458474970189226}
   castleBottom: {fileID: 8397605281418274854}
-  nodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  maxNumberOfTroops: 30
+  nodes: []
+  maxNumberOfTroops: 0
   ActiveUnits: []
-  waypointsTop:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypointsTop: []
   waypointsBottom: []
-  spawningInProcess: 0
-  askForSpawnCooldown: 0
+  spawningInProcess: 1
+  askForSpawnCooldown: 15
 --- !u!1001 &1197480248100389717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +414,11 @@ PrefabInstance:
 --- !u!1 &6612458474970189226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5429764460347428607, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+  m_PrefabInstance: {fileID: 1197480248100389717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7685686361118553535 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 1197480248100389717}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7998987675256021493 stripped
@@ -763,6 +758,11 @@ PrefabInstance:
 --- !u!4 &4633217312456115321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+  m_PrefabInstance: {fileID: 4598227450171614937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5037110665642692659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 4598227450171614937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8397605281418274854 stripped
