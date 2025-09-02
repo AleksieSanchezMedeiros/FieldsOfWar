@@ -8,6 +8,12 @@ public class Building : MonoBehaviour
     public static string price;
     [SerializeField] GameObject buildingBody;
     [SerializeField] protected BaseController factionController;
+    HealthBar healthBar;
+
+    void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBar>();
+    }
 
     public void Build()
     {
@@ -31,6 +37,7 @@ public class Building : MonoBehaviour
         {
             DestroyBuilding();
         }
+        healthBar.reduceHP(incomingDamage);
     }
     
     void OnDrawGizmosSelected()

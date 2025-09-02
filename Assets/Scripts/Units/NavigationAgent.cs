@@ -12,6 +12,7 @@ Remove references to deprecated Scripts
 public class NavigationAgent : MonoBehaviour
 {
     public NavMeshAgent agent;
+    Unit myUnit;
     public Transform[] waypoints;
     UIManager ins;
     private int currentWaypointIndex = 0;
@@ -30,6 +31,8 @@ public class NavigationAgent : MonoBehaviour
         {
             agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
+        myUnit = GetComponent<Unit>();
+        agent.stoppingDistance = (myUnit.shortRange / 3) * 2;
     }
 
     public void setWaypoints(List<Transform> _waypoints)
@@ -40,6 +43,8 @@ public class NavigationAgent : MonoBehaviour
     void Update()
     {
         if (!agent.isOnNavMesh) return;
+        //by checking on the game manager on update the script invalidates the separation of top and bottom since 
+        //any order issued on any will be mirrored by the other next update
         int action = GameManager.currrentAction;
         if (action != lastAction)
         {
@@ -61,10 +66,18 @@ public class NavigationAgent : MonoBehaviour
         }
     }
 
+    public void setTarget(Transform enemyPosition)
+    {
+        
+    }
+
     private void HandleAction(int action)
     {
         switch (action) //0 = retreat, 1 = defend, 2 = attack
         {
+            case -1: //go after enemy
+                pursueEnemy();
+                break;
             case 0: // Retreat 
                 MoveToPreviousWaypoint();
                 break;
@@ -75,6 +88,11 @@ public class NavigationAgent : MonoBehaviour
                 MoveToNextWaypoint();
                 break;
         }
+    }
+
+    void pursueEnemy()
+    {
+        agent.SetDestination(myUnit.getTarget().position);
     }
 
     private void MoveToNextWaypoint()

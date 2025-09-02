@@ -3,20 +3,30 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour, IUnitBase
 {
     public float speed, shortRange, longRange, distanceToTarget, attackCooldown;
-    public int damage, health, maxHealth, type;
+    public int damage, health, maxHealth, type, command;
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
     NavigationAgent agent;
+    HealthBar healthBar;
 
-    public void Move() //either <= or =>
+    Transform target;
+
+    void Awake()
     {
-        //agentStandIn.move() //either <= or =>
+        healthBar = GetComponentInChildren<HealthBar>();
+        agent = GetComponent<NavigationAgent>();
+    }
+
+    public void Move(int move) //either <= or =>
+    {
+        command = move;
     }
 
     public void MoveTowardsTarget(Transform targetPosition)
     {
-        //navAgent.move()
+        command = -1;
+        agent.setTarget(targetPosition);
     }
 
     public void Attack(Unit target)
@@ -31,6 +41,12 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         {
             Die();
         }
+        healthBar.reduceHP(dmg);
+    }
+
+    public Transform getTarget()
+    {
+        return target;
     }
 
     public virtual void Spawn(string _faction, bool _isOnTopTrack)
