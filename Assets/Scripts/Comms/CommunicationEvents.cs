@@ -5,6 +5,7 @@ public class CommunicationEvents : ScriptableObject
 {
     public static Action<string, int> GatherResource;
     public static Action<string, Unit, bool> AddUnitToFactionList; //faction, unit, isOnTopTrack
+    public static Action<GatheringUnit, bool> SetGathererInfo;
     public static Action<Unit> RemoveUnitFromFactionList;
     public static Action<int, int> updateUI, updateUnitCount; //currentUnitCount, maxUnitCount
     public static Action<string> onFactionDefeated;

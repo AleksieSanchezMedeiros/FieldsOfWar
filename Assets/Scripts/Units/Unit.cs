@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour, IUnitBase
 {
     public float speed, shortRange, longRange, distanceToTarget, attackCooldown;
-    public int damage, health, maxHealth, type, command, previousCommand;
+    public int damage, health, maxHealth, command, previousCommand;
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
@@ -16,7 +16,6 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         CommunicationEvents.setUnitOrders += setCommand;
         healthBar = GetComponentInChildren<HealthBar>();
         agent = GetComponent<NavigationAgent>();
-
     }
 
     public virtual void Move(int move) //either <= or =>
@@ -52,14 +51,14 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         return target;
     }
 
-    public virtual void Spawn(string _faction, bool _isOnTopTrack)
+    public virtual void Spawn(string _faction, bool _isOnTopTrack, GameObject Spawner)
     {
         gameObject.tag = _faction;
         faction = _faction;
         isOnTopTrack = _isOnTopTrack;
-        gameObject.layer = LayerMask.NameToLayer(_faction);
-        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this, _isOnTopTrack);
-        if (faction == "Player")
+        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
+
+        if (_faction == "Player")
         {
             transform.Find("player-graphics").gameObject.SetActive(true);
             transform.Find("enemy-graphics").gameObject.SetActive(false);
@@ -69,8 +68,9 @@ public abstract class Unit : MonoBehaviour, IUnitBase
             transform.Find("enemy-graphics").gameObject.SetActive(true);
             transform.Find("player-graphics").gameObject.SetActive(false);
         }
-
         health = maxHealth;
+        gameObject.layer = LayerMask.NameToLayer(_faction);
+        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this, _isOnTopTrack);
     }
 
     public void Die()

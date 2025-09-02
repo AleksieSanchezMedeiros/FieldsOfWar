@@ -6,5 +6,5 @@ public interface IUnitBase
     abstract void TakeDamage(int dmg);
     abstract void Move(int move);
     abstract void Die();
-    abstract void Spawn(string _faction, bool _isOnTopTrack);
+    abstract void Spawn(string _faction, bool _isOnTopTrack, GameObject spawner);
 }

@@ -40,18 +40,24 @@ public class StoreManager : MonoBehaviour
     {
         GameObject spawnee;
         yield return new WaitForSeconds(listOfUnits[val].GetTimeUntilSpawn());
-        UnityEngine.Vector3 spawnPos;
 
         if (spawnOnTop)
         {
-            spawnPos = new UnityEngine.Vector3(topTrackSpawn.position.x, topTrackSpawn.position.y, topTrackSpawn.position.z);
-            spawnee = Instantiate(listOfUnits[val].GetUnit(), spawnPos, new quaternion(0,0,0,0));
+            spawnee = Instantiate(listOfUnits[val].GetUnit(), topTrackSpawn);
         }
         else
         {
             spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
         }
-        spawnee.GetComponent<Unit>().Spawn(faction, spawnOnTop);
+        
+        if (spawnee.TryGetComponent<GatheringUnit>(out _))
+        {
+            spawnee.GetComponent<GatheringUnit>().SpawnMe(faction, spawnOnTop, this.gameObject);
+        }
+        else
+        {
+            spawnee.GetComponent<Unit>().Spawn(faction, spawnOnTop, this.gameObject);
+        }
     }
 
     void increaseFunds(string _faction, int value)

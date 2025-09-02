@@ -58,9 +58,9 @@ public class CombatUnit : Unit
         }
     }
 
-    public override void Spawn(string _faction, bool _isOnTopTrack)
+    public override void Spawn(string _faction, bool _isOnTopTrack, GameObject spawner)
     {
-        base.Spawn(_faction, _isOnTopTrack);
+        base.Spawn(_faction, _isOnTopTrack, spawner);
         canAttack = true;
     }
 

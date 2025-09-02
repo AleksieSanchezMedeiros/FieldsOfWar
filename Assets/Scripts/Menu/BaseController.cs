@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,17 +6,20 @@ public abstract class BaseController : MonoBehaviour
 {
     [SerializeField] string faction;
     protected StoreManager storeManager;
-    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, castle;
+    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, castleTop, castleBottom;
     bool selectedTopTrack = true;
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
     [SerializeField] protected List<Transform> waypointsTop, waypointsBottom;
 
-    void Awake()
+    public virtual void Awake()
     {
         storeManager = gameObject.GetComponent<StoreManager>();//get store component on own GameObject
         ActiveUnits = new List<Unit>();
+        CommunicationEvents.AddUnitToFactionList += addUnitToUnitList;
+        CommunicationEvents.RemoveUnitFromFactionList += removeUnitFromList;
+        CommunicationEvents.SetGathererInfo += addGathererToUnitList;
     }
 
     public virtual void Start()
@@ -23,8 +27,6 @@ public abstract class BaseController : MonoBehaviour
         faction = gameObject.tag;
         selectedTrack = topTrack;
         selectedTopTrack = true;
-        CommunicationEvents.AddUnitToFactionList += addUnitToUnitList;
-        CommunicationEvents.RemoveUnitFromFactionList += removeUnitFromList;
         alternateSelectedTrack(true);
     }
 
@@ -50,27 +52,35 @@ public abstract class BaseController : MonoBehaviour
 
     public virtual void addUnitToUnitList(string _faction, Unit unit, bool isOnTopTrack)
     {
-        if (faction == _faction)
+        if (unit.faction != faction) return;
+        ActiveUnits.Add(unit);
+        if (isOnTopTrack)
         {
-            ActiveUnits.Add(unit);
-            if (unit is GatheringUnit)
-            {
-                ((GatheringUnit)unit).setCastleAndGatherNode(castle, activeResourceNode);
-            }
-            else
-            {
-                if (isOnTopTrack)
-                {
-                    unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsTop);
-                }
-                else
-                {
-                    unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsBottom);
-                }
-            }
+            unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsTop);
         }
-
+        else
+        {
+            unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsBottom);
+        }
+        
+        if (faction != "Player") return;
         CommunicationEvents.updateUI?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
+    }
+
+    public void addGathererToUnitList(GatheringUnit unit, bool isOnTopTrack)
+    {
+        if (unit.faction != faction) return;
+        if (isOnTopTrack)
+        {
+            Debug.Log($"{this}, L74 Unit: {unit.faction}, Controller: {faction}, top? {isOnTopTrack}, castle {castleTop}, node {nodes[0].gameObject}");
+            //unit.castle = castleTop;
+            //unit.resourceNode = nodes[0].gameObject;
+            unit.setCastleAndGatherNode(castleTop, nodes[0].gameObject);
+        }
+        else
+        {
+            unit.setCastleAndGatherNode(castleBottom, nodes[1].gameObject);
+        }
     }
 
     public virtual void removeUnitFromList(Unit unit)
@@ -81,7 +91,6 @@ public abstract class BaseController : MonoBehaviour
     public void purchaseUnit(int _orderInList)
     {
         storeManager = gameObject.GetComponent<StoreManager>();
-        Debug.Log($"{_orderInList} {storeManager.gameObject}");
         bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
     }
 }

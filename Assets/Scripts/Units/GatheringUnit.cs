@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class GatheringUnit : Unit
 {
-
-    [SerializeField] GameObject resourceNode, castle;
+    [SerializeField] public GameObject resourceNode, castle, spawner;
     [SerializeField] bool goGather = true, loadingCargo = false;
     ResourceNode nodeLogic;
 
     //Move ignoring key path and instead goes to and fro the nearest resource node 
     void Update()
     {
-        //if (!resourceNode || !castle) return;
+        if (!resourceNode || !castle)
+        {
+            spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
+        }
 
         if (goGather && !loadingCargo)
         {
@@ -29,9 +31,10 @@ public class GatheringUnit : Unit
         }
 
 
-        if (loadingCargo && CalculateDistanceToTarget(castle.transform) > shortRange)
+        if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
-            nodeLogic.sendResource(faction);
+            if(loadingCargo)
+                nodeLogic.sendResource(faction);
         }
 
         if (goGather)
@@ -39,6 +42,30 @@ public class GatheringUnit : Unit
             StartCoroutine(startGather());
             return;
         }
+    }
+
+    public void SpawnMe(string _faction, bool _isOnTopTrack, GameObject _spawner)
+    {
+        gameObject.tag = _faction;
+        faction = _faction;
+        isOnTopTrack = _isOnTopTrack;
+        spawner = _spawner;
+        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
+
+        if (_faction == "Player")
+        {
+            transform.Find("player-graphics").gameObject.SetActive(true);
+            transform.Find("enemy-graphics").gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.Find("enemy-graphics").gameObject.SetActive(true);
+            transform.Find("player-graphics").gameObject.SetActive(false);
+        }
+        health = maxHealth;
+        gameObject.layer = LayerMask.NameToLayer(_faction);
+        spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);
+        spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
     }
 
     public override void Move(int move)
@@ -61,6 +88,7 @@ public class GatheringUnit : Unit
 
     public void setCastleAndGatherNode(GameObject _castle, GameObject node)
     {
+        Debug.Log(node.name + _castle.name + "Curse it all");
         resourceNode = node;
         castle = _castle;
         if (!resourceNode.TryGetComponent(out nodeLogic))

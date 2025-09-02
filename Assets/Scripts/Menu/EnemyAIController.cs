@@ -12,10 +12,11 @@ public class EnemyAIController : BaseController
     List<Building> buildings;
     List<Unit> topUnits, bottomUnits;
     EnemyAIController Instance;
-    [SerializeField] bool spawningInProcess;
-    [SerializeField] float askForSpawnCooldown;
-    void Awake()
+    [SerializeField] bool spawningInProcess = true;
+    [SerializeField] float askForSpawnCooldown = 15f;
+    public override void Awake()
     {
+        base.Awake();
         if (Instance == null)
         {
             Instance = this;
@@ -31,11 +32,12 @@ public class EnemyAIController : BaseController
         buildings = new List<Building>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (ActiveUnits.Count < maxNumberOfTroops && !spawningInProcess)
         {
             expandArmy();
+            StartCoroutine("waitToBuyUnits");
         }
 
         if (topUnits.Count >= maxNumberOfTroops / 3)
@@ -65,7 +67,8 @@ public class EnemyAIController : BaseController
 
     void expandArmy()
     {
-        StartCoroutine(waitToBuyUnits());
+        //StartCoroutine(waitToBuyUnits());
+        if (spawningInProcess) return;
         if (randSpawnNumber <= 0)
         {
             System.Random rnd = new System.Random(DateTime.Now.Millisecond);
