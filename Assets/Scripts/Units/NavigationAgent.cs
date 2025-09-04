@@ -16,7 +16,7 @@ public class NavigationAgent : MonoBehaviour
     public Transform[] waypoints;
     UIManager ins;
     private int currentWaypointIndex = 0;
-    private int lastAction = -1;
+    private int lastAction = -1, action;
     private static bool timerRunning = false;
     private static float timerCountdown = 0f;
     private static float controlDuration = 30f;
@@ -32,7 +32,8 @@ public class NavigationAgent : MonoBehaviour
             agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
         myUnit = GetComponent<Unit>();
-        agent.stoppingDistance = (myUnit.shortRange / 3) * 2;
+        agent.stoppingDistance = myUnit.shortRange * 0.66f;
+        agent.speed = myUnit.speed;
     }
 
     public void setWaypoints(List<Transform> _waypoints)
@@ -44,14 +45,16 @@ public class NavigationAgent : MonoBehaviour
     {
         if (!agent.isOnNavMesh) return;
         //by checking on the game manager on update the script invalidates the separation of top and bottom since 
-        //any order issued on any will be mirrored by the other next update
-        int action = GameManager.currrentAction;
+        //any order issued on any will be mirrored by the other next update - Sb
+        //int action = GameManager.currrentAction;
+        action = myUnit.command;
         if (action != lastAction)
         {
             HandleAction(action);
             lastAction = action;
         }
 
+        //Whats this for? V - Sb
         CheckIfReachedDestination();
         if (timerRunning)
         {
@@ -68,24 +71,24 @@ public class NavigationAgent : MonoBehaviour
 
     public void setTarget(Transform enemyPosition)
     {
-        
+        agent.SetDestination(enemyPosition.position);
     }
 
     private void HandleAction(int action)
     {
         switch (action) //0 = retreat, 1 = defend, 2 = attack
         {
-            case -1: //go after enemy
-                pursueTarget();
-                break;
             case 0: // Retreat 
                 MoveToPreviousWaypoint();
                 break;
-            case 1: // Defend- hold position
+            case 1: // Defend - hold position
                 StopMoving();
                 break;
             case 2: // attack
                 MoveToNextWaypoint();
+                break;
+            case 3: //go after enemy
+                pursueTarget();
                 break;
         }
     }
@@ -134,12 +137,14 @@ public class NavigationAgent : MonoBehaviour
             }
         }
     }
+    
 
+    //These look like herd navigation AI patterns but I'm unsure of how and when to use them V - Sb
     private void MonitorGroupAtWaypointZero()
     {
         if (waypoints.Length == 0 || timerRunning) return;
 
-        NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>(); 
+        NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>();
         int count = 0;
 
         foreach (var unit in allAgents)

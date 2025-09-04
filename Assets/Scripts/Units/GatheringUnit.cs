@@ -7,9 +7,19 @@ public class GatheringUnit : Unit
     [SerializeField] bool goGather = true, loadingCargo = false;
     ResourceNode nodeLogic;
 
-    //Move ignoring key path and instead goes to and fro the nearest resource node 
-    void Update()
+    void Start()
     {
+        command = -1;
+    }
+
+    //Move ignoring key path and instead goes to and fro the nearest resource node 
+    public override void Update()
+    {
+        if (command != 0)
+        {
+            command = 3;
+        }
+
         if (!resourceNode || !castle)
         {
             spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
@@ -24,17 +34,16 @@ public class GatheringUnit : Unit
             target = castle.transform;
         }
 
-        if (CalculateDistanceToTarget(resourceNode.transform) > shortRange)
-        {
-            MoveTowardsTarget(target);
-            return;
-        }
-
+        base.Update();
 
         if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
-            if(loadingCargo)
+            if (loadingCargo)
+            {
+                loadingCargo = false;
                 nodeLogic.sendResource(faction);
+                goGather = true;
+            }
         }
 
         if (goGather)
@@ -50,7 +59,6 @@ public class GatheringUnit : Unit
         faction = _faction;
         isOnTopTrack = _isOnTopTrack;
         spawner = _spawner;
-        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
 
         if (_faction == "Player")
         {
@@ -83,6 +91,7 @@ public class GatheringUnit : Unit
     IEnumerator startGather()
     {
         yield return new WaitForSeconds(attackCooldown);
+        goGather = false;
         loadingCargo = true;
     }
 

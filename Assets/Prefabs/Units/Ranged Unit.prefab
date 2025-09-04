@@ -51,15 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d78c66b1940d6449ae5b4ff524832a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 30
   shortRange: 117.3
   longRange: 229.9
   distanceToTarget: 0
   attackCooldown: 1.5
   damage: 1
-  health: 0
+  health: 6
   maxHealth: 6
-  type: 0
+  command: 0
+  previousCommand: 0
   canAttack: 0
   isOnTopTrack: 0
   faction: 

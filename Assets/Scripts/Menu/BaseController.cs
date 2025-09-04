@@ -6,8 +6,8 @@ public abstract class BaseController : MonoBehaviour
 {
     [SerializeField] string faction;
     protected StoreManager storeManager;
-    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, castleTop, castleBottom;
-    bool selectedTopTrack = true;
+    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, spawnTop, spawnBottom;
+    protected bool selectedTopTrack = true;
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
@@ -72,14 +72,11 @@ public abstract class BaseController : MonoBehaviour
         if (unit.faction != faction) return;
         if (isOnTopTrack)
         {
-            Debug.Log($"{this}, L74 Unit: {unit.faction}, Controller: {faction}, top? {isOnTopTrack}, castle {castleTop}, node {nodes[0].gameObject}");
-            //unit.castle = castleTop;
-            //unit.resourceNode = nodes[0].gameObject;
-            unit.setCastleAndGatherNode(castleTop, nodes[0].gameObject);
+            unit.setCastleAndGatherNode(spawnTop, nodes[0].gameObject);
         }
         else
         {
-            unit.setCastleAndGatherNode(castleBottom, nodes[1].gameObject);
+            unit.setCastleAndGatherNode(spawnBottom, nodes[1].gameObject);
         }
     }
 

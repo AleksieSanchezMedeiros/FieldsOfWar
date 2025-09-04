@@ -9,25 +9,33 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     [SerializeField] GameObject playerGraphics, enemyGraphics;
     NavigationAgent agent;
     HealthBar healthBar;
-    protected Transform target;
+    protected Transform target, previousTarget;
 
     void Awake()
     {
         CommunicationEvents.setUnitOrders += setCommand;
         healthBar = GetComponentInChildren<HealthBar>();
         agent = GetComponent<NavigationAgent>();
+        command = 1; //Hold position
     }
 
-    public virtual void Move(int move) //either <= or =>
+    public virtual void Update()
     {
-        if (previousCommand == move) return;
+        if (target != previousTarget)
+        {
+            agent.setTarget(target);
+            previousTarget = target;
+        }
+    }
+
+    public virtual void Move(int move) //Retreat (0), Hold(1), Advance(2)
+    {
         command = move;
-        previousCommand = command;
     }
 
     public virtual void MoveTowardsTarget(Transform targetPosition)
     {
-        command = -1;
+        command = 3;
         agent.setTarget(targetPosition);
     }
 
@@ -56,7 +64,6 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         gameObject.tag = _faction;
         faction = _faction;
         isOnTopTrack = _isOnTopTrack;
-        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
 
         if (_faction == "Player")
         {

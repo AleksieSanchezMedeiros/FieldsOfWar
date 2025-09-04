@@ -73,8 +73,8 @@ MonoBehaviour:
   bottomTrack: {fileID: 0}
   selectedTrack: {fileID: 0}
   activeResourceNode: {fileID: 0}
-  castleTop: {fileID: 6612458474970189226}
-  castleBottom: {fileID: 8397605281418274854}
+  spawnTop: {fileID: 3103653427513286583}
+  spawnBottom: {fileID: 314132848156457531}
   nodes: []
   maxNumberOfTroops: 0
   ActiveUnits: []
@@ -358,6 +358,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0442
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0296
+      objectReference: {fileID: 0}
     - target: {fileID: 9084415183667536328, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -411,9 +419,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
---- !u!1 &6612458474970189226 stripped
+--- !u!1 &3103653427513286583 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5429764460347428607, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4290850354448850146, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 1197480248100389717}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7685686361118553535 stripped
@@ -702,6 +710,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0364
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.024
+      objectReference: {fileID: 0}
     - target: {fileID: 9084415183667536328, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -755,6 +771,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+--- !u!1 &314132848156457531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4290850354448850146, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+  m_PrefabInstance: {fileID: 4598227450171614937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4633217312456115321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
@@ -763,10 +784,5 @@ Transform:
 --- !u!4 &5037110665642692659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
-  m_PrefabInstance: {fileID: 4598227450171614937}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8397605281418274854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5429764460347428607, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 4598227450171614937}
   m_PrefabAsset: {fileID: 0}

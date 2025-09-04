@@ -47,7 +47,7 @@ public class StoreManager : MonoBehaviour
         }
         else
         {
-            spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
+            spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn.transform.position, new quaternion(0,0,0,0));
         }
         
         if (spawnee.TryGetComponent<GatheringUnit>(out _))

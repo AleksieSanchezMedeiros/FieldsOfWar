@@ -68,7 +68,6 @@ public class EnemyAIController : BaseController
         //StartCoroutine(waitToBuyUnits());
         if (spawningInProcess)
         {
-            Debug.Log("I respect the spawning process");
             return;
         }
         
@@ -78,7 +77,7 @@ public class EnemyAIController : BaseController
         {
             System.Random rnd = new System.Random(DateTime.Now.Millisecond);
             randSpawnNumber = rnd.Next(2, 3);
-            if (minersCount < (maxNumberOfTroops / 4))
+            if (minersCount < (maxNumberOfTroops / 6)) 
             {
                 spawnType = 0;
             }
@@ -89,14 +88,15 @@ public class EnemyAIController : BaseController
             }
         }
 
-        if (topUnits.Count <= maxNumberOfTroops / 2)
+        if (topUnits.Count <= bottomUnits.Count)
         {
-            storeManager.trySpawnUnit(spawnType, topTrack);
+            selectedTopTrack = true;
         }
         else
         {
-            storeManager.trySpawnUnit(spawnType, bottomTrack);
+            selectedTopTrack = false;
         }
+        storeManager.trySpawnUnit(spawnType, selectedTopTrack);
         randSpawnNumber--;
     }
 
@@ -130,7 +130,6 @@ public class EnemyAIController : BaseController
 
     IEnumerator waitToBuyUnits()
     {
-        Debug.Log(Time.timeScale);
         yield return new WaitForSeconds(askForSpawnCooldown);
         spawningInProcess = false;
     }
