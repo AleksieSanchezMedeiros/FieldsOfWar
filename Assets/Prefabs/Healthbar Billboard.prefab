@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 6551661441339551636}
   - component: {fileID: 1856975235136457758}
   - component: {fileID: 5707162774674680861}
+  - component: {fileID: 265053744118018878}
   m_Layer: 5
   m_Name: Healthbar Billboard
   m_TagString: Untagged
@@ -276,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.049987793, y: 2.5200043}
+  m_AnchoredPosition: {x: 0.049987793, y: 2.5200195}
   m_SizeDelta: {x: 29.99187, y: 6.4447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6551661441339551636
@@ -342,6 +343,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &265053744118018878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805588489973977121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa935eae3d8d004a85a34ec9ef5ef2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 2744351049223632092}
 --- !u!1 &9134411337332355663
 GameObject:
   m_ObjectHideFlags: 0

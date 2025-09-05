@@ -170,21 +170,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972238c8ed88943cbb2055f16313b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 101
-  HP: 0
+  range: 120
+  HP: 40
   hasBeenDestroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 283911407068402224}
   factionController: {fileID: 0}
   attackFrequency: 1
   damage: 10
+  attackCooldown: 0
   opposingLayer:
     serializedVersion: 2
     m_Bits: 128
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 256
   maxTargets: 3
+  enemies: []
 --- !u!1001 &9065013709844426631
 PrefabInstance:
   m_ObjectHideFlags: 0

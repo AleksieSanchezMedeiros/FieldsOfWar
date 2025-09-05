@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,12 +17,9 @@ public class NavigationAgent : MonoBehaviour
     public Transform[] waypoints;
     UIManager ins;
     private int currentWaypointIndex = 0;
-    private int lastAction = -1;
+    [SerializeField]private int lastcommand = -1, command, requiredUnits = 20;
     private static bool timerRunning = false;
-    private static float timerCountdown = 0f;
-    private static float controlDuration = 30f;
-    private static int requiredUnits = 20;
-    private static float proximityThreshold = 1.5f;
+    private static float timerCountdown = 0f, controlDuration = 30f, proximityThreshold = 1.5f;
     void Start()
     {
         if (agent == null)
@@ -32,7 +30,8 @@ public class NavigationAgent : MonoBehaviour
             agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
         myUnit = GetComponent<Unit>();
-        agent.stoppingDistance = (myUnit.shortRange / 3) * 2;
+        agent.stoppingDistance = myUnit.shortRange * 0.66f;
+        agent.speed = myUnit.speed;
     }
 
     public void setWaypoints(List<Transform> _waypoints)
@@ -43,15 +42,20 @@ public class NavigationAgent : MonoBehaviour
     void Update()
     {
         if (!agent.isOnNavMesh) return;
-        //by checking on the game manager on update the script invalidates the separation of top and bottom since 
-        //any order issued on any will be mirrored by the other next update
-        int action = GameManager.currrentAction;
-        if (action != lastAction)
+
+        command = myUnit.command;
+        if (myUnit.TryGetComponent<GatheringUnit>(out _))
         {
-            HandleAction(action);
-            lastAction = action;
+            Debug.Log(command);
+        }
+        //if (myUnit.stoppedAtGarrison == true) return;
+        if (command != lastcommand)
+        {
+            HandleCommand(command);
+            lastcommand = command;
         }
 
+        //Whats this for? V - Sb
         CheckIfReachedDestination();
         if (timerRunning)
         {
@@ -68,24 +72,24 @@ public class NavigationAgent : MonoBehaviour
 
     public void setTarget(Transform enemyPosition)
     {
-        
+        agent.SetDestination(enemyPosition.position);
     }
 
-    private void HandleAction(int action)
+    private void HandleCommand(int command)
     {
-        switch (action) //0 = retreat, 1 = defend, 2 = attack
+        switch (command) //0 = retreat, 1 = defend, 2 = attack
         {
-            case -1: //go after enemy
-                pursueTarget();
-                break;
             case 0: // Retreat 
                 MoveToPreviousWaypoint();
                 break;
-            case 1: // Defend- hold position
+            case 1: // Defend - hold position
                 StopMoving();
                 break;
             case 2: // attack
                 MoveToNextWaypoint();
+                break;
+            case 3: //go after enemy
+                pursueTarget();
                 break;
         }
     }
@@ -128,18 +132,20 @@ public class NavigationAgent : MonoBehaviour
     {
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            if (GameManager.currrentAction == 2)
+            if (myUnit.command == 2)
             {
                 MoveToNextWaypoint();
             }
         }
     }
+    
 
+    //These look like herd navigation AI patterns but I'm unsure of how and when to use them V - Sb
     private void MonitorGroupAtWaypointZero()
     {
         if (waypoints.Length == 0 || timerRunning) return;
 
-        NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>(); 
+        NavigationAgent[] allAgents = FindObjectsOfType<NavigationAgent>();
         int count = 0;
 
         foreach (var unit in allAgents)

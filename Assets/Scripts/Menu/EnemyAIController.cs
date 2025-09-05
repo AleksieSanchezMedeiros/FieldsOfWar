@@ -7,8 +7,9 @@ public class EnemyAIController : BaseController
 {
     int randSpawnNumber, //determines how many times a certain unit is spawned in a row
     minersCount = 0,
-    spawnType;// 0: miner; 1: melee; 2: ranged;
-    List<Building> buildings;
+    spawnType, // 0: miner; 1: melee; 2: ranged;
+    previousCommandTop = 0,
+    previousCommandBottom = 0;
     List<Unit> topUnits, bottomUnits;
     EnemyAIController Instance;
     [SerializeField] bool spawningInProcess;
@@ -28,12 +29,11 @@ public class EnemyAIController : BaseController
         ActiveUnits = new List<Unit>();
         topUnits = new List<Unit>();
         bottomUnits = new List<Unit>();
-        buildings = new List<Building>();
     }
 
     void Update()
     {
-        if (ActiveUnits.Count < maxNumberOfTroops && spawningInProcess == false)
+        if (ActiveUnits.Count < maxNumberOfTroops && !spawningInProcess)
         {
             expandArmy();
         }
@@ -41,25 +41,25 @@ public class EnemyAIController : BaseController
         if (topUnits.Count >= maxNumberOfTroops / 3)
         {
             //issue command attack on top
-            CommunicationEvents.moveTowardsTarget?.Invoke(1, true);
+            CommunicationEvents.setUnitOrders?.Invoke(2, true, faction);
         }
 
         if (bottomUnits.Count >= maxNumberOfTroops / 3)
         {
             //issue command attack on bottom
-            CommunicationEvents.moveTowardsTarget?.Invoke(1, false);
+            CommunicationEvents.setUnitOrders?.Invoke(2, false, faction);
         }
 
         if (topUnits.Count <= maxNumberOfTroops / 6)
         {
             //issue command retreat on top
-            CommunicationEvents.moveTowardsTarget?.Invoke(2, true);
+            CommunicationEvents.setUnitOrders?.Invoke(0, true, faction);
         }
 
         if (bottomUnits.Count <= maxNumberOfTroops / 6)
         {
             //issue command retreat on bottom
-            CommunicationEvents.moveTowardsTarget?.Invoke(2, false);
+            CommunicationEvents.setUnitOrders?.Invoke(0, false, faction);
         }
     }
 
@@ -68,17 +68,17 @@ public class EnemyAIController : BaseController
         //StartCoroutine(waitToBuyUnits());
         if (spawningInProcess)
         {
-            Debug.Log("I respect the spawning process");
             return;
         }
         
         spawningInProcess = true;
         StartCoroutine("waitToBuyUnits");
+        
         if (randSpawnNumber <= 0)
         {
             System.Random rnd = new System.Random(DateTime.Now.Millisecond);
             randSpawnNumber = rnd.Next(2, 3);
-            if (minersCount < (maxNumberOfTroops / 4))
+            if (minersCount < (maxNumberOfTroops / 6))
             {
                 spawnType = 0;
             }
@@ -89,14 +89,15 @@ public class EnemyAIController : BaseController
             }
         }
 
-        if (topUnits.Count <= maxNumberOfTroops / 2)
+        if (topUnits.Count <= bottomUnits.Count)
         {
-            storeManager.trySpawnUnit(spawnType, topTrack);
+            selectedTopTrack = true;
         }
         else
         {
-            storeManager.trySpawnUnit(spawnType, bottomTrack);
+            selectedTopTrack = false;
         }
+        storeManager.trySpawnUnit(spawnType, selectedTopTrack);
         randSpawnNumber--;
     }
 
@@ -130,7 +131,6 @@ public class EnemyAIController : BaseController
 
     IEnumerator waitToBuyUnits()
     {
-        Debug.Log(Time.timeScale);
         yield return new WaitForSeconds(askForSpawnCooldown);
         spawningInProcess = false;
     }

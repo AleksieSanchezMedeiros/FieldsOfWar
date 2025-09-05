@@ -5,10 +5,6 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] Slider slider;
     Transform cam;
-    void Awake()
-    {
-        cam = FindFirstObjectByType<Camera>().gameObject.transform;
-    }
     public void setMaxValue(int val)
     {
         slider.maxValue = val;
@@ -22,6 +18,7 @@ public class HealthBar : MonoBehaviour
 
     void LateUpdate()
     {
+        if(!cam) cam = FindFirstObjectByType<Camera>().gameObject.transform;
         transform.LookAt(transform.position + cam.forward);
     }
 }

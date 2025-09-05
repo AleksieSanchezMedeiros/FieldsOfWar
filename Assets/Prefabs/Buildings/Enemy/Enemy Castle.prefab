@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7503995369008980930}
   m_Layer: 0
   m_Name: Enemy Castle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,21 +78,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972238c8ed88943cbb2055f16313b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
+  range: 85
+  HP: 40
   hasBeenDestroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 93616746035963674}
   factionController: {fileID: 0}
-  attackFrequency: 1
-  damage: 10
+  damage: 2
+  attackFrequency: 1.4
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 384
   maxTargets: 3
+  enemies: []
 --- !u!1001 &143770600635884888
 PrefabInstance:
   m_ObjectHideFlags: 0

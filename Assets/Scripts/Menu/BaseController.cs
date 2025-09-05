@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class BaseController : MonoBehaviour
 {
-    [SerializeField] string faction;
+    [SerializeField] protected string faction;
     protected StoreManager storeManager;
-    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, castleTop, castleBottom;
-    bool selectedTopTrack = true;
+    [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, spawnTop, spawnBottom;
+    protected bool selectedTopTrack = true;
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
@@ -28,11 +28,8 @@ public abstract class BaseController : MonoBehaviour
         selectedTrack = topTrack;
         selectedTopTrack = true;
         alternateSelectedTrack(true);
+        storeManager = gameObject.GetComponent<StoreManager>();
     }
-
-    public void orderAdvance() { }
-    public void orderStay() { }
-    public void orderRetreat() { }
 
     public void alternateSelectedTrack(bool top)
     {
@@ -69,17 +66,15 @@ public abstract class BaseController : MonoBehaviour
 
     public void addGathererToUnitList(GatheringUnit unit, bool isOnTopTrack)
     {
+        addUnitToUnitList(unit.faction, unit, isOnTopTrack);
         if (unit.faction != faction) return;
         if (isOnTopTrack)
         {
-            Debug.Log($"{this}, L74 Unit: {unit.faction}, Controller: {faction}, top? {isOnTopTrack}, castle {castleTop}, node {nodes[0].gameObject}");
-            //unit.castle = castleTop;
-            //unit.resourceNode = nodes[0].gameObject;
-            unit.setCastleAndGatherNode(castleTop, nodes[0].gameObject);
+            unit.setCastleAndGatherNode(spawnTop, nodes[0].gameObject);
         }
         else
         {
-            unit.setCastleAndGatherNode(castleBottom, nodes[1].gameObject);
+            unit.setCastleAndGatherNode(spawnBottom, nodes[1].gameObject);
         }
     }
 
@@ -90,7 +85,6 @@ public abstract class BaseController : MonoBehaviour
 
     public void purchaseUnit(int _orderInList)
     {
-        storeManager = gameObject.GetComponent<StoreManager>();
         bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
     }
 }

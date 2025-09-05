@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GatheringUnit : Unit
 {
@@ -7,9 +9,16 @@ public class GatheringUnit : Unit
     [SerializeField] bool goGather = true, loadingCargo = false;
     ResourceNode nodeLogic;
 
-    //Move ignoring key path and instead goes to and fro the nearest resource node 
-    void Update()
+    void Start()
     {
+        command = 3;
+    }
+
+    //Move ignoring key path and instead goes to and fro the nearest resource node 
+    public override void Update()
+    {
+        if (command != 0) command = 3;
+
         if (!resourceNode || !castle)
         {
             spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
@@ -24,23 +33,20 @@ public class GatheringUnit : Unit
             target = castle.transform;
         }
 
-        if (CalculateDistanceToTarget(resourceNode.transform) > shortRange)
-        {
-            MoveTowardsTarget(target);
-            return;
-        }
-
+        base.Update();
 
         if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
-            if(loadingCargo)
-                nodeLogic.sendResource(faction);
+            loadingCargo = false;
+            //Debug.Log("I'm depositing resources");
+            nodeLogic.sendResource(faction);
+            goGather = true;
+            return;
         }
 
-        if (goGather)
+        if (goGather && CalculateDistanceToTarget(resourceNode.transform) < shortRange)
         {
             StartCoroutine(startGather());
-            return;
         }
     }
 
@@ -50,7 +56,6 @@ public class GatheringUnit : Unit
         faction = _faction;
         isOnTopTrack = _isOnTopTrack;
         spawner = _spawner;
-        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
 
         if (_faction == "Player")
         {
@@ -64,7 +69,6 @@ public class GatheringUnit : Unit
         }
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
-        spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);
         spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
     }
 
@@ -72,9 +76,8 @@ public class GatheringUnit : Unit
     {
         if (move != 0)//if unit isn't set to retreat then keep mining
         {
-            command = -1;
-            target = resourceNode.transform;
-            MoveTowardsTarget(target);
+            command = 3;
+            //MoveTowardsTarget(target);
             return;
         }
         base.Move(move);
@@ -83,6 +86,7 @@ public class GatheringUnit : Unit
     IEnumerator startGather()
     {
         yield return new WaitForSeconds(attackCooldown);
+        goGather = false;
         loadingCargo = true;
     }
 

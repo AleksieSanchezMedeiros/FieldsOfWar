@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3578202778576675543}
   - component: {fileID: 434474138366635378}
   - component: {fileID: 2441928071477926328}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: MiningSpot2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6294127895072135971}
   - component: {fileID: 9172152723771154940}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemy Resource node
   m_TagString: Enemy
   m_Icon: {fileID: 0}

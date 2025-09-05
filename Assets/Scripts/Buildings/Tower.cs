@@ -1,43 +1,63 @@
+using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using NUnit.Framework;
 using UnityEngine;
 
 public class Tower : Building
 {
-    public float attackFrequency = 1f;
     public int damage = 10;
-    protected float attackTimer;
-    [SerializeField] protected LayerMask opposingLayer, obstacleLayer;
+    [SerializeField] protected float attackFrequency;
+    protected bool canAttack = true;
+    [SerializeField] protected LayerMask opposingLayer;
+    Unit currentTarget;
 
-    private void Update()
+    protected virtual void Awake()
     {
-        attackTimer += Time.deltaTime;
-
-        if (attackTimer >= attackFrequency)
+        if (tag == "Player")
         {
-            GameObject enemy = FindEnemyInRange();
-            if (enemy != null)
-            {
-                Attack(enemy);
-                attackTimer = 0f;
-            }
+            opposingLayer = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer
+        }
+        else
+        {
+            opposingLayer = LayerMask.GetMask("Player", "Unbreakable"); //player layer
         }
     }
 
-    private GameObject FindEnemyInRange()
+    private void FixedUpdate()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer << obstacleLayer);
-        foreach (var hit in hits) {
-            if (!hit.CompareTag(tag)) {
-                return hit.gameObject;
+        if (FindEnemyInRange() && canAttack)
+        {
+            Attack(currentTarget);
+            canAttack = false;
+            StartCoroutine(attackFrequencyStart());
+        }
+    }
+
+    private Unit FindEnemyInRange()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer);
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent(out currentTarget))
+            {
+                return currentTarget;
             }
         }
         return null;
     }
 
-    protected void Attack(GameObject target)
-    {        
-        CombatUnit s = target.GetComponent<CombatUnit>();
-        if (s != null) {
-            s.TakeDamage(damage);
+    protected void Attack(Unit target)
+    {
+        if (currentTarget != null)
+        {
+            currentTarget.TakeDamage(damage);
         }
+    }
+
+    protected IEnumerator attackFrequencyStart()
+    {
+        yield return new WaitForSeconds(attackFrequency);
+        canAttack = true;
     }
 }

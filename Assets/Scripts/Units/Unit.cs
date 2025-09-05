@@ -7,27 +7,41 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
-    NavigationAgent agent;
+    protected NavigationAgent agent;
     HealthBar healthBar;
-    protected Transform target;
+    [SerializeField]protected Transform target, previousTarget;
 
     void Awake()
     {
         CommunicationEvents.setUnitOrders += setCommand;
         healthBar = GetComponentInChildren<HealthBar>();
         agent = GetComponent<NavigationAgent>();
+        healthBar.setMaxValue(maxHealth);
+        command = 1; //Hold position
     }
 
-    public virtual void Move(int move) //either <= or =>
+    public virtual void Update()
     {
-        if (previousCommand == move) return;
+        if (target && target != previousTarget)
+        {
+            previousTarget = target;
+            MoveTowardsTarget(target);
+        }
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public virtual void Move(int move) //Retreat (0), Hold(1), Advance(2)
+    {
         command = move;
-        previousCommand = command;
     }
 
     public virtual void MoveTowardsTarget(Transform targetPosition)
     {
-        command = -1;
+        command = 3;
         agent.setTarget(targetPosition);
     }
 
@@ -56,7 +70,6 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         gameObject.tag = _faction;
         faction = _faction;
         isOnTopTrack = _isOnTopTrack;
-        //Debug.Log($"{this} base Unit L 59 inc: {_faction}; present: {faction}");
 
         if (_faction == "Player")
         {
@@ -70,13 +83,13 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         }
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
-        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this, _isOnTopTrack);
+        Spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);
     }
 
     public void Die()
     {
         CommunicationEvents.RemoveUnitFromFactionList(this);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     void setCommand(int _command, bool _isOnTop, string _faction)
