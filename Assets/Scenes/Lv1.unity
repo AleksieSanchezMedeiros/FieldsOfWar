@@ -4018,19 +4018,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1525518444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FlipSpawnViaGameManager
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1525518444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6340,13 +6328,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5db55ba071a724a9507ccb0a896ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackImage: {fileID: 1908523806}
+  attackButton: {fileID: 1908523806}
   attackNormal: {fileID: 21300000, guid: 89a0bcea3eebb9040901fd9cd4541c2e, type: 3}
   attackSelected: {fileID: 21300000, guid: 87b372782c9a3be4fad08ca1cdf20875, type: 3}
-  defendImage: {fileID: 376394304}
+  defendButton: {fileID: 376394304}
   defendNormal: {fileID: 21300000, guid: b1050b40b5690264d95b8e9b4c580a9a, type: 3}
   defendSelected: {fileID: 21300000, guid: 1b4a5aacf5d60e844a5855a042e5b85f, type: 3}
-  retreatImage: {fileID: 42395677}
+  retreatButton: {fileID: 42395677}
   retreatNormal: {fileID: 21300000, guid: bb6bf00a9e7ae144b84a11fb1c29d332, type: 3}
   retreatSelected: {fileID: 21300000, guid: 28647da4a13e0624bba4371255f42504, type: 3}
 --- !u!1001 &2060416235
@@ -6881,7 +6869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938901581674159618, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0616
+      value: 0.023
       objectReference: {fileID: 0}
     - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: spawnTop
@@ -6899,6 +6887,10 @@ PrefabInstance:
       propertyPath: spawnBottom
       value: 
       objectReference: {fileID: 393282127}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: storeManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: selectedTrack
       value: 

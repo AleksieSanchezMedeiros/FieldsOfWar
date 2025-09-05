@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : BaseController
 {
     StoreManager store;
     List<ResourceNode> factionResourceNodes;
 
+    
+ 
     public override void Start()
     {
         base.Start();
@@ -18,10 +21,7 @@ public class PlayerController : BaseController
         CommunicationEvents.updateUnitCount?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
     }
 
-    // i tried to see if that's what causes it not spawn  from bottom... if it doesn’t   help you can delete it - Shir
-    // if you delete it - something else needs to be associated with the arrow UI
-    public void FlipSpawnViaGameManager()
-    {
-        FindObjectOfType<GameManager>().FlipSpawnPoints();
-    }
+    
+    
+    
 }

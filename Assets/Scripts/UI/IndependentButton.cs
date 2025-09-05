@@ -14,13 +14,12 @@ public class IndependentButton : MonoBehaviour
     {
         buttonImage = GetComponent<Image>();
         buttonImage.sprite = normalSprite;
+    GetComponent<Button>().onClick.AddListener(ToggleButton);
+}
 
-        GetComponent<Button>().onClick.AddListener(ToggleButton);
-    }
-
-    void ToggleButton()
-    {
-        isPressed = !isPressed;
-        buttonImage.sprite = isPressed ? pressedSprite : normalSprite;
-    }
+void ToggleButton()
+{
+    isPressed = !isPressed;
+    buttonImage.sprite = isPressed ? pressedSprite : normalSprite;
+}
 }
