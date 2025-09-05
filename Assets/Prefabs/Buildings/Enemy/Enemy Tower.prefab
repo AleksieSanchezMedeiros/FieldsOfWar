@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7512658664088440121}
   - component: {fileID: 1673807395943154831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Tower
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,13 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 86
-  HP: 0
+  HP: 16
   hasBeenDestroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 1275123602044904480}
   factionController: {fileID: 0}
-  attackFrequency: 1
-  damage: 10
+  attackFrequency: 1.5
+  damage: 2
+  attackCooldown: 2
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -70,6 +71,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7512658664088440121}
     m_Modifications:
+    - target: {fileID: -8949507840506978715, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -122,9 +127,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7770355759108668905, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2232544406923438193, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -750354435938141357, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
       propertyPath: m_Name
       value: CornTower (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357447420944487982, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217462707917109053, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092708244707826562, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614000274424496966, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663499172853734404, guid: 4fe0724397ee37a498493b8b273afeef, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -149,6 +190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7512658664088440121}
     m_Modifications:
+    - target: {fileID: 2515282022620535878, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2967425152188770807, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 3.8074
@@ -181,6 +226,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4068707896657470101, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269948057892928326, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5488493897633068132, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -192,6 +245,10 @@ PrefabInstance:
     - target: {fileID: 7805588489973977121, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_Name
       value: Healthbar Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805588489973977121, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8248453995399444149, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_Pivot.x
@@ -284,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 8248453995399444149, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134411337332355663, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

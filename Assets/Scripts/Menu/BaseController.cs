@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseController : MonoBehaviour
 {
-    [SerializeField] string faction;
+    [SerializeField] protected string faction;
     protected StoreManager storeManager;
     [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, spawnTop, spawnBottom;
     protected bool selectedTopTrack = true;
@@ -28,11 +28,8 @@ public abstract class BaseController : MonoBehaviour
         selectedTrack = topTrack;
         selectedTopTrack = true;
         alternateSelectedTrack(true);
+        storeManager = gameObject.GetComponent<StoreManager>();
     }
-
-    public void orderAdvance() { }
-    public void orderStay() { }
-    public void orderRetreat() { }
 
     public void alternateSelectedTrack(bool top)
     {
@@ -69,6 +66,7 @@ public abstract class BaseController : MonoBehaviour
 
     public void addGathererToUnitList(GatheringUnit unit, bool isOnTopTrack)
     {
+        addUnitToUnitList(unit.faction, unit, isOnTopTrack);
         if (unit.faction != faction) return;
         if (isOnTopTrack)
         {
@@ -87,7 +85,6 @@ public abstract class BaseController : MonoBehaviour
 
     public void purchaseUnit(int _orderInList)
     {
-        storeManager = gameObject.GetComponent<StoreManager>();
         bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
     }
 }

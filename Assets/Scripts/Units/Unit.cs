@@ -7,24 +7,30 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     public bool canAttack, isOnTopTrack;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
-    NavigationAgent agent;
+    protected NavigationAgent agent;
     HealthBar healthBar;
-    protected Transform target, previousTarget;
+    [SerializeField]protected Transform target, previousTarget;
 
     void Awake()
     {
         CommunicationEvents.setUnitOrders += setCommand;
         healthBar = GetComponentInChildren<HealthBar>();
         agent = GetComponent<NavigationAgent>();
+        healthBar.setMaxValue(maxHealth);
         command = 1; //Hold position
     }
 
     public virtual void Update()
     {
-        if (target != previousTarget)
+        if (target && target != previousTarget)
         {
-            agent.setTarget(target);
             previousTarget = target;
+            MoveTowardsTarget(target);
+        }
+
+        if (health <= 0)
+        {
+            Die();
         }
     }
 
@@ -77,13 +83,13 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         }
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
-        CommunicationEvents.AddUnitToFactionList?.Invoke(faction, this, _isOnTopTrack);
+        Spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);
     }
 
     public void Die()
     {
         CommunicationEvents.RemoveUnitFromFactionList(this);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     void setCommand(int _command, bool _isOnTop, string _faction)

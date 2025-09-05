@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
     public int HP;
     [SerializeField]protected bool hasBeenDestroyed = false, isIndestructible = false;
     public static string price;
+    protected string faction;
     [SerializeField] GameObject buildingBody;
     [SerializeField] protected BaseController factionController;
     HealthBar healthBar;
@@ -13,6 +14,7 @@ public class Building : MonoBehaviour
     void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
+        faction = tag;
     }
 
     public void Build()

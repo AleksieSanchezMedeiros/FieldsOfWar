@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class CombatUnit : Unit
 {
-    [SerializeField] LayerMask detection, obstacles;
-    GameObject targetEnemy;
-    Unit targetEnemyUnit;
-    Building targetEnemyBuilding;
+    [SerializeField] LayerMask detection;
+    [SerializeField] GameObject targetEnemy;
+    [SerializeField] Unit targetEnemyUnit;
+    [SerializeField] Building targetEnemyBuilding;
     [SerializeField] float visionAngle;
     [SerializeField] protected AudioClip attackSound;
     [SerializeField] protected AudioSource audioSource;
+    [SerializeField] string opposingFaction;
 
-    void Update()
+    public override void Update()
     {
         // detect if enemy unit or building is nearby, if so set closest enemy unit to target
-
-        if (!targetEnemy)
+        if (targetEnemy == null)
         {
             targetEnemy = FindEnemyInVision();
         }
         //move towards checkpoint
-
+        base.Update();
         //move towards enemy
-        if (command == 1 || command == 2)
+        //Debug.Log($"Post base update \n targetEnemy = {targetEnemy}");
+        if (command != 0)
         {
             if (targetEnemy != null)
             {
@@ -35,23 +36,20 @@ public class CombatUnit : Unit
 
                 if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
                 {
-                    MoveTowardsTarget(targetEnemy.transform);
+                    //MoveTowardsTarget(targetEnemy.transform);
                 }
-
                 else if (canAttack)
                 {
-                    if (targetEnemyBuilding != null || targetEnemyUnit != null)
+                    if (targetEnemy.TryGetComponent(out targetEnemyBuilding))
                     {
-                        if (targetEnemy.TryGetComponent(out targetEnemyBuilding))
-                        {
-                            targetEnemyBuilding.TakeDamage(damage);
-                        }
-                        else if (targetEnemy.TryGetComponent(out targetEnemyUnit))
-                        {
-                            targetEnemyUnit.TakeDamage(damage);
-                        }
+                        targetEnemyBuilding.TakeDamage(damage);
                     }
-                    audioSource.PlayOneShot(attackSound);
+                    else if (targetEnemy.TryGetComponent(out targetEnemyUnit))
+                    {
+                        targetEnemyUnit.TakeDamage(damage);
+                    }
+                    //audioSource.PlayOneShot(attackSound);
+                    canAttack = false;
                     StartCoroutine(reloadAttack());
                 }
             }
@@ -62,14 +60,28 @@ public class CombatUnit : Unit
     {
         base.Spawn(_faction, _isOnTopTrack, spawner);
         canAttack = true;
+        if (faction == "Player")
+        {
+            detection = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer
+            opposingFaction = "Enemy";
+        }
+        else
+        {
+            detection = LayerMask.GetMask("Player", "Unbreakable"); //player layer
+            opposingFaction = "Player";
+        }
     }
 
     private GameObject FindEnemyInVision()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, longRange, detection << obstacles);
-        foreach (var hit in hits) {
-            if (hit.CompareTag("Enemy")) {
-                if (IsInVision(hit.gameObject)) {
+        Collider[] hits = Physics.OverlapSphere(transform.position, longRange, detection);
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag(opposingFaction))
+            {
+                if (IsInVision(hit.gameObject))
+                {
+                    target = hit.gameObject.transform;
                     return hit.gameObject;
                 }
             }
@@ -87,8 +99,7 @@ public class CombatUnit : Unit
 
     IEnumerator reloadAttack()
     {
-        canAttack = !canAttack;
         yield return new WaitForSeconds(attackCooldown);
-        canAttack = !canAttack;
+        canAttack = true;
     }
 }

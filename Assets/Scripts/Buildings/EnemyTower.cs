@@ -2,15 +2,100 @@ using UnityEngine;
 
 public class EnemyTower : Tower
 {
+    LayerMask allyLayer;
+    [SerializeField] GameObject[] alliesInGarrison;
     public int garrison = 0;
     public int maxGarrison = 5;
 
-    public void AllyEnters(GameObject ally)
+    protected override void Awake()
     {
-        if (garrison < maxGarrison)
+        base.Awake();
+        allyLayer = LayerMask.GetMask("Enemy");
+        alliesInGarrison = new GameObject[maxGarrison];
+    }
+
+    void FixedUpdate()
+    {
+        if (!checkGarrisonFull())
         {
-            garrison++;
-            Stop(ally);
+            FindAlliesInRange();
+            orderStop();
+        }
+        else
+        {
+            orderAdvance();
+        }
+    }
+
+    bool checkGarrisonFull()
+    {
+        for (int i = 0; i < alliesInGarrison.Length; i++)
+        {
+            if (!alliesInGarrison[i]) return false;
+        }
+        return true;
+    }
+
+    void orderStop()
+    {
+        for(int i = 0; i < alliesInGarrison.Length; i++)
+        {
+            if(alliesInGarrison[i])
+            {
+                if (alliesInGarrison[i].GetComponent<CombatUnit>().command != 3)
+                {
+                    //alliesInGarrison[i].GetComponent<CombatUnit>().receiveDirectCommand(1, true);
+                }
+            }
+        }
+    }
+
+    void orderAdvance()
+    {
+        for(int i = 0; i < alliesInGarrison.Length; i++)
+        {
+            if(alliesInGarrison[i])
+            {
+                if (alliesInGarrison[i].GetComponent<CombatUnit>().command != 3)
+                {
+                    //alliesInGarrison[i].GetComponent<CombatUnit>().receiveDirectCommand(2, false);
+                }
+            }
+        }
+    }
+
+    private void FindAlliesInRange()
+    {
+        bool targetInArray = false;
+        //check if object is already on the array
+        //Check if array full with existing objects
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, allyLayer);
+
+        foreach (var hit in hits)
+        {
+            if (!hit.TryGetComponent<CombatUnit>(out _)) return;
+
+            for (int i = 0; i < alliesInGarrison.Length; i++)
+            {
+                if (hit.gameObject == alliesInGarrison[i])
+                {
+                    targetInArray = true;
+                    break;
+                }
+                targetInArray = false;
+            }
+
+            if (!targetInArray)
+            {
+                for (int i = 0; i < alliesInGarrison.Length; i++)
+                {
+                    if (!alliesInGarrison[i])
+                    {
+                        alliesInGarrison[i] = hit.gameObject;
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -18,16 +103,6 @@ public class EnemyTower : Tower
     {
         garrison--;
         AskForReinforcements();
-    }
-
-    private void Stop(GameObject ally)
-    {
-        // Uncomment when we have the movement for the soliders
-        //var move = ally.GetComponent<NavigationAgent>();
-        //
-        //if (move != null) {
-        //    move.Stop();
-        //}
     }
 
     private void AskForReinforcements()

@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GatheringUnit : Unit
 {
@@ -9,16 +11,13 @@ public class GatheringUnit : Unit
 
     void Start()
     {
-        command = -1;
+        command = 3;
     }
 
     //Move ignoring key path and instead goes to and fro the nearest resource node 
     public override void Update()
     {
-        if (command != 0)
-        {
-            command = 3;
-        }
+        if (command != 0) command = 3;
 
         if (!resourceNode || !castle)
         {
@@ -38,18 +37,16 @@ public class GatheringUnit : Unit
 
         if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
-            if (loadingCargo)
-            {
-                loadingCargo = false;
-                nodeLogic.sendResource(faction);
-                goGather = true;
-            }
+            loadingCargo = false;
+            //Debug.Log("I'm depositing resources");
+            nodeLogic.sendResource(faction);
+            goGather = true;
+            return;
         }
 
-        if (goGather)
+        if (goGather && CalculateDistanceToTarget(resourceNode.transform) < shortRange)
         {
             StartCoroutine(startGather());
-            return;
         }
     }
 
@@ -72,7 +69,6 @@ public class GatheringUnit : Unit
         }
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
-        spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);
         spawner.GetComponent<BaseController>().addGathererToUnitList(this, isOnTopTrack);
     }
 
@@ -80,9 +76,8 @@ public class GatheringUnit : Unit
     {
         if (move != 0)//if unit isn't set to retreat then keep mining
         {
-            command = -1;
-            target = resourceNode.transform;
-            MoveTowardsTarget(target);
+            command = 3;
+            //MoveTowardsTarget(target);
             return;
         }
         base.Move(move);

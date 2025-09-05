@@ -18,4 +18,9 @@ public class PlayerController : BaseController
         CommunicationEvents.updateUnitCount?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
     }
 
+    public void issueCommand(int command)
+    {
+        CommunicationEvents.setUnitOrders?.Invoke(command, selectedTopTrack, faction);
+    }
+
 }

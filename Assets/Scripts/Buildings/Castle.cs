@@ -4,49 +4,67 @@ using System.Collections.Generic;
 public class Castle : Tower
 {
     public int maxTargets = 3;
+    [SerializeField] GameObject[] enemies;
+
+    void Awake()
+    {
+        enemies = new GameObject[maxTargets];
+    }
 
     private void Update()
     {
-        attackTimer += Time.deltaTime;
-
-        if (attackTimer >= attackFrequency)
+        if (canAttack)
         {
-            List<GameObject> enemies = FindEnemiesInRange();
-
-            int shotsFired = 0;
-            foreach (GameObject enemy in enemies)
+            FindEnemiesInRange();
+            for (int i = 0; i < enemies.Length; i++)
             {
-                if (shotsFired >= maxTargets)
+                if (enemies[i] != null)
                 {
-                    break;
+                    Attack(enemies[i].GetComponent<Unit>());
+                    Debug.Log($"Feel the heat, {enemies[i].name}!");
                 }
-
-                Attack(enemy);
-                shotsFired++;
             }
-            attackTimer = 0f;
+            canAttack = false;
+            StartCoroutine(attackFrequencyStart());
         }
     }
 
-    private List<GameObject> FindEnemiesInRange()
+    private void FindEnemiesInRange()
     {
-        List<GameObject> enemies = new List<GameObject>();
-        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer << obstacleLayer);
+        bool targetInArray = false;
+        //check if object is already on the array
+        //Check if array full with existing objects
+        Collider[] hits = Physics.OverlapSphere(transform.position, range, opposingLayer);
 
         foreach (var hit in hits)
         {
-            if (!hit.CompareTag(gameObject.tag))
+            for (int i = 0; i < enemies.Length; i++)
             {
-                enemies.Add(hit.gameObject);
+                if (hit.gameObject == enemies[i])
+                {
+                    targetInArray = true;
+                    break;
+                }
+                targetInArray = false;
+            }
+
+            if (!targetInArray)
+            {
+                for (int i = 0; i < enemies.Length; i++)
+                {
+                    if (!enemies[i])
+                    {
+                        enemies[i] = hit.gameObject;
+                        break;
+                    }
+                }
             }
         }
-
-        return enemies;
     }
 
     public void Die()
     {
-
+        CommunicationEvents.onFactionDefeated(faction);
     }
 
     void OnDrawGizmosSelected()

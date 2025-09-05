@@ -9,9 +9,8 @@ public class CommunicationEvents : ScriptableObject
     public static Action<Unit> RemoveUnitFromFactionList;
     public static Action<int, int> updateUI, updateUnitCount; //currentUnitCount, maxUnitCount
     public static Action<string> onFactionDefeated;
-    public static Action<int, bool> moveTowardsTarget; //0: retreat/1: hold/2: Advance, is on top track
     public static Action<int> updateFunds;
-    public static Action<int, bool, string> setUnitOrders; //Command, isOnTop, faction
+    public static Action<int, bool, string> setUnitOrders; //Command(0 = retreat, 1 = hold, 2 = advance, 3 (Unit defined, not broadcasted) = pursue target), isOnTop, faction
     static bool modeIsTimer;
     public static void setMode(bool mode) { modeIsTimer = mode; }
     public static bool getMode() { return modeIsTimer; }
