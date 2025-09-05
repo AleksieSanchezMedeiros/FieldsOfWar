@@ -18,9 +18,10 @@ public class PlayerController : BaseController
         CommunicationEvents.updateUnitCount?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
     }
 
-    public void issueCommand(int command)
+    // i tried to see if that's what causes it not spawn  from bottom... if it doesn’t   help you can delete it - Shir
+    // if you delete it - something else needs to be associated with the arrow UI
+    public void FlipSpawnViaGameManager()
     {
-        CommunicationEvents.setUnitOrders?.Invoke(command, selectedTopTrack, faction);
+        FindObjectOfType<GameManager>().FlipSpawnPoints();
     }
-
 }

@@ -1,7 +1,9 @@
+using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,7 +17,8 @@ public class UIManager : MonoBehaviour
     AudioClip music;
     bool paused = false;
     LevelManager levelManager;
-
+    
+    
     void instantiate()
     {
         if (Instance == null)
@@ -118,4 +121,7 @@ public class UIManager : MonoBehaviour
     {
         
     }
+    
+    
+    
 }
