@@ -47,14 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d70fe7535d44204be576b2c12560cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100.38
-  HP: 0
-  hasBeenDestroyed: 0
+  range: 86
+  HP: 2
+  maxHealth: 4
+  Destroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 6446858025889967917}
   factionController: {fileID: 0}
-  damage: 10
-  attackFrequency: 1
+  damage: 2
+  attackFrequency: 3
   opposingLayer:
     serializedVersion: 2
     m_Bits: 128

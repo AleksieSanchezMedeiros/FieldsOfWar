@@ -11,7 +11,7 @@ public class Building : MonoBehaviour
     [SerializeField] protected BaseController factionController;
     HealthBar healthBar;
 
-    void Awake()
+    protected virtual void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.setMaxValue(maxHealth);
@@ -36,8 +36,8 @@ public class Building : MonoBehaviour
     public bool TakeDamage(int incomingDamage)
     {
         if (isIndestructible) return false;
-        HP -= incomingDamage;
-        Debug.Log($"I'm taking enemy fire! {HP} dmg {incomingDamage}");
+        HP = HP - incomingDamage;
+        Debug.Log($"I'm taking enemy fire! {HP + incomingDamage} dmg {incomingDamage}");
         if (HP <= 0)
         {
             DestroyBuilding();

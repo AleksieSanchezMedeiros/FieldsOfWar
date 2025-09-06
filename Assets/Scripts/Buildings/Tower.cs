@@ -15,8 +15,9 @@ public class Tower : Building
     protected string opposingFaction;
     Unit currentTarget;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (tag == "Player")
         {
             opposingLayer = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer

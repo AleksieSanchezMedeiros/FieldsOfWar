@@ -51,7 +51,7 @@ public class NavigationAgent : MonoBehaviour
             lastcommand = command;
         }
 
-        if (command == 3 && agent.destination != myUnit.getTarget().position)
+        if (command == 3 && agent.destination != myUnit.getTarget().position && myUnit.getTarget().TryGetComponent<Unit>(out _))
         {
             pursueTarget();
         }

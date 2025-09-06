@@ -172,13 +172,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 120
   HP: 40
-  hasBeenDestroyed: 0
+  maxHealth: 30
+  Destroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 283911407068402224}
   factionController: {fileID: 0}
-  attackFrequency: 1
   damage: 10
-  attackCooldown: 0
+  attackFrequency: 1
   opposingLayer:
     serializedVersion: 2
     m_Bits: 128

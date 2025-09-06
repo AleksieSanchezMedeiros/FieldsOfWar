@@ -80,8 +80,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 86
-  HP: 16
-  hasBeenDestroyed: 0
+  HP: 20
+  maxHealth: 0
+  Destroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 1275123602044904480}
   factionController: {fileID: 0}

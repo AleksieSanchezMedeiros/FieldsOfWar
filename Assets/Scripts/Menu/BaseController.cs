@@ -7,7 +7,7 @@ public abstract class BaseController : MonoBehaviour
     [SerializeField] protected string faction;
     protected StoreManager storeManager;
     [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, spawnTop, spawnBottom;
-    protected bool selectedTopTrack = true;
+    [SerializeField] protected bool selectedTopTrack = true;
     [SerializeField] protected ResourceNode[] nodes;
     [SerializeField] public int maxNumberOfTroops;
     [SerializeField] protected List<Unit> ActiveUnits;
@@ -26,14 +26,14 @@ public abstract class BaseController : MonoBehaviour
     {
         faction = gameObject.tag;
         selectedTrack = topTrack;
-        selectedTopTrack = true;
-        alternateSelectedTrack(true);
+        selectedTopTrack = false;
+        alternateSelectedTrack();
         storeManager = gameObject.GetComponent<StoreManager>();
     }
 
-    public void alternateSelectedTrack(bool top)
+    public void alternateSelectedTrack()
     {
-        if (top)
+        if (!selectedTopTrack)
         {
             activeResourceNode = nodes[0].gameObject;
             selectedTrack = topTrack;
@@ -42,8 +42,8 @@ public abstract class BaseController : MonoBehaviour
         else
         {
             selectedTrack = bottomTrack;
-            selectedTopTrack = false;
             activeResourceNode = nodes[1].gameObject;
+            selectedTopTrack = false;
         }
     }
 
