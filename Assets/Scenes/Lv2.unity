@@ -407,6 +407,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 147.65106
@@ -513,6 +521,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7039829731772361912, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
+      propertyPath: buildingBody
+      value: 
+      objectReference: {fileID: 123471876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -521,6 +533,11 @@ PrefabInstance:
 --- !u!4 &123471875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 118678456327169352, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
+  m_PrefabInstance: {fileID: 123471874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &123471876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 668488391123608362, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
   m_PrefabInstance: {fileID: 123471874}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &138460673
@@ -551,6 +568,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1087,6 +1112,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -194.24052
@@ -1368,6 +1401,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.228052
@@ -1831,6 +1872,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 159.0212
@@ -1881,37 +1930,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
   m_PrefabInstance: {fileID: 518867686}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &568962374
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 568962375}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &568962375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568962374}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2127215558}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &610470637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2024,7 +2042,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1526652368}
-  - {fileID: 822625252}
   - {fileID: 1530273731}
   - {fileID: 2127215558}
   - {fileID: 210437436}
@@ -2871,37 +2888,6 @@ Transform:
   - {fileID: 1176141703}
   m_Father: {fileID: 2058648668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &794717844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 794717845}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &794717845
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794717844}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 822625252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808449130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,38 +3009,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &822625251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 822625252}
-  m_Layer: 0
-  m_Name: Player Towers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &822625252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822625251}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 794717845}
-  m_Father: {fileID: 615858439}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845672165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,6 +3113,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+--- !u!114 &929419396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 112847572968109622, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+  m_PrefabInstance: {fileID: 929419395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a96f5bf3c0c4346b7208062d7342f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1008856837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,6 +3972,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 789108224}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (3)
@@ -4089,6 +4066,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (2)
@@ -4403,6 +4396,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (1)
@@ -4682,7 +4691,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1629675097}
   - {fileID: 1204447694}
   - {fileID: 1442097557}
   - {fileID: 1963589407}
@@ -4791,7 +4799,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2049108357}
   - {fileID: 2107304079}
   - {fileID: 651472891}
   m_Father: {fileID: 615858439}
@@ -4858,37 +4865,6 @@ Transform:
   m_Children:
   - {fileID: 1249229412}
   m_Father: {fileID: 2058648668}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1629675096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1629675097}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1629675097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629675096}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1526652368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684135853
 GameObject:
@@ -5094,6 +5070,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: startingFunds
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2417335878473240459, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5388,6 +5368,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower
@@ -5739,37 +5735,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6294127895072135971, guid: 4f7da94c3119f4a42bf96f2d19c10711, type: 3}
   m_PrefabInstance: {fileID: 2026409322}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2049108356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2049108357}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2049108357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049108356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1530273731}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055661356
 GameObject:
   m_ObjectHideFlags: 0
@@ -6155,7 +6120,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 568962375}
   - {fileID: 1529401015}
   - {fileID: 218286296}
   m_Father: {fileID: 615858439}
@@ -6188,6 +6152,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBarrier
       objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 6847442086996321294, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0007142857
@@ -6309,6 +6285,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
