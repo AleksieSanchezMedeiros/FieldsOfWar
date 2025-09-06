@@ -1,31 +1,30 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class LocalLevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject victoryBanner, defeatBanner, gameEndUI, underlevel, timer;
-    bool timerMode = false;
+    [SerializeField] GameObject victoryBanner, defeatBanner, gameEndUI, timer;
+    TextMeshPro timerText;
+    bool suddenDeath = false;
     [SerializeField] float timeToDefeat;
-    
+    [SerializeField] int totalUnitsOnBottomTrack;
+    [SerializeField] int unitsThatAreAboutToDie;
 
     void Awake()
     {
-        timerMode = CommunicationEvents.getMode();
-        if (!timerMode)
-        {
-            CommunicationEvents.onFactionDefeated += gameOver;
-            underlevel.SetActive(true);
-        }
-        else
-        {
-            timer.SetActive(true);
-        }
+        timerText = timer.GetComponent<TextMeshPro>();
+        CommunicationEvents.onFactionDefeated += onFactionDefeated;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void onFactionDefeated(string faction)
+    {
+        
+    }
 
     void FixedUpdate()
     {
-        if (timerMode)
+        if (suddenDeath)
         {
             timeToDefeat -= Time.deltaTime;
         }
@@ -34,6 +33,30 @@ public class LocalLevelManager : MonoBehaviour
         {
             gameOver("Player");
         }
+    }
+
+    void updateUnitsOnBottomTrack(bool increase)
+    {
+        if (suddenDeath) return;
+        if (increase)
+        {
+            totalUnitsOnBottomTrack++;
+            if (totalUnitsOnBottomTrack == unitsThatAreAboutToDie)
+            {
+                suddenDeath = true;
+            }
+        }
+        else
+        {
+            totalUnitsOnBottomTrack--;
+        }
+    }
+
+    void updateTimer()
+    {
+        string mins = (timeToDefeat / 60).ToString();
+        string seg = (timeToDefeat % 60).ToString();
+        timerText.text = timeToDefeat.ToString($"{mins}:{seg}");
     }
 
     void gameOver(string _faction) // _faction = the defeated faction

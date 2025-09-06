@@ -1,15 +1,19 @@
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using System.Linq;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] sceneCodes _controlScene, activeScene, nextScene, mainMenu;
-    [SerializeField] sceneCodes[] scenes;
+    [SerializeField] public sceneCodes _controlScene, activeScene, nextScene;
+    [SerializeField] sceneCodes[] scenes = new sceneCodes[5];
     public static LevelManager Instance;
     [SerializeField] Canvas pauseScreen;
     [SerializeField] Camera mainMenuCamera;
-    bool paused;
+    [SerializeField] GameObject mainMenu, instructions, nextInstructionSlideBtn, prevInstructionSlideBtn;
+    [SerializeField] Image[] instructionSlides;
+    bool paused, showingSlides = false;
+    int currentlyActiveInstructionSlide = 0;
     void Awake()
     {
         if (Instance == null)
@@ -20,6 +24,8 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(this);
         }
+        scenes = new sceneCodes[5];
+        Debug.Log(scenes);
 
         for (int i = 0; i < scenes.Length; i++)
         {
@@ -36,42 +42,106 @@ public class LevelManager : MonoBehaviour
         }
 
         _controlScene = scenes[0];
-        mainMenu = scenes[1];
-        if (activeScene != scenes[1])
-        {
-            changeScene("Main Menu");
-        }
-        
+        mainMenu.gameObject.SetActive(true);
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && activeScene.getName() != "Main Menu")
+        if (Input.GetKeyDown(KeyCode.P) && activeScene.getName() != "Background")
         {
-            if (paused)
-            {
-                paused = false;
-                Time.timeScale = 1;
-                pauseScreen.gameObject.SetActive(false);
-            }
-            else
-            {
-                paused = true;
-                Time.timeScale = 0;
-                pauseScreen.gameObject.SetActive(true);
-            }
+            pauseUnpause();
         }
     }
 
+    #region Local level and pause menu management
+    public void pauseUnpause()
+    {
+        if (paused)
+        {
+            paused = false;
+            Time.timeScale = 1;
+            pauseScreen.gameObject.SetActive(false);
+        }
+        else
+        {
+            paused = true;
+            Time.timeScale = 0;
+            pauseScreen.gameObject.SetActive(true);
+        }
+        showInstructionSlides();
+    }
+
+    public void showInstructionSlides()
+    {
+        if (!showingSlides)
+        {
+            instructions.SetActive(true);
+            currentlyActiveInstructionSlide = 0;
+            showingSlides = !showingSlides;
+            checkSlidesindex();
+        }
+        else
+        {
+            instructions.SetActive(false);
+            currentlyActiveInstructionSlide = 0;
+            showingSlides = !showingSlides;
+            checkSlidesindex();
+        }
+    }
+
+    public void nextInstructionSlide()
+    {
+        instructionSlides[currentlyActiveInstructionSlide].gameObject.SetActive(false);
+        currentlyActiveInstructionSlide++;
+        checkSlidesindex();
+
+    }
+
+    public void prevInstructionSlide()
+    {
+        instructionSlides[currentlyActiveInstructionSlide].gameObject.SetActive(false);
+        currentlyActiveInstructionSlide--;
+        checkSlidesindex();
+    }
+
+    void checkSlidesindex()
+    {
+        instructionSlides[currentlyActiveInstructionSlide].gameObject.SetActive(true);
+        switch (currentlyActiveInstructionSlide)
+        {
+            case 0:
+                nextInstructionSlideBtn.gameObject.SetActive(true);
+                prevInstructionSlideBtn.gameObject.SetActive(false);
+                break;
+            case 1:
+                nextInstructionSlideBtn.gameObject.SetActive(true);
+                prevInstructionSlideBtn.gameObject.SetActive(true);
+                break;
+            case 2:
+
+                nextInstructionSlideBtn.gameObject.SetActive(false);
+                prevInstructionSlideBtn.gameObject.SetActive(true);
+                break;
+        }
+    }
+    #endregion
+    #region Scene management
     public void changeScene(string sceneName)
     {
-        if(sceneName == "Background")
-        for (int i = 2; i < scenes.Length; i++)
+        if (mainMenuCamera.gameObject.activeSelf)
+        {
+            mainMenuCamera.gameObject.SetActive(false);
+        }
+        if (sceneName == "Background")
+        {
+            loadMainMenu();
+        }
+        for (int i = 1; i < scenes.Length; i++)
         {
             if (scenes[i].getName() == sceneName)
             {
                 nextScene = scenes[i];
-                if (activeScene != null)
+                if (activeScene != null && activeScene.getName() != "Background")
                 {
                     SceneManager.UnloadSceneAsync(activeScene.getCode());
                 }
@@ -83,8 +153,8 @@ public class LevelManager : MonoBehaviour
 
     public void moveToNextScene()
     {
-        string nextCode = mainMenu.getName();
-        for (int i = 2; i < scenes.Length; i++)
+        string nextCode = _controlScene.getName();
+        for (int i = 1; i < scenes.Length; i++)
         {
             if (scenes[i].getName() == activeScene.getName() && i != scenes.Length - 1)
             {
@@ -92,20 +162,37 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-                nextCode = "Main Menu";
+                nextCode = "Background";
             }
         }
         changeScene(nextCode);
     }
 
+    public void firstLevel()
+    {
+        mainMenu.gameObject.SetActive(false);
+        instructions.gameObject.SetActive(false);
+        mainMenuCamera.gameObject.SetActive(false);
+        showingSlides = false;
+        changeScene(scenes[1].getName());
+    }
+
     public void loadMainMenu()
     {
-        changeScene(mainMenu.getName());
+        SceneManager.UnloadSceneAsync(activeScene.getName());
+        mainMenu.gameObject.SetActive(true);
+        mainMenuCamera.gameObject.SetActive(true);
     }
     public void reloadLevel()
     {
         SceneManager.LoadScene(activeScene.getName());
     }
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
+    #endregion
 }
 
 public class sceneCodes{

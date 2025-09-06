@@ -5,8 +5,9 @@ public class FactionWall : Building
 {
     //protected List<GameObject> allies = new List<GameObject>();
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         CommunicationEvents.AddUnitToFactionList += OnAllyCreated;
     }
     public void OnAllyCreated(string _faction, Unit u, bool top)
