@@ -48,14 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: Enemy
-  topTrackSpawn: {fileID: 7685686361118553535}
-  bottomTrackSpawn: {fileID: 5037110665642692659}
+  topTrackSpawn: {fileID: 0}
+  bottomTrackSpawn: {fileID: 0}
   listOfUnits:
   - {fileID: 11400000, guid: c80a5e55e27fb2543861f99358d2d4e3, type: 2}
   - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
   - {fileID: 11400000, guid: 9f99a07f6b1a0c3498735858be85413c, type: 2}
   funds: 0
-  startingFunds: 100
+  startingFunds: 1000
 --- !u!114 &112847572968109622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,13 +75,29 @@ MonoBehaviour:
   activeResourceNode: {fileID: 0}
   spawnTop: {fileID: 3103653427513286583}
   spawnBottom: {fileID: 314132848156457531}
-  nodes: []
-  maxNumberOfTroops: 0
+  nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  maxNumberOfTroops: 6
   ActiveUnits: []
-  waypointsTop: []
-  waypointsBottom: []
-  spawningInProcess: 1
-  askForSpawnCooldown: 15
+  waypointsTop:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  waypointsBottom:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawningInProcess: 0
+  askForSpawnCooldown: 4
 --- !u!1001 &1197480248100389717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 90.8
+      value: 109
       objectReference: {fileID: 0}
     - target: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -422,11 +438,6 @@ PrefabInstance:
 --- !u!1 &3103653427513286583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4290850354448850146, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
-  m_PrefabInstance: {fileID: 1197480248100389717}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7685686361118553535 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 1197480248100389717}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7998987675256021493 stripped
@@ -712,11 +723,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0364
+      value: 0.0361
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0058
       objectReference: {fileID: 0}
     - target: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.024
+      value: 0.055
       objectReference: {fileID: 0}
     - target: {fileID: 9084415183667536328, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_Layer
@@ -732,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2000046
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -779,10 +794,5 @@ GameObject:
 --- !u!4 &4633217312456115321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9195313711023055520, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
-  m_PrefabInstance: {fileID: 4598227450171614937}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5037110665642692659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8806585621072787178, guid: 1ce89491dfe7b2746a487db0062fdefc, type: 3}
   m_PrefabInstance: {fileID: 4598227450171614937}
   m_PrefabAsset: {fileID: 0}
