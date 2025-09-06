@@ -1350,6 +1350,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 295938479}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier (1)
@@ -1548,7 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfUnitsText: {fileID: 878081394}
   goldAmountText: {fileID: 761812360}
-  commandsGroup: {fileID: 0}
+  commandsGroup: {fileID: 710384786}
   timerText: {fileID: 2038585020}
 --- !u!114 &393337548
 MonoBehaviour:
@@ -1724,9 +1732,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FlipSpawnPoints
+      - m_Target: {fileID: 1394817810}
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: alternateSelectedTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1788,7 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 7a1b02928bcfa454c97fc4512d1fe518, type: 3}
   pressedSprite: {fileID: 21300000, guid: 9aa0e84b73d9f0340b7cb769218dfd4e, type: 3}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 393337547}
 --- !u!1001 &466924397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1937,6 +1945,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 295938479}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier
@@ -2468,16 +2484,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeCurrentAction
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 0
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 710384786}
@@ -3236,16 +3252,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeCurrentAction
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 710384786}
@@ -5607,16 +5623,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 710384786}

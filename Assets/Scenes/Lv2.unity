@@ -775,6 +775,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1976161058}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RetreatCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &179303232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2469,6 +2481,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1976161058}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DefendCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &726887616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3104,6 +3128,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 112847572968109622, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: topTrack
+      value: 
+      objectReference: {fileID: 1684135853}
+    - target: {fileID: 112847572968109622, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: bottomTrack
+      value: 
+      objectReference: {fileID: 1461690239}
+    - target: {fileID: 4586547986447431200, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: topTrackSpawn
+      value: 
+      objectReference: {fileID: 1684135854}
+    - target: {fileID: 4586547986447431200, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: bottomTrackSpawn
+      value: 
+      objectReference: {fileID: 1461690240}
     - target: {fileID: 4811726639648888628, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_Name
       value: Enemy Controller
@@ -5031,6 +5071,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1976161058}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AttackCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1514786502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5477,10 +5529,90 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: topTrack
+      value: 
+      objectReference: {fileID: 2055661356}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: bottomTrack
+      value: 
+      objectReference: {fileID: 845672165}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: waypointsTop.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: waypointsBottom.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2055661357}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[1]'
+      value: 
+      objectReference: {fileID: 58008289}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1895540379}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[3]'
+      value: 
+      objectReference: {fileID: 437096130}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1949411182}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1556473619}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsTop.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1684135854}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[0]'
+      value: 
+      objectReference: {fileID: 845672166}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[1]'
+      value: 
+      objectReference: {fileID: 194392224}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[2]'
+      value: 
+      objectReference: {fileID: 623915509}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[3]'
+      value: 
+      objectReference: {fileID: 251638580}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[4]'
+      value: 
+      objectReference: {fileID: 515178384}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[5]'
+      value: 
+      objectReference: {fileID: 510004673}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: 'waypointsBottom.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1461690240}
     - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: startingFunds
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: topTrackSpawn
+      value: 
+      objectReference: {fileID: 2055661357}
+    - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: bottomTrackSpawn
+      value: 
+      objectReference: {fileID: 845672166}
     - target: {fileID: 2417335878473240459, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6140,10 +6272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b748f7863738d4bb316d304847bb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfUnitsText: {fileID: 0}
-  goldAmountText: {fileID: 0}
-  commandsGroup: {fileID: 0}
-  timerText: {fileID: 0}
+  numberOfUnitsText: {fileID: 1077319448}
+  goldAmountText: {fileID: 2069695376}
+  commandsGroup: {fileID: 6307064}
+  timerText: {fileID: 770947206}
 --- !u!114 &1976161059
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 7a1b02928bcfa454c97fc4512d1fe518, type: 3}
   pressedSprite: {fileID: 21300000, guid: 9aa0e84b73d9f0340b7cb769218dfd4e, type: 3}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 231267951}
 --- !u!114 &80105275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,8 +281,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1045419848}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: FlipSpawnViaGameManager
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: alternateSelectedTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfUnitsText: {fileID: 341633639}
   goldAmountText: {fileID: 720337181}
-  commandsGroup: {fileID: 0}
+  commandsGroup: {fileID: 209561824}
   timerText: {fileID: 1232230524}
 --- !u!114 &231267952
 MonoBehaviour:
@@ -2260,6 +2260,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AttackCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &650915378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,6 +2666,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RetreatCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &754768367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3036,7 +3060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
@@ -3266,6 +3290,18 @@ MonoBehaviour:
       - m_Target: {fileID: 209561824}
         m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
         m_MethodName: ClickDefend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DefendCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6296,7 +6332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
