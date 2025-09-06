@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6337588902435030299, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6722615815860425321, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -186,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 8216224915577599973, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700323323099668631, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -200,6 +208,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 991964060}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (5)
@@ -648,7 +664,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1941441018}
+    m_TransformParent: {fileID: 277950079}
     m_Modifications:
     - target: {fileID: 590276292445486500, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.x
@@ -670,33 +686,41 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0020337857
+      value: 2.8473
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.32743245
+      value: 2.8473005
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02382714
+      value: 2.8473003
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.17607142
+      value: -25.099998
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1876403
+      value: 108.82754
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.334
+      value: -50.977398
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1074,6 +1098,7 @@ Transform:
   m_Children:
   - {fileID: 363117889}
   - {fileID: 1440206629}
+  - {fileID: 229671228}
   m_Father: {fileID: 1941441018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295938478
@@ -1373,6 +1398,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1989,6 +2022,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 991964060}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (4)
@@ -3579,6 +3620,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 295938479}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (3)
@@ -3680,6 +3729,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -4133,6 +4190,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3168251251788624756, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189446722806570664, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6764502411956986385, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_Name
       value: Player Controller
@@ -4220,6 +4285,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -4454,6 +4527,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 991964060}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (6)
@@ -4810,6 +4891,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -5421,7 +5510,6 @@ Transform:
   m_LocalScale: {x: 1400, y: 8.69584, z: 119.4982}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 229671228}
   - {fileID: 277950079}
   - {fileID: 991964060}
   - {fileID: 1998761789}
@@ -6064,6 +6152,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8461169329509525781, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_PresetInfoIsWorld

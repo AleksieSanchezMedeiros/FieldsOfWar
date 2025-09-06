@@ -659,37 +659,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57d70e77f6849ae4bad76d7880d83bec, type: 3}
   m_PrefabInstance: {fileID: 109120432}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &110453675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 110453676}
-  m_Layer: 0
-  m_Name: VeggieBarriers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &110453676
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110453675}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 295938479}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126569479
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +740,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1105,37 +1082,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &267369852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 267369853}
-  m_Layer: 0
-  m_Name: Unbreakable walls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &267369853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267369852}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822034, z: 2.1673417}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1941441018}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295938478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,10 +1114,7 @@ Transform:
   m_LocalScale: {x: 1400, y: 8.69584, z: 119.4982}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 633741095}
-  - {fileID: 110453676}
   - {fileID: 1280213241}
-  - {fileID: 351515781}
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &295938480
@@ -1384,37 +1327,6 @@ RectTransform:
   m_AnchoredPosition: {x: -967.8, y: -230}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &351515780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 351515781}
-  m_Layer: 0
-  m_Name: 'Enemy towers '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &351515781
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351515780}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822034, z: 2.1673417}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 295938479}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &416983455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1827,62 +1739,9 @@ Transform:
   m_LocalPosition: {x: 389.39758, y: 5.6897078, z: -16.041111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1365779598}
-  m_Father: {fileID: 2054452676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &505162499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 505162500}
-  - component: {fileID: 505162501}
-  m_Layer: 7
-  m_Name: VeggieBarrier
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &505162500
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505162499}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &505162501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505162499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
-  hasBeenDestroyed: 0
-  isIndestructible: 0
-  buildingBody: {fileID: 0}
-  factionController: {fileID: 0}
-  garrison: 0
-  maxGarrison: 10
 --- !u!1 &525822820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +1867,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -390.46542
@@ -2058,89 +1925,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
   m_PrefabInstance: {fileID: 572617371}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &606417436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 606417437}
-  - component: {fileID: 606417438}
-  m_Layer: 7
-  m_Name: VeggieBarrier
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &606417437
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606417436}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2054452676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &606417438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606417436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
-  hasBeenDestroyed: 0
-  isIndestructible: 0
-  buildingBody: {fileID: 0}
-  factionController: {fileID: 0}
-  garrison: 0
-  maxGarrison: 10
---- !u!1 &633741094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633741095}
-  m_Layer: 0
-  m_Name: 'PlayerBreakableBarrier '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &633741095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633741094}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822034, z: 2.1673417}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 295938479}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650915375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +2753,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (3)
@@ -3217,37 +3013,6 @@ Transform:
   - {fileID: 1786806345}
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &991964059
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 991964060}
-  m_Layer: 0
-  m_Name: Enemy Towers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &991964060
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991964059}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822034, z: 2.1673417}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1941441018}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1031226348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3353,6 +3118,14 @@ PrefabInstance:
     - target: {fileID: 2754172671851962967, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168251251788624756, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189446722806570664, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6764502411956986385, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_Name
@@ -3476,58 +3249,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6847442086996321294, guid: 80420baff9b413b45b48c03678382abc, type: 3}
   m_PrefabInstance: {fileID: 1078283358}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1102298977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1102298978}
-  - component: {fileID: 1102298979}
-  m_Layer: 7
-  m_Name: VeggieBarrier
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1102298978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102298977}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2054452676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1102298979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102298977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
-  hasBeenDestroyed: 0
-  isIndestructible: 0
-  buildingBody: {fileID: 0}
-  factionController: {fileID: 0}
-  garrison: 0
-  maxGarrison: 10
 --- !u!1 &1183068932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,6 +3404,14 @@ PrefabInstance:
     - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3906,37 +3635,6 @@ Transform:
   - {fileID: 1896031990}
   m_Father: {fileID: 295938479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1294675149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1294675150}
-  m_Layer: 0
-  m_Name: PlayerTowers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1294675150
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294675149}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17685887, y: 0.5048057, z: 0.11400916}
-  m_LocalScale: {x: 0.0007142857, y: 0.11499751, z: 0.008368327}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1941441018}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1309010666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3948,6 +3646,14 @@ PrefabInstance:
     - target: {fileID: 1398868361111835338, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_Name
       value: Player Tower (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4135,138 +3841,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357523023}
   m_CullTransparentMesh: 1
---- !u!1001 &1365779597
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 494488610}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.08715578
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9961947
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 190
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-      propertyPath: m_Name
-      value: PumpkinTower (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: -5686471317970145436, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-    - {fileID: 5769484663829117588, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 991671182c3807c4c982002a915e9e83, type: 3}
---- !u!4 &1365779598 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 991671182c3807c4c982002a915e9e83, type: 3}
-  m_PrefabInstance: {fileID: 1365779597}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1408001876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1408001877}
-  - component: {fileID: 1408001878}
-  m_Layer: 7
-  m_Name: VeggieBarrier
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1408001877
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408001876}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2054452676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1408001878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408001876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
-  hasBeenDestroyed: 0
-  isIndestructible: 0
-  buildingBody: {fileID: 0}
-  factionController: {fileID: 0}
-  garrison: 0
-  maxGarrison: 10
 --- !u!1 &1437655333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,6 +4300,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -234.10925
@@ -5077,6 +4659,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (2)
@@ -5513,6 +5107,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (1)
@@ -5727,6 +5333,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower
@@ -5914,11 +5532,8 @@ Transform:
   m_LocalScale: {x: 1400, y: 8.69584, z: 119.4982}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 991964060}
   - {fileID: 1762858792}
   - {fileID: 106505775}
-  - {fileID: 267369853}
-  - {fileID: 1294675150}
   m_Father: {fileID: 2054452676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1941441019
@@ -6198,6 +5813,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (4)
@@ -6342,58 +5969,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57d70e77f6849ae4bad76d7880d83bec, type: 3}
   m_PrefabInstance: {fileID: 2003318779}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2053366275
-GameObject:
+--- !u!1001 &2010785685
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2053366276}
-  - component: {fileID: 2053366277}
-  m_Layer: 7
-  m_Name: VeggieBarrier
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2053366276
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053366275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2054452676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2053366277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2054452676}
+    m_Modifications:
+    - target: {fileID: 1398868361111835338, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_Name
+      value: Player Tower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 386.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.2897077
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+--- !u!4 &2010785686 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+  m_PrefabInstance: {fileID: 2010785685}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053366275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec8ab3ded2724ee48d0c89a3c3164ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0
-  HP: 0
-  hasBeenDestroyed: 0
-  isIndestructible: 0
-  buildingBody: {fileID: 0}
-  factionController: {fileID: 0}
-  garrison: 0
-  maxGarrison: 10
 --- !u!1 &2054452675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6425,11 +6078,6 @@ Transform:
   m_Children:
   - {fileID: 1941441018}
   - {fileID: 295938479}
-  - {fileID: 1102298978}
-  - {fileID: 606417437}
-  - {fileID: 1408001877}
-  - {fileID: 505162500}
-  - {fileID: 2053366276}
   - {fileID: 977998414}
   - {fileID: 494488610}
   - {fileID: 1560584491}
@@ -6442,17 +6090,18 @@ Transform:
   - {fileID: 1309010667}
   - {fileID: 1185208466}
   - {fileID: 203442932}
+  - {fileID: 2010785686}
   - {fileID: 422839377}
   - {fileID: 1800584533}
   - {fileID: 2119014316}
   - {fileID: 1875740459}
-  - {fileID: 64473946}
   - {fileID: 1770581915}
   - {fileID: 1623413642}
-  - {fileID: 1902359204}
-  - {fileID: 1078283359}
-  - {fileID: 946554729}
   - {fileID: 1994888492}
+  - {fileID: 946554729}
+  - {fileID: 1902359204}
+  - {fileID: 64473946}
+  - {fileID: 1078283359}
   - {fileID: 1628809107}
   - {fileID: 1447412338}
   m_Father: {fileID: 0}
@@ -7014,6 +6663,14 @@ PrefabInstance:
     - target: {fileID: 5886382781393055319, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337588902435030299, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700323323099668631, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
