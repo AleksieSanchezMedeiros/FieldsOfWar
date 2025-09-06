@@ -4009,6 +4009,10 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: factionController
       value: 
       objectReference: {fileID: 929419396}
@@ -4104,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: damage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: factionController
@@ -4434,7 +4438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: damage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: factionController
@@ -5414,7 +5418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: damage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: factionController
