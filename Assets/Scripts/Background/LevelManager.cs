@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] sceneCodes[] scenes;
     public static LevelManager Instance;
     [SerializeField] Canvas pauseScreen;
+    [SerializeField] Camera mainMenuCamera;
     bool paused;
     void Awake()
     {
@@ -63,6 +65,7 @@ public class LevelManager : MonoBehaviour
 
     public void changeScene(string sceneName)
     {
+        if(sceneName == "Background")
         for (int i = 2; i < scenes.Length; i++)
         {
             if (scenes[i].getName() == sceneName)
