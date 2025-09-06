@@ -9,8 +9,7 @@ public class LocalLevelManager : MonoBehaviour
     TextMeshPro timerText;
     bool suddenDeath = false;
     [SerializeField] float timeToDefeat;
-    [SerializeField] int totalUnitsOnBottomTrack;
-    [SerializeField] int unitsThatAreAboutToDie;
+    [SerializeField] int unitsThatAreAboutToDie, totalUnitsBottomCount = 0;
 
     void Awake()
     {
@@ -41,12 +40,14 @@ public class LocalLevelManager : MonoBehaviour
     {
         CommunicationEvents.onReloadLevel?.Invoke();
     }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void FixedUpdate()
     {
         if (suddenDeath)
         {
             timeToDefeat -= Time.deltaTime;
+            updateTimer();
         }
 
         if (timeToDefeat <= 0)
@@ -55,28 +56,27 @@ public class LocalLevelManager : MonoBehaviour
         }
     }
 
-    void updateUnitsOnBottomTrack(bool increase)
+    void updateTimer()
     {
-        if (suddenDeath) return;
+        string mins = (timeToDefeat / 60).ToString();
+        string sec = (timeToDefeat % 60).ToString();
+        timerText.text = $"{mins}:{sec}";
+    }
+
+    void unitsThatAreToDie(bool increase)
+    {
         if (increase)
         {
-            totalUnitsOnBottomTrack++;
-            if (totalUnitsOnBottomTrack == unitsThatAreAboutToDie)
+            totalUnitsBottomCount++;
+            if (totalUnitsBottomCount >= unitsThatAreAboutToDie)
             {
                 suddenDeath = true;
             }
         }
         else
         {
-            totalUnitsOnBottomTrack--;
+            totalUnitsBottomCount--;
         }
-    }
-
-    void updateTimer()
-    {
-        string mins = (timeToDefeat / 60).ToString();
-        string seg = (timeToDefeat % 60).ToString();
-        timerText.text = timeToDefeat.ToString($"{mins}:{seg}");
     }
 
     void gameOver(string _faction) // _faction = the defeated faction

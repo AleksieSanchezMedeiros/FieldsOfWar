@@ -127,6 +127,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier
@@ -235,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 7a1b02928bcfa454c97fc4512d1fe518, type: 3}
   pressedSprite: {fileID: 21300000, guid: 9aa0e84b73d9f0340b7cb769218dfd4e, type: 3}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 231267951}
 --- !u!114 &80105275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,8 +289,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1045419848}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: FlipSpawnViaGameManager
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: alternateSelectedTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,7 +421,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
@@ -992,7 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfUnitsText: {fileID: 341633639}
   goldAmountText: {fileID: 720337181}
-  commandsGroup: {fileID: 0}
+  commandsGroup: {fileID: 209561824}
   timerText: {fileID: 1232230524}
 --- !u!114 &231267952
 MonoBehaviour:
@@ -1494,6 +1502,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Barrier (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1753,6 +1769,14 @@ PrefabInstance:
     - target: {fileID: 5024051343719629059, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_Name
       value: Player Barrier (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2095,6 +2119,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: range
       value: 45
@@ -2251,6 +2283,18 @@ MonoBehaviour:
       - m_Target: {fileID: 209561824}
         m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
         m_MethodName: ClickAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AttackCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2654,6 +2698,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RetreatCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &754768367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,6 +2799,14 @@ PrefabInstance:
     - target: {fileID: 5024051343719629059, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_Name
       value: Player Barrier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3036,7 +3100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
@@ -3266,6 +3330,18 @@ MonoBehaviour:
       - m_Target: {fileID: 209561824}
         m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
         m_MethodName: ClickDefend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 231267951}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DefendCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3536,6 +3612,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier (2)
@@ -4137,6 +4221,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: range
       value: 45
@@ -4475,6 +4567,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier (4)
@@ -4790,6 +4890,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342537632774918511, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: range
       value: 45
@@ -4899,6 +5007,14 @@ PrefabInstance:
     - target: {fileID: 5024051343719629059, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_Name
       value: Player Barrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5231,6 +5347,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier (3)
@@ -6049,6 +6173,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054452676}
     m_Modifications:
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 158189221009940987, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677542872272456999, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_Name
       value: EnemyBarrier (1)
@@ -6296,7 +6428,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1045419848}
         m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
         m_MethodName: purchaseUnit
         m_Mode: 3
@@ -6760,6 +6892,14 @@ PrefabInstance:
     - target: {fileID: 5024051343719629059, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_Name
       value: Player Barrier (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

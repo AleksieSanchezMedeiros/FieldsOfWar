@@ -4641,8 +4641,6 @@ MonoBehaviour:
   timer: {fileID: 209097476}
   nextLevel: {fileID: 0}
   timeToDefeat: 720
-  totalUnitsOnBottomTrack: 0
-  unitsThatAreAboutToDie: 20
 --- !u!1 &1766432020
 GameObject:
   m_ObjectHideFlags: 0

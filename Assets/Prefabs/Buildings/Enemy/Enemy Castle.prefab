@@ -86,7 +86,7 @@ MonoBehaviour:
   buildingBody: {fileID: 93616746035963674}
   factionController: {fileID: 0}
   damage: 2
-  attackFrequency: 2
+  attackFrequency: 1.4
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -150,10 +150,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpkinTower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2531582135531000942, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -5686471317970145436, guid: 991671182c3807c4c982002a915e9e83, type: 3}
     - {fileID: 5769484663829117588, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+    - {fileID: -750354435938141357, guid: 991671182c3807c4c982002a915e9e83, type: 3}
+    - {fileID: 3217462707917109053, guid: 991671182c3807c4c982002a915e9e83, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991671182c3807c4c982002a915e9e83, type: 3}

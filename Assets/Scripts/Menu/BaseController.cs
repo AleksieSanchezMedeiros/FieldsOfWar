@@ -85,7 +85,6 @@ public abstract class BaseController : MonoBehaviour
 
     public void purchaseUnit(int _orderInList)
     {
-        if (ActiveUnits.Count >= maxNumberOfTroops) return;
         bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
     }
     
