@@ -5,8 +5,9 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] sceneCodes _controlScene, activeScene, nextScene, mainMenu;
     [SerializeField] sceneCodes[] scenes;
-
     public static LevelManager Instance;
+    [SerializeField] Canvas pauseScreen;
+    bool paused;
     void Awake()
     {
         if (Instance == null)
@@ -33,11 +34,31 @@ public class LevelManager : MonoBehaviour
         }
 
         _controlScene = scenes[0];
+        mainMenu = scenes[1];
         if (activeScene != scenes[1])
         {
             changeScene("Main Menu");
         }
         
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && activeScene.getName() != "Main Menu")
+        {
+            if (paused)
+            {
+                paused = false;
+                Time.timeScale = 1;
+                pauseScreen.gameObject.SetActive(false);
+            }
+            else
+            {
+                paused = true;
+                Time.timeScale = 0;
+                pauseScreen.gameObject.SetActive(true);
+            }
+        }
     }
 
     public void changeScene(string sceneName)
@@ -62,9 +83,13 @@ public class LevelManager : MonoBehaviour
         string nextCode = mainMenu.getName();
         for (int i = 2; i < scenes.Length; i++)
         {
-            if (scenes[i].getName() == activeScene.getName() && i != scenes.Length)
+            if (scenes[i].getName() == activeScene.getName() && i != scenes.Length - 1)
             {
-                nextCode = scenes[i].getName();
+                nextCode = scenes[i++].getName();
+            }
+            else
+            {
+                nextCode = "Main Menu";
             }
         }
         changeScene(nextCode);
