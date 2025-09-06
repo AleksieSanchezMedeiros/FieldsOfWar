@@ -152,6 +152,66 @@ Transform:
   - {fileID: 518867687}
   m_Father: {fileID: 2058648668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6307062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6307063}
+  - component: {fileID: 6307064}
+  m_Layer: 5
+  m_Name: CommandGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6307063
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 726887614}
+  - {fileID: 179303230}
+  - {fileID: 1514786500}
+  m_Father: {fileID: 1976161062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -440}
+  m_SizeDelta: {x: 470, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6307064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5db55ba071a724a9507ccb0a896ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackButton: {fileID: 1514786502}
+  attackNormal: {fileID: 21300000, guid: 89a0bcea3eebb9040901fd9cd4541c2e, type: 3}
+  attackSelected: {fileID: 21300000, guid: 87b372782c9a3be4fad08ca1cdf20875, type: 3}
+  defendButton: {fileID: 726887616}
+  defendNormal: {fileID: 21300000, guid: b1050b40b5690264d95b8e9b4c580a9a, type: 3}
+  defendSelected: {fileID: 21300000, guid: 1b4a5aacf5d60e844a5855a042e5b85f, type: 3}
+  retreatButton: {fileID: 179303232}
+  retreatNormal: {fileID: 21300000, guid: bb6bf00a9e7ae144b84a11fb1c29d332, type: 3}
+  retreatSelected: {fileID: 21300000, guid: 28647da4a13e0624bba4371255f42504, type: 3}
 --- !u!1 &27877163
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +407,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 147.65106
@@ -453,6 +525,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7039829731772361912, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
+      propertyPath: buildingBody
+      value: 
+      objectReference: {fileID: 123471876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -461,6 +537,11 @@ PrefabInstance:
 --- !u!4 &123471875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 118678456327169352, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
+  m_PrefabInstance: {fileID: 123471874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &123471876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 668488391123608362, guid: 000e9029aa4253d4f8a97dcf060af56d, type: 3}
   m_PrefabInstance: {fileID: 123471874}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &138460673
@@ -491,6 +572,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -601,17 +694,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179303229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1061194120}
-  m_Father: {fileID: 1976161062}
+  m_Father: {fileID: 6307063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -160, y: 100}
+  m_AnchoredPosition: {x: -160, y: 75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179303231
@@ -633,7 +726,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -658,10 +751,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeCurrentAction
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6307064}
+        m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
+        m_MethodName: ClickRetreat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1015,6 +1120,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -194.24052
@@ -1296,6 +1413,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.228052
@@ -1759,6 +1888,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128014193349837257, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 159.0212
@@ -1809,37 +1950,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8857350870208278555, guid: b00ec3a44c1b0e04eb0e2596ec94f6ec, type: 3}
   m_PrefabInstance: {fileID: 518867686}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &568962374
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 568962375}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &568962375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568962374}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2127215558}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &610470637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1952,7 +2062,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1526652368}
-  - {fileID: 822625252}
   - {fileID: 1530273731}
   - {fileID: 2127215558}
   - {fileID: 210437436}
@@ -2243,17 +2352,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726887613}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1073250904}
-  m_Father: {fileID: 1976161062}
+  m_Father: {fileID: 6307063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726887615
@@ -2275,7 +2384,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2300,14 +2409,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeCurrentAction
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6307064}
+        m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
+        m_MethodName: ClickDefend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2569,9 +2690,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnUnit
+      - m_Target: {fileID: 1750364991}
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: purchaseUnit
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2787,37 +2908,6 @@ Transform:
   - {fileID: 1176141703}
   m_Father: {fileID: 2058648668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &794717844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 794717845}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &794717845
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794717844}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 822625252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808449130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,38 +3029,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &822625251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 822625252}
-  m_Layer: 0
-  m_Name: Player Towers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &822625252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822625251}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 794717845}
-  m_Father: {fileID: 615858439}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845672165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,6 +3112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6337588902435030299, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6722615815860425321, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3069,12 +3131,27 @@ PrefabInstance:
     - target: {fileID: 8216224915577599973, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700323323099668631, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+      propertyPath: range
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+--- !u!114 &929419396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 112847572968109622, guid: 2f880fe63f9fc844d90c77013895d58c, type: 3}
+  m_PrefabInstance: {fileID: 929419395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a96f5bf3c0c4346b7208062d7342f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1008856837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,8 +3285,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 080077b7c55a2544989330f24c874f29, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 080077b7c55a2544989330f24c874f29, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3222,9 +3299,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnUnit
+      - m_Target: {fileID: 1750364991}
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: purchaseUnit
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3923,6 +4000,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 789108224}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (3)
@@ -4005,6 +4098,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (2)
@@ -4319,6 +4428,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower (1)
@@ -4450,17 +4575,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514786499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 783514158}
-  m_Father: {fileID: 1976161062}
+  m_Father: {fileID: 6307063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 160, y: 100}
+  m_AnchoredPosition: {x: 160, y: 75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514786501
@@ -4482,7 +4607,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4507,14 +4632,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeCurrentAction
-        m_Mode: 3
+      - m_Target: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6307064}
+        m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
+        m_MethodName: ClickAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4586,7 +4723,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1629675097}
   - {fileID: 1204447694}
   - {fileID: 1442097557}
   - {fileID: 1963589407}
@@ -4695,7 +4831,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2049108357}
   - {fileID: 2107304079}
   - {fileID: 651472891}
   m_Father: {fileID: 615858439}
@@ -4762,37 +4897,6 @@ Transform:
   m_Children:
   - {fileID: 1249229412}
   m_Father: {fileID: 2058648668}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1629675096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1629675097}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1629675097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629675096}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1526652368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684135853
 GameObject:
@@ -4894,8 +4998,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 2b687ce8a73f49a4ca060b0d043912c0, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 2b687ce8a73f49a4ca060b0d043912c0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4908,9 +5012,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnUnit
+      - m_Target: {fileID: 1750364991}
+        m_TargetAssemblyTypeName: BaseController, Assembly-CSharp
+        m_MethodName: purchaseUnit
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4998,6 +5102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: startingFunds
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2417335878473240459, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5013,6 +5121,14 @@ PrefabInstance:
     - target: {fileID: 2754172671851962967, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168251251788624756, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189446722806570664, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: range
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6764502411956986385, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: m_Name
@@ -5063,6 +5179,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+--- !u!114 &1750364991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+  m_PrefabInstance: {fileID: 1750364990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670d998b4d50dcd4690b2cf790311b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1895540378
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,6 +5233,7 @@ GameObject:
   - component: {fileID: 1897460821}
   - component: {fileID: 1897460820}
   - component: {fileID: 1897460819}
+  - component: {fileID: 1897460822}
   m_Layer: 5
   m_Name: SpawnUpperOrLower
   m_TagString: Untagged
@@ -5152,7 +5280,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5177,7 +5305,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1976161057}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: FlipSpawnPoints
         m_Mode: 1
@@ -5227,6 +5355,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897460817}
   m_CullTransparentMesh: 1
+--- !u!114 &1897460822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897460817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673aca87ddfa76845a8d58c47f47e2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: 7a1b02928bcfa454c97fc4512d1fe518, type: 3}
+  pressedSprite: {fileID: 21300000, guid: 9aa0e84b73d9f0340b7cb769218dfd4e, type: 3}
 --- !u!1 &1949411181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,6 +5408,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1526652368}
     m_Modifications:
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673807395943154831, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 5648296908932944236, guid: f49dc92597257284c9f00b86a17189d1, type: 3}
       propertyPath: m_Name
       value: Enemy Tower
@@ -5353,7 +5511,6 @@ GameObject:
   - component: {fileID: 1976161060}
   - component: {fileID: 1976161059}
   - component: {fileID: 1976161058}
-  - component: {fileID: 1976161057}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5361,27 +5518,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1976161057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976161056}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f54296806981b14ea01bca75a4e5bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfUnitsText: {fileID: 1077319448}
-  goldAmountText: {fileID: 2069695376}
-  unitCosts: 3200000096000000c8000000
-  spawnOnTop: 1
-  topSpawnPoints: []
-  bottomSpawnPoints: []
-  maxNumOfUnits: 25
-  currentGoldAmount: 1000
-  flipSpawnPointsText: {fileID: 27877164}
 --- !u!114 &1976161058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5475,9 +5611,7 @@ RectTransform:
   - {fileID: 783324910}
   - {fileID: 1705503708}
   - {fileID: 1033969510}
-  - {fileID: 726887614}
-  - {fileID: 179303230}
-  - {fileID: 1514786500}
+  - {fileID: 6307063}
   - {fileID: 1897460818}
   - {fileID: 1077319450}
   - {fileID: 2069695378}
@@ -5641,37 +5775,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6294127895072135971, guid: 4f7da94c3119f4a42bf96f2d19c10711, type: 3}
   m_PrefabInstance: {fileID: 2026409322}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2049108356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2049108357}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2049108357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049108356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1530273731}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055661356
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,7 +6160,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.9822029, z: 2.2685523}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 568962375}
   - {fileID: 1529401015}
   - {fileID: 218286296}
   m_Father: {fileID: 615858439}
@@ -6090,6 +6192,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBarrier
       objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211953445997282731, guid: 80420baff9b413b45b48c03678382abc, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 929419396}
     - target: {fileID: 6847442086996321294, guid: 80420baff9b413b45b48c03678382abc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0007142857
@@ -6211,6 +6325,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: HP
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049124825480964639, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
+      propertyPath: factionController
+      value: 
+      objectReference: {fileID: 1750364991}
     - target: {fileID: 8119273437197168033, guid: 8378ca9fb7e87d94db308a034e8330a1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

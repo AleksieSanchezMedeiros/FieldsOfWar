@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : BaseController
 {
     StoreManager store;
     List<ResourceNode> factionResourceNodes;
 
+    
+ 
     public override void Start()
     {
         base.Start();
@@ -18,9 +21,7 @@ public class PlayerController : BaseController
         CommunicationEvents.updateUnitCount?.Invoke(ActiveUnits.Count, maxNumberOfTroops);
     }
 
-    public void issueCommand(int command)
-    {
-        CommunicationEvents.setUnitOrders?.Invoke(command, selectedTopTrack, faction);
-    }
-
+    
+    
+    
 }
