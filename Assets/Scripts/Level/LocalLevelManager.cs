@@ -2,9 +2,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 public class LocalLevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject victoryBanner, defeatBanner, gameEndUI, timer;
+    [SerializeField] GameObject victoryBanner, defeatBanner, gameEndUI, timer, nextLevel;
     TextMeshPro timerText;
     bool suddenDeath = false;
     [SerializeField] float timeToDefeat;
@@ -19,7 +20,26 @@ public class LocalLevelManager : MonoBehaviour
 
     void onFactionDefeated(string faction)
     {
-        
+        if (faction == "Player")
+        {
+            gameEndUI.SetActive(true);
+            defeatBanner.SetActive(true);
+        }
+    }
+
+    public void onNextLevelPressed()
+    {
+        CommunicationEvents.onLoadNextLevel?.Invoke();
+    }
+
+    public void onBackToMainMenuPressed()
+    {
+        CommunicationEvents.onLoadMainMenu?.Invoke();
+    }
+
+    public void onRetryPressed()
+    {
+        CommunicationEvents.onReloadLevel?.Invoke();
     }
 
     void FixedUpdate()

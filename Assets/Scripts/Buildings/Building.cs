@@ -13,6 +13,7 @@ public class Building : MonoBehaviour
 
     protected virtual void Awake()
     {
+        if (maxHealth == 0) return;
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.setMaxValue(maxHealth);
         HP = maxHealth;

@@ -14,4 +14,5 @@ public class CommunicationEvents : ScriptableObject
     static bool modeIsTimer;
     public static void setMode(bool mode) { modeIsTimer = mode; }
     public static bool getMode() { return modeIsTimer; }
+    public static Action onReloadLevel, onLoadMainMenu, onLoadNextLevel;
 }

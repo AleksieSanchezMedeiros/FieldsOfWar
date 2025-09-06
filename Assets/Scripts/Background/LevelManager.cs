@@ -43,6 +43,11 @@ public class LevelManager : MonoBehaviour
 
         _controlScene = scenes[0];
         mainMenu.gameObject.SetActive(true);
+
+        CommunicationEvents.onFactionDefeated += pauseUnpause;
+        CommunicationEvents.onLoadMainMenu += loadMainMenu;
+        CommunicationEvents.onReloadLevel += reloadLevel;
+        CommunicationEvents.onLoadNextLevel += moveToNextScene;
     }
 
     void Update()
@@ -69,6 +74,11 @@ public class LevelManager : MonoBehaviour
             pauseScreen.gameObject.SetActive(true);
         }
         showInstructionSlides();
+    }
+
+    public void pauseUnpause(string a)
+    {
+        pauseUnpause();
     }
 
     public void showInstructionSlides()
