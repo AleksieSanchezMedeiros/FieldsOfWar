@@ -43,6 +43,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     {
         command = 3;
         target = targetPosition;
+        
     }
 
     public void Attack(Unit target)

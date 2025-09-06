@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4250875194654731237}
   m_Layer: 0
   m_Name: Mining Unit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -45,4 +45,12 @@ public class CommandsGroup : MonoBehaviour
 
         currentSelected = clickedImage;
     }
+    
+    public void ResetCommandsVisual()
+    {
+        attackButton.sprite = attackNormal;
+        defendButton.sprite = defendNormal;
+        retreatButton.sprite = retreatNormal;
+        currentSelected = null;
+    }
 }

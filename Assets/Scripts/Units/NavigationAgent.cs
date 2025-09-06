@@ -32,6 +32,7 @@ public class NavigationAgent : MonoBehaviour
         myUnit = GetComponent<Unit>();
         agent.stoppingDistance = myUnit.shortRange * 0.66f;
         agent.speed = myUnit.speed;
+      
     }
 
     public void setWaypoints(List<Transform> _waypoints)
@@ -69,6 +70,7 @@ public class NavigationAgent : MonoBehaviour
                 // win / lose screen
             }
         }
+
     }
 
     public void setTarget(Transform enemyPosition)

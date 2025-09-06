@@ -267,6 +267,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2025996483}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RetreatCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &42395677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,6 +1088,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2051330741}
         m_TargetAssemblyTypeName: CommandsGroup, Assembly-CSharp
         m_MethodName: ClickDefend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2025996483}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DefendCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3797,6 +3821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 7a1b02928bcfa454c97fc4512d1fe518, type: 3}
   pressedSprite: {fileID: 21300000, guid: 9aa0e84b73d9f0340b7cb769218dfd4e, type: 3}
+  uiManager: {fileID: 2025996483}
 --- !u!4 &1528455274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2200831905846848368, guid: 1aeab3c84c71965448d336c82b24f223, type: 3}
@@ -4585,6 +4610,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2025996483}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: AttackCommand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1908523806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5137,6 +5174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfUnitsText: {fileID: 379402721}
   goldAmountText: {fileID: 1496830211}
+  commandsGroup: {fileID: 2051330741}
   timerText: {fileID: 209097478}
 --- !u!114 &2025996484
 MonoBehaviour:

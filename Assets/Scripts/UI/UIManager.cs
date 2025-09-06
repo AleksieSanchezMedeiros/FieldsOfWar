@@ -17,8 +17,9 @@ public class UIManager : MonoBehaviour
     AudioClip music;
     bool paused = false;
     LevelManager levelManager;
-    
-    
+    //
+    private bool isTopTrackSelected = true;
+    public CommandsGroup commandsGroup;
     void instantiate()
     {
         if (Instance == null)
@@ -69,16 +70,26 @@ public class UIManager : MonoBehaviour
     //0 = retreat, 1 = defend, 2 = attack
     public void AttackCommand()
     {
-        GameManager.currrentAction = 2;
+        //GameManager.currrentAction = 2;
+       // CommunicationEvents.setUnitOrders?.Invoke(2, true, "Player");
+       CommunicationEvents.setUnitOrders?.Invoke(2, isTopTrackSelected, "Player");
     }
     public void DefendCommand()
     {
-        GameManager.currrentAction = 1;
+        //  GameManager.currrentAction = 1;
+
+        //CommunicationEvents.setUnitOrders?.Invoke(1, true, "Player");
+
+        CommunicationEvents.setUnitOrders?.Invoke(1, isTopTrackSelected, "Player");
+
     }
 
     public void RetreatCommand()
     {
-        GameManager.currrentAction = 0;
+       // GameManager.currrentAction = 0;
+      //  CommunicationEvents.setUnitOrders?.Invoke(0, true, "Player");
+        CommunicationEvents.setUnitOrders?.Invoke(0, isTopTrackSelected, "Player");
+
     }
 
     public void alternateSpawnPoint()
@@ -122,6 +133,21 @@ public class UIManager : MonoBehaviour
         
     }
     
+    //
+
+    public void SelectTopTrack()
+    {
+        isTopTrackSelected = true; 
+        commandsGroup.ResetCommandsVisual();
+
+    }
+
+    public void SelectBottomTrack()
+    {
+        isTopTrackSelected = false;
+        commandsGroup.ResetCommandsVisual();
+
+    }
     
     
 }
