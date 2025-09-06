@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4869090422299366302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8392985123507761969}
+  m_Layer: 7
+  m_Name: Rally point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8392985123507761969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869090422299366302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7512658664088440121}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5648296908932944236
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7512658664088440121}
   - component: {fileID: 1673807395943154831}
+  - component: {fileID: 1445401917325630927}
   m_Layer: 7
   m_Name: Enemy Tower
   m_TagString: Enemy
@@ -32,6 +64,7 @@ Transform:
   m_Children:
   - {fileID: 6081817670577174841}
   - {fileID: 1943855767864622746}
+  - {fileID: 8392985123507761969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1673807395943154831
@@ -52,17 +85,38 @@ MonoBehaviour:
   isIndestructible: 0
   buildingBody: {fileID: 1275123602044904480}
   factionController: {fileID: 0}
-  attackFrequency: 1.5
   damage: 2
-  attackCooldown: 2
+  attackFrequency: 1.5
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  alliesInGarrison: []
   garrison: 0
   maxGarrison: 5
+  rallyPoint: {fileID: 8392985123507761969}
+--- !u!136 &1445401917325630927
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648296908932944236}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.3102453
+  m_Height: 14.279651
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.7620635, z: 0}
 --- !u!1001 &2122127779827243377
 PrefabInstance:
   m_ObjectHideFlags: 0

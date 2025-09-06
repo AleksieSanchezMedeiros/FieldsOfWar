@@ -22,27 +22,18 @@ public class CombatUnit : Unit
         //move towards checkpoint
         base.Update();
         //move towards enemy
-        //Debug.Log($"Post base update \n targetEnemy = {targetEnemy}");
         if (command != 0)
         {
             if (targetEnemy != null)
             {
-                if (CalculateDistanceToTarget(targetEnemy.transform) > longRange)
-                {
-                    targetEnemy = null;
-                    targetEnemyUnit = null;
-                    targetEnemyBuilding = null;
-                }
-
-                if (CalculateDistanceToTarget(targetEnemy.transform) >= shortRange)
-                {
-                    //MoveTowardsTarget(targetEnemy.transform);
-                }
-                else if (canAttack)
+                if (CalculateDistanceToTarget(targetEnemy.transform) < shortRange && canAttack)
                 {
                     if (targetEnemy.TryGetComponent(out targetEnemyBuilding))
                     {
-                        targetEnemyBuilding.TakeDamage(damage);
+                        if (targetEnemyBuilding.TakeDamage(damage))
+                        {
+                            targetEnemy = null;
+                        }
                     }
                     else if (targetEnemy.TryGetComponent(out targetEnemyUnit))
                     {
@@ -52,6 +43,10 @@ public class CombatUnit : Unit
                     canAttack = false;
                     StartCoroutine(reloadAttack());
                 }
+            }
+            else if (command == 3)
+            {
+                command = previousCommand;
             }
         }
     }
@@ -82,6 +77,8 @@ public class CombatUnit : Unit
                 if (IsInVision(hit.gameObject))
                 {
                     target = hit.gameObject.transform;
+                    previousCommand = command;
+                    command = 3;
                     return hit.gameObject;
                 }
             }
@@ -101,5 +98,23 @@ public class CombatUnit : Unit
     {
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+
+    protected override void setCommand(int _command, bool _isOnTop, string _faction)
+    {
+        if(command != 3) base.setCommand(_command, _isOnTop, _faction);
+    }
+
+    public bool isTargetEnemyOrNull()
+    {
+        if (!target) return false;
+        return target.gameObject.TryGetComponent<Unit>(out _);
+    }
+
+    public void setTargetRallyPoint(Transform rallyPoint, int _command)
+    {
+        command = _command;
+        target = rallyPoint;
+        agent.HandleCommand(_command);
     }
 }

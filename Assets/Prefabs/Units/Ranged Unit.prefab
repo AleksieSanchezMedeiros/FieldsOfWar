@@ -66,15 +66,18 @@ MonoBehaviour:
   faction: 
   playerGraphics: {fileID: 0}
   enemyGraphics: {fileID: 0}
+  target: {fileID: 0}
+  previousTarget: {fileID: 0}
   detection:
     serializedVersion: 2
     m_Bits: 0
-  obstacles:
-    serializedVersion: 2
-    m_Bits: 256
+  targetEnemy: {fileID: 0}
+  targetEnemyUnit: {fileID: 0}
+  targetEnemyBuilding: {fileID: 0}
   visionAngle: 0
   attackSound: {fileID: 0}
   audioSource: {fileID: 0}
+  opposingFaction: 
 --- !u!114 &6830095068936722193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   waypoints: []
+  lastcommand: -1
+  command: 0
+  requiredUnits: 20
 --- !u!195 &98144613769106165
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -100,7 +106,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.73
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

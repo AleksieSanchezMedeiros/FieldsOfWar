@@ -7,9 +7,7 @@ public class EnemyAIController : BaseController
 {
     int randSpawnNumber, //determines how many times a certain unit is spawned in a row
     minersCount = 0,
-    spawnType, // 0: miner; 1: melee; 2: ranged;
-    previousCommandTop = 0,
-    previousCommandBottom = 0;
+    spawnType; // 0: miner; 1: melee; 2: ranged;
     List<Unit> topUnits, bottomUnits;
     EnemyAIController Instance;
     [SerializeField] bool spawningInProcess;
@@ -85,7 +83,15 @@ public class EnemyAIController : BaseController
             else
             {
                 rnd = new System.Random(DateTime.Now.Millisecond);
-                spawnType = rnd.Next(1, 2);
+                spawnType = rnd.Next(1, 21);
+                if (spawnType < 13)
+                {
+                    spawnType = 1;
+                }
+                else 
+                {
+                    spawnType = 2;
+                }
             }
         }
 

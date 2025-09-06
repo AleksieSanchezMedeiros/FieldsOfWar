@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8857350870208278555}
   - component: {fileID: 8128014193349837257}
+  - component: {fileID: 3635691049547231558}
   m_Layer: 6
   m_Name: Player Tower
   m_TagString: Player
@@ -52,14 +53,34 @@ MonoBehaviour:
   isIndestructible: 0
   buildingBody: {fileID: 6446858025889967917}
   factionController: {fileID: 0}
-  attackFrequency: 1
   damage: 10
+  attackFrequency: 1
   opposingLayer:
     serializedVersion: 2
     m_Bits: 128
-  obstacleLayer:
+--- !u!136 &3635691049547231558
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398868361111835338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.4970717
+  m_Height: 17.806938
+  m_Direction: 1
+  m_Center: {x: 0.44177297, y: 6.777346, z: 0}
 --- !u!1001 &6176333835421160060
 PrefabInstance:
   m_ObjectHideFlags: 0

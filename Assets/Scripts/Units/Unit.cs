@@ -42,7 +42,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     public virtual void MoveTowardsTarget(Transform targetPosition)
     {
         command = 3;
-        agent.setTarget(targetPosition);
+        target = targetPosition;
     }
 
     public void Attack(Unit target)
@@ -92,7 +92,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         Destroy(gameObject);
     }
 
-    void setCommand(int _command, bool _isOnTop, string _faction)
+    protected virtual void setCommand(int _command, bool _isOnTop, string _faction)
     {
         if (_faction != faction) return;
         if (_isOnTop != isOnTopTrack) return;

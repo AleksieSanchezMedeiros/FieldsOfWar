@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Tower : Building
 {
@@ -10,6 +12,7 @@ public class Tower : Building
     [SerializeField] protected float attackFrequency;
     protected bool canAttack = true;
     [SerializeField] protected LayerMask opposingLayer;
+    protected string opposingFaction;
     Unit currentTarget;
 
     protected virtual void Awake()
@@ -17,16 +20,18 @@ public class Tower : Building
         if (tag == "Player")
         {
             opposingLayer = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer
+            opposingFaction = "Enemy";
         }
         else
         {
             opposingLayer = LayerMask.GetMask("Player", "Unbreakable"); //player layer
+            opposingFaction = "Player";
         }
     }
 
     private void FixedUpdate()
     {
-        if (FindEnemyInRange() && canAttack)
+        if (FindEnemyInRange() && canAttack && !Destroyed)
         {
             Attack(currentTarget);
             canAttack = false;

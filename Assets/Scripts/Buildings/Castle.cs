@@ -6,7 +6,7 @@ public class Castle : Tower
     public int maxTargets = 3;
     [SerializeField] GameObject[] enemies;
 
-    void Awake()
+    void Start()
     {
         enemies = new GameObject[maxTargets];
     }
@@ -52,7 +52,7 @@ public class Castle : Tower
             {
                 for (int i = 0; i < enemies.Length; i++)
                 {
-                    if (!enemies[i])
+                    if (!enemies[i] && hit.gameObject.CompareTag(opposingFaction))
                     {
                         enemies[i] = hit.gameObject;
                         break;

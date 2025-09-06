@@ -44,10 +44,6 @@ public class NavigationAgent : MonoBehaviour
         if (!agent.isOnNavMesh) return;
 
         command = myUnit.command;
-        if (myUnit.TryGetComponent<GatheringUnit>(out _))
-        {
-            Debug.Log(command);
-        }
         //if (myUnit.stoppedAtGarrison == true) return;
         if (command != lastcommand)
         {
@@ -55,8 +51,13 @@ public class NavigationAgent : MonoBehaviour
             lastcommand = command;
         }
 
-        //Whats this for? V - Sb
+        if (command == 3 && agent.destination != myUnit.getTarget().position)
+        {
+            pursueTarget();
+        }
+
         CheckIfReachedDestination();
+        //Whats this for? V - Sb
         if (timerRunning)
         {
             timerCountdown -= Time.deltaTime;
@@ -75,7 +76,7 @@ public class NavigationAgent : MonoBehaviour
         agent.SetDestination(enemyPosition.position);
     }
 
-    private void HandleCommand(int command)
+    public void HandleCommand(int command)
     {
         switch (command) //0 = retreat, 1 = defend, 2 = attack
         {
@@ -130,11 +131,15 @@ public class NavigationAgent : MonoBehaviour
 
     private void CheckIfReachedDestination()
     {
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (!agent.pathPending && agent.remainingDistance < agent.stoppingDistance)
         {
             if (myUnit.command == 2)
             {
                 MoveToNextWaypoint();
+            }
+            else if(myUnit.command == 3)
+            {
+                pursueTarget();
             }
         }
     }

@@ -6,6 +6,7 @@ public class EnemyTower : Tower
     [SerializeField] GameObject[] alliesInGarrison;
     public int garrison = 0;
     public int maxGarrison = 5;
+    [SerializeField] Transform rallyPoint;
 
     protected override void Awake()
     {
@@ -42,9 +43,9 @@ public class EnemyTower : Tower
         {
             if(alliesInGarrison[i])
             {
-                if (alliesInGarrison[i].GetComponent<CombatUnit>().command != 3)
+                if (!alliesInGarrison[i].GetComponent<CombatUnit>().isTargetEnemyOrNull())
                 {
-                    //alliesInGarrison[i].GetComponent<CombatUnit>().receiveDirectCommand(1, true);
+                    alliesInGarrison[i].GetComponent<CombatUnit>().setTargetRallyPoint(rallyPoint, 3);
                 }
             }
         }
@@ -56,9 +57,9 @@ public class EnemyTower : Tower
         {
             if(alliesInGarrison[i])
             {
-                if (alliesInGarrison[i].GetComponent<CombatUnit>().command != 3)
+                if (!alliesInGarrison[i].GetComponent<CombatUnit>().isTargetEnemyOrNull())
                 {
-                    //alliesInGarrison[i].GetComponent<CombatUnit>().receiveDirectCommand(2, false);
+                    alliesInGarrison[i].GetComponent<CombatUnit>().setTargetRallyPoint(null, 2);
                 }
             }
         }

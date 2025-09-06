@@ -3,8 +3,8 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public float range;
-    public int HP;
-    [SerializeField]protected bool hasBeenDestroyed = false, isIndestructible = false;
+    public int HP, maxHealth;
+    [SerializeField]protected bool Destroyed = false, isIndestructible = false;
     public static string price;
     protected string faction;
     [SerializeField] GameObject buildingBody;
@@ -14,12 +14,14 @@ public class Building : MonoBehaviour
     void Awake()
     {
         healthBar = GetComponentInChildren<HealthBar>();
+        healthBar.setMaxValue(maxHealth);
+        HP = maxHealth;
         faction = tag;
     }
 
     public void Build()
     {
-        if (!hasBeenDestroyed)
+        if (!Destroyed)
         {
             gameObject.SetActive(true);
         }
@@ -27,19 +29,22 @@ public class Building : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        buildingBody.SetActive(false);
-        hasBeenDestroyed = true;
+        gameObject.SetActive(false);
+        Destroyed = true;
     }
 
-    public void TakeDamage(int incomingDamage)
+    public bool TakeDamage(int incomingDamage)
     {
-        if (isIndestructible) return;
+        if (isIndestructible) return false;
         HP -= incomingDamage;
+        Debug.Log($"I'm taking enemy fire! {HP} dmg {incomingDamage}");
         if (HP <= 0)
         {
             DestroyBuilding();
+            return Destroyed;
         }
         healthBar.reduceHP(incomingDamage);
+        return Destroyed;
     }
     
     void OnDrawGizmosSelected()
