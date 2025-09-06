@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     //
     private bool isTopTrackSelected = true;
     public CommandsGroup commandsGroup;
+    private int topFloorUnitCount = 0;
+    private int bottomFloorUnitCount = 0;
+    
     void instantiate()
     {
         if (Instance == null)
@@ -57,9 +60,16 @@ public class UIManager : MonoBehaviour
         goldAmountText.text = currentGoldAmountStr;
     }
 
-    private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)
+ //   private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)
+//    {
+ //       numberOfUnitsText.text = currentNumOfUnits.ToString("00") + "/" + maxNumOfUnits;
+  // }
+    private void UpdateCurrentNumOfUnits(int _, int __)
     {
-        numberOfUnitsText.text = currentNumOfUnits.ToString("00") + "/" + maxNumOfUnits;
+        int currentCount = isTopTrackSelected ? topFloorUnitCount : bottomFloorUnitCount;
+        int maxCount = 30;
+
+        numberOfUnitsText.text = currentCount.ToString("00") + "/" + maxCount.ToString("00");
     }
 
     // public void issueCommand() // 0: Advance; 1: Halt; 2: Retreat;
@@ -134,11 +144,18 @@ public class UIManager : MonoBehaviour
     }
     
     //
+    private void RefreshUnitDisplay()
+    {
+        int currentCount = isTopTrackSelected ? topFloorUnitCount : bottomFloorUnitCount;
+        int maxCount = 30; 
 
+        numberOfUnitsText.text = currentCount.ToString("00") + "/" + maxCount.ToString("00");
+    }
     public void SelectTopTrack()
     {
         isTopTrackSelected = true; 
         commandsGroup.ResetCommandsVisual();
+        RefreshUnitDisplay();
 
     }
 
@@ -146,8 +163,33 @@ public class UIManager : MonoBehaviour
     {
         isTopTrackSelected = false;
         commandsGroup.ResetCommandsVisual();
-
+        RefreshUnitDisplay();
+        
     }
-    
-    
+    //
+
+
+    public void AddUnitToTopFloor()
+    {
+        topFloorUnitCount++;
+        RefreshUnitDisplay();
+    }
+
+    public void AddUnitToBottomFloor()
+    {
+        bottomFloorUnitCount++;
+        RefreshUnitDisplay();
+    }
+
+    public void RemoveUnitFromTopFloor()
+    {
+        topFloorUnitCount = Mathf.Max(0, topFloorUnitCount - 1);
+        RefreshUnitDisplay();
+    }
+
+    public void RemoveUnitFromBottomFloor()
+    {
+        bottomFloorUnitCount = Mathf.Max(0, bottomFloorUnitCount - 1);
+        RefreshUnitDisplay();
+    }
 }
