@@ -16,7 +16,25 @@ public abstract class BaseController : MonoBehaviour
     public virtual void Awake()
     {
         storeManager = gameObject.GetComponent<StoreManager>();//get store component on own GameObject
-        ActiveUnits = new List<Unit>();
+        if (ActiveUnits == null)
+        {
+            ActiveUnits = new List<Unit>();
+        }
+        else
+        {
+            foreach (Unit unit in ActiveUnits)
+            {
+                if (unit.gameObject.TryGetComponent<GatheringUnit>(out _))
+                {
+                    addGathererToUnitList((GatheringUnit)unit, unit.isOnTopTrack);
+                }
+                else
+                {
+                    addUnitToUnitList(faction, unit, unit.isOnTopTrack);
+
+                }
+            }
+        }
         CommunicationEvents.AddUnitToFactionList += addUnitToUnitList;
         CommunicationEvents.RemoveUnitFromFactionList += removeUnitFromList;
         CommunicationEvents.SetGathererInfo += addGathererToUnitList;
@@ -50,7 +68,15 @@ public abstract class BaseController : MonoBehaviour
     public virtual void addUnitToUnitList(string _faction, Unit unit, bool isOnTopTrack)
     {
         if (unit.faction != faction) return;
-        ActiveUnits.Add(unit);
+        if (!ActiveUnits.Contains(unit))
+        {
+            ActiveUnits.Add(unit);
+        }
+        else
+        {
+            unit.Spawn(faction, isOnTopTrack, gameObject);
+        }
+
         if (isOnTopTrack)
         {
             unit.gameObject.GetComponent<NavigationAgent>().setWaypoints(waypointsTop);

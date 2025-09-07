@@ -55,7 +55,7 @@ MonoBehaviour:
   shortRange: 22.4
   longRange: 98.04
   distanceToTarget: 0
-  attackCooldown: 4
+  attackCooldown: 2
   damage: 0
   health: 6
   maxHealth: 6

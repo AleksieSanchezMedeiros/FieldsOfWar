@@ -7,6 +7,7 @@ public class FactionWall : Building
 
     protected override void Awake()
     {
+        base.Awake();
         CommunicationEvents.AddUnitToFactionList += OnAllyCreated;
     }
     public void OnAllyCreated(string _faction, Unit u, bool top)

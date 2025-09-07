@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6847442086996321294}
   - component: {fileID: 6211953445997282731}
+  - component: {fileID: 8826673382980666794}
   m_Layer: 7
   m_Name: EnemyBarrier
   m_TagString: Enemy
@@ -49,12 +50,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 86
   HP: 20
-  hasBeenDestroyed: 0
+  maxHealth: 20
+  Destroyed: 0
   isIndestructible: 0
   buildingBody: {fileID: 1677542872272456999}
   factionController: {fileID: 0}
   garrison: 0
   maxGarrison: 10
+--- !u!65 &8826673382980666794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677542872272456999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.836792, y: 13.851015, z: 122.71344}
+  m_Center: {x: -1.3494873, y: 6.7257643, z: -7.498863}
 --- !u!1001 &2229292329966302046
 PrefabInstance:
   m_ObjectHideFlags: 0

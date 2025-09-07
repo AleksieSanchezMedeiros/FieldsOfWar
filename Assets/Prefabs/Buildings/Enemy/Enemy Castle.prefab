@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 85
-  HP: 40
+  HP: 30
   maxHealth: 30
   Destroyed: 0
   isIndestructible: 0

@@ -55,10 +55,10 @@ MonoBehaviour:
   shortRange: 21.7
   longRange: 90
   distanceToTarget: 0
-  attackCooldown: 1.2
+  attackCooldown: 1.1
   damage: 2
   health: 10
-  maxHealth: 10
+  maxHealth: 12
   command: 0
   previousCommand: 0
   canAttack: 0

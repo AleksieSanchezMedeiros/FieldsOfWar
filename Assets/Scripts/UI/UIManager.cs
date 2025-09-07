@@ -59,11 +59,6 @@ public class UIManager : MonoBehaviour
         string currentGoldAmountStr = currentGoldAmount.ToString();
         goldAmountText.text = currentGoldAmountStr;
     }
-
- //   private void UpdateCurrentNumOfUnits(int currentNumOfUnits, int maxNumOfUnits)
-//    {
- //       numberOfUnitsText.text = currentNumOfUnits.ToString("00") + "/" + maxNumOfUnits;
-  // }
     private void UpdateCurrentNumOfUnits(int _, int __)
     {
         int currentCount = isTopTrackSelected ? topFloorUnitCount : bottomFloorUnitCount;

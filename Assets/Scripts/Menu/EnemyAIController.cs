@@ -15,6 +15,10 @@ public class EnemyAIController : BaseController
     public override void Awake()
     {
         base.Awake();
+        foreach (GatheringUnit unit in ActiveUnits)
+        {
+            minersCount++;
+        }
         if (Instance == null)
         {
             Instance = this;

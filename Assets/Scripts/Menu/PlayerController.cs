@@ -6,9 +6,6 @@ public class PlayerController : BaseController
 {
     StoreManager store;
     List<ResourceNode> factionResourceNodes;
-
-    
- 
     public override void Start()
     {
         base.Start();

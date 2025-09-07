@@ -10,10 +10,10 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
     [SerializeField] Canvas pauseScreen;
     [SerializeField] Camera mainMenuCamera;
-    [SerializeField] GameObject mainMenu, instructions, nextInstructionSlideBtn, prevInstructionSlideBtn;
+    [SerializeField] GameObject mainMenu, instructions, nextInstructionSlideBtn, prevInstructionSlideBtn, eventSystem;
     [SerializeField] Image[] instructionSlides;
     bool paused, showingSlides = false;
-    int currentlyActiveInstructionSlide = 0;
+    [SerializeField]int currentlyActiveInstructionSlide = 0;
     void Awake()
     {
         if (Instance == null)
@@ -88,6 +88,10 @@ public class LevelManager : MonoBehaviour
             instructions.SetActive(true);
             currentlyActiveInstructionSlide = 0;
             showingSlides = !showingSlides;
+            foreach (Image slide in instructionSlides)
+            {
+                slide.gameObject.SetActive(false);
+            }
             checkSlidesindex();
         }
         else
@@ -140,7 +144,7 @@ public class LevelManager : MonoBehaviour
     {
         if (mainMenuCamera.gameObject.activeSelf)
         {
-            mainMenuCamera.gameObject.SetActive(false);
+            unloadMainMenu();
         }
         if (sceneName == "Background")
         {
@@ -180,9 +184,7 @@ public class LevelManager : MonoBehaviour
 
     public void firstLevel()
     {
-        mainMenu.gameObject.SetActive(false);
-        instructions.gameObject.SetActive(false);
-        mainMenuCamera.gameObject.SetActive(false);
+        unloadMainMenu();
         showingSlides = false;
         changeScene(scenes[1].getName());
     }
@@ -190,8 +192,16 @@ public class LevelManager : MonoBehaviour
     public void loadMainMenu()
     {
         SceneManager.UnloadSceneAsync(activeScene.getName());
+        eventSystem.SetActive(true);
         mainMenu.gameObject.SetActive(true);
         mainMenuCamera.gameObject.SetActive(true);
+    }
+
+    void unloadMainMenu()
+    {
+        eventSystem.SetActive(false);
+        mainMenu.gameObject.SetActive(false);
+        mainMenuCamera.gameObject.SetActive(false);
     }
     public void reloadLevel()
     {
