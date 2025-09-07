@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         //subscribe UpdateCurrentGoldAmount and UpdateCurrentNumberOfUnits to event that will tell them what to display
     }
 
-    private void UpdateCurrentGoldAmount(int currentGoldAmount)
+    private void UpdateCurrentGoldAmount(float currentGoldAmount)
     {
         string currentGoldAmountStr = currentGoldAmount.ToString();
         goldAmountText.text = currentGoldAmountStr;

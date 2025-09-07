@@ -64,7 +64,7 @@ public class Castle : Tower
 
     public void Die()
     {
-        CommunicationEvents.onFactionDefeated(faction);
+        CommunicationEvents.onFactionDefeated?.Invoke(faction);
     }
 
     void OnDrawGizmosSelected()

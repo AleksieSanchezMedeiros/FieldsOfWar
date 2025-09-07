@@ -10,7 +10,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] string faction;
     [SerializeField] Transform topTrackSpawn, bottomTrackSpawn;
     [SerializeField] MenuUnitObject[] listOfUnits;
-    [SerializeField] int funds;
+    [SerializeField] float funds;
     [SerializeField] int startingFunds = 100;
 
     void Awake()
@@ -60,7 +60,7 @@ public class StoreManager : MonoBehaviour
         }
     }
 
-    void increaseFunds(string _faction, int value)
+    void increaseFunds(string _faction, float value)
     {
         if (_faction != faction) return;
 

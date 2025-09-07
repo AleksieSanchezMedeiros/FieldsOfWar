@@ -34,11 +34,15 @@ public class GatheringUnit : Unit
         }
 
         base.Update();
+    }
 
+    void FixedUpdate()
+    {
         if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
             loadingCargo = false;
             //Debug.Log("I'm depositing resources");
+            Debug.Log("Manda plata");
             nodeLogic.sendResource(faction);
             goGather = true;
             return;

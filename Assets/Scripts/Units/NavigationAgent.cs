@@ -30,7 +30,7 @@ public class NavigationAgent : MonoBehaviour
             agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
         myUnit = GetComponent<Unit>();
-        agent.stoppingDistance = myUnit.shortRange * 0.66f;
+        agent.stoppingDistance = 0.5f;
         agent.speed = myUnit.speed;
       
     }

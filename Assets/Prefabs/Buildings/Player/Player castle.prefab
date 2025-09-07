@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2686658040870070439}
   - component: {fileID: 4295748467306506012}
+  - component: {fileID: 4609480100507616693}
   m_Layer: 6
   m_Name: Player Castle
   m_TagString: Player
@@ -184,6 +185,27 @@ MonoBehaviour:
     m_Bits: 128
   maxTargets: 3
   enemies: []
+--- !u!65 &4609480100507616693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124952430063623672}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027928064, y: 0.10580247, z: 0.22882548}
+  m_Center: {x: -0.0009904933, y: -0.004727362, z: -0.005569086}
 --- !u!1001 &9065013709844426631
 PrefabInstance:
   m_ObjectHideFlags: 0
