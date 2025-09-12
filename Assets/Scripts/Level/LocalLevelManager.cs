@@ -23,6 +23,15 @@ public class LocalLevelManager : MonoBehaviour
         {
             gameEndUI.SetActive(true);
             defeatBanner.SetActive(true);
+            victoryBanner.SetActive(false);
+            nextLevel.SetActive(false);
+        }
+        else
+        {
+            gameEndUI.SetActive(true);
+            nextLevel.SetActive(true);
+            victoryBanner.SetActive(true);
+            defeatBanner.SetActive(false);
         }
     }
 

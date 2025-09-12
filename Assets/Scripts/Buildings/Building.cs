@@ -38,7 +38,6 @@ public class Building : MonoBehaviour
     {
         if (isIndestructible) return false;
         HP = HP - incomingDamage;
-        Debug.Log($"I'm taking enemy fire! {HP + incomingDamage} dmg {incomingDamage}");
         if (HP <= 0)
         {
             DestroyBuilding();

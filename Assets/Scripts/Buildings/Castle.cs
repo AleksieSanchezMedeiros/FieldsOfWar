@@ -21,7 +21,6 @@ public class Castle : Tower
                 if (enemies[i] != null)
                 {
                     Attack(enemies[i].GetComponent<Unit>());
-                    Debug.Log($"Feel the heat, {enemies[i].name}!");
                 }
             }
             canAttack = false;
