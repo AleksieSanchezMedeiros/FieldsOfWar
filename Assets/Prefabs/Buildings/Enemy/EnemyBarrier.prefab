@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6847442086996321294}
   - component: {fileID: 6211953445997282731}
   - component: {fileID: 8826673382980666794}
+  - component: {fileID: 3854555224457945844}
   m_Layer: 7
   m_Name: EnemyBarrier
   m_TagString: Enemy
@@ -78,6 +79,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 19.836792, y: 13.851015, z: 122.71344}
   m_Center: {x: -1.3494873, y: 6.7257643, z: -7.498863}
+--- !u!114 &3854555224457945844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677542872272456999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2229292329966302046
 PrefabInstance:
   m_ObjectHideFlags: 0

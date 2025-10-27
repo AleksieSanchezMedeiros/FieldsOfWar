@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7512658664088440121}
   - component: {fileID: 1673807395943154831}
   - component: {fileID: 1445401917325630927}
+  - component: {fileID: 1499670162905409122}
   m_Layer: 7
   m_Name: Enemy Tower
   m_TagString: Enemy
@@ -118,6 +119,22 @@ CapsuleCollider:
   m_Height: 14.279651
   m_Direction: 1
   m_Center: {x: 0, y: 5.7620635, z: 0}
+--- !u!208 &1499670162905409122
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648296908932944236}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 4.44, y: 8.92, z: 4.44}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 5.4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2122127779827243377
 PrefabInstance:
   m_ObjectHideFlags: 0

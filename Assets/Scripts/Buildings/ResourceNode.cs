@@ -7,7 +7,6 @@ public class ResourceNode : MonoBehaviour
 
     public void sendResource(string teamTag)
     {
-        Debug.Log("Plata");
         CommunicationEvents.GatherResource?.Invoke(teamTag, resourceYield);
     }
 }

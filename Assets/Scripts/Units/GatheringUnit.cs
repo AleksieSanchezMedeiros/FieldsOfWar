@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class GatheringUnit : Unit
 {
     [SerializeField] public GameObject resourceNode, castle, spawner;
-    [SerializeField] bool goGather = true, loadingCargo = false;
+    [SerializeField] bool goGather = true, loadingCargo = false, working = false;
     ResourceNode nodeLogic;
 
     void Start()
@@ -40,16 +40,13 @@ public class GatheringUnit : Unit
     {
         if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
         {
-            loadingCargo = false;
-            //Debug.Log("I'm depositing resources");
-            Debug.Log("Manda plata");
-            nodeLogic.sendResource(faction);
-            goGather = true;
-            return;
+            if (working) return;
+            StartCoroutine(startDeposit());
         }
 
         if (goGather && CalculateDistanceToTarget(resourceNode.transform) < shortRange)
         {
+            if (working) return;
             StartCoroutine(startGather());
         }
     }
@@ -89,9 +86,21 @@ public class GatheringUnit : Unit
 
     IEnumerator startGather()
     {
+        working = true;
         yield return new WaitForSeconds(attackCooldown);
         goGather = false;
         loadingCargo = true;
+        working = false;
+    }
+
+    IEnumerator startDeposit()
+    {
+        working = true;
+        yield return new WaitForSeconds(attackCooldown / 2);
+        nodeLogic.sendResource(tag);
+        goGather = true;
+        loadingCargo = false;
+        working = false;
     }
 
     public void setCastleAndGatherNode(GameObject _castle, GameObject node)

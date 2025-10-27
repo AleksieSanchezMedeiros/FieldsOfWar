@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5886382781393055319}
   - component: {fileID: 4586547986447431200}
   - component: {fileID: 112847572968109622}
+  - component: {fileID: 1473408705209975654}
   m_Layer: 7
   m_Name: Enemy Controller
   m_TagString: Enemy
@@ -75,6 +76,7 @@ MonoBehaviour:
   activeResourceNode: {fileID: 0}
   spawnTop: {fileID: 3103653427513286583}
   spawnBottom: {fileID: 314132848156457531}
+  selectedTopTrack: 1
   nodes:
   - {fileID: 0}
   - {fileID: 0}
@@ -98,6 +100,26 @@ MonoBehaviour:
   - {fileID: 0}
   spawningInProcess: 0
   askForSpawnCooldown: 4
+--- !u!114 &1473408705209975654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811726639648888628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1197480248100389717
 PrefabInstance:
   m_ObjectHideFlags: 0
