@@ -3978,6 +3978,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
+      propertyPath: maxNumberOfTroops
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: 'nodes.Array.data[0]'
       value: 
       objectReference: {fileID: 438086325}

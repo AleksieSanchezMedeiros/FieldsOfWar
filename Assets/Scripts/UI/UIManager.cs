@@ -59,12 +59,9 @@ public class UIManager : MonoBehaviour
         string currentGoldAmountStr = currentGoldAmount.ToString();
         goldAmountText.text = currentGoldAmountStr;
     }
-    private void UpdateCurrentNumOfUnits(int _, int __)
+    private void UpdateCurrentNumOfUnits(int current, int max)
     {
-        int currentCount = isTopTrackSelected ? topFloorUnitCount : bottomFloorUnitCount;
-        int maxCount = 30;
-
-        numberOfUnitsText.text = currentCount.ToString("00") + "/" + maxCount.ToString("00");
+            numberOfUnitsText.text = current.ToString("00") + "/" + max.ToString("00");
     }
 
     // public void issueCommand() // 0: Advance; 1: Halt; 2: Retreat;
@@ -176,15 +173,26 @@ public class UIManager : MonoBehaviour
         RefreshUnitDisplay();
     }
 
-    public void RemoveUnitFromTopFloor()
+    public void removeUnitFromList(Unit unit)
     {
-        topFloorUnitCount = Mathf.Max(0, topFloorUnitCount - 1);
+        if (unit.isOnTopTrack)
+        {
+            RemoveUnitFromTopFloor();
+        } else
+        {
+            RemoveUnitFromBottomFloor();
+        }
+    }
+
+    void RemoveUnitFromTopFloor()
+    {
+        topFloorUnitCount --;
         RefreshUnitDisplay();
     }
 
-    public void RemoveUnitFromBottomFloor()
+    void RemoveUnitFromBottomFloor()
     {
-        bottomFloorUnitCount = Mathf.Max(0, bottomFloorUnitCount - 1);
+        bottomFloorUnitCount --;
         RefreshUnitDisplay();
     }
 }

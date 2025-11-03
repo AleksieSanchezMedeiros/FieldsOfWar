@@ -9,7 +9,7 @@ public abstract class BaseController : MonoBehaviour
     [SerializeField] protected GameObject topTrack, bottomTrack, selectedTrack, activeResourceNode, spawnTop, spawnBottom;
     [SerializeField] protected bool selectedTopTrack = true;
     [SerializeField] protected ResourceNode[] nodes;
-    [SerializeField] public int maxNumberOfTroops;
+    [SerializeField] public int maxNumberOfTroops = 16;
     [SerializeField] protected List<Unit> ActiveUnits;
     [SerializeField] protected List<Transform> waypointsTop, waypointsBottom;
 
@@ -111,7 +111,10 @@ public abstract class BaseController : MonoBehaviour
 
     public void purchaseUnit(int _orderInList)
     {
-        bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
+        if(ActiveUnits.Count < maxNumberOfTroops)
+        {
+            bool r = storeManager.trySpawnUnit(_orderInList, selectedTopTrack);
+        }
     }
     
 

@@ -23,7 +23,13 @@ public class PlayerController : BaseController
 
     }
 
-    
-    
+
+    public override void removeUnitFromList(Unit unit)
+    {
+        if (!ActiveUnits.Contains(unit)) return;
+
+        UIManager.Instance.removeUnitFromList(unit);
+        base.removeUnitFromList(unit);
+    }
     
 }
