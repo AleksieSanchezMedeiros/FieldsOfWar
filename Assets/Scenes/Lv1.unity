@@ -3979,7 +3979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: maxNumberOfTroops
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1296799102646122349, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: 'nodes.Array.data[0]'
@@ -4055,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 2042662768}
     - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: startingFunds
-      value: 60
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: topTrackSpawn

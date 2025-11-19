@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class CombatUnit : Unit
 {
-    [SerializeField] LayerMask detection;
+    [Header("Combat")]
+    [SerializeField] LayerMask detectionLayer;
     [SerializeField] GameObject targetEnemy;
     [SerializeField] Unit targetEnemyUnit;
     [SerializeField] Building targetEnemyBuilding;
     [SerializeField] float visionAngle;
+    /* 
     [SerializeField] protected AudioClip attackSound;
-    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioSource audioSource; */
     [SerializeField] string opposingFaction;
 
     public override void Update()
@@ -57,19 +59,19 @@ public class CombatUnit : Unit
         canAttack = true;
         if (faction == "Player")
         {
-            detection = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer
+            detectionLayer = LayerMask.GetMask("Enemy", "Unbreakable"); //enemy layer
             opposingFaction = "Enemy";
         }
         else
         {
-            detection = LayerMask.GetMask("Player", "Unbreakable"); //player layer
+            detectionLayer = LayerMask.GetMask("Player", "Unbreakable"); //player layer
             opposingFaction = "Player";
         }
     }
 
     private GameObject FindEnemyInVision()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, longRange, detection);
+        Collider[] hits = Physics.OverlapSphere(transform.position, longRange, detectionLayer);
         foreach (var hit in hits)
         {
             if (hit.CompareTag(opposingFaction))
@@ -117,5 +119,4 @@ public class CombatUnit : Unit
         target = rallyPoint;
         agent.HandleCommand(_command);
     }
-    
 }

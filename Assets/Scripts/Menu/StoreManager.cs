@@ -12,6 +12,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] MenuUnitObject[] listOfUnits;
     [SerializeField] float funds;
     [SerializeField] int startingFunds = 100;
+    bool spawning;
 
     void Awake()
     {
@@ -26,6 +27,7 @@ public class StoreManager : MonoBehaviour
 
     public bool trySpawnUnit(int val, bool spawnOnTop)
     {
+        if (spawning) return false;
         if (funds < listOfUnits[val].GetCost())
         {
             return false;
@@ -39,6 +41,7 @@ public class StoreManager : MonoBehaviour
     IEnumerator spawnUnit(int val, bool spawnOnTop)
     {
         GameObject spawnee;
+        spawning = true;
         yield return new WaitForSeconds(listOfUnits[val].GetTimeUntilSpawn());
 
         if (spawnOnTop)
@@ -49,7 +52,7 @@ public class StoreManager : MonoBehaviour
         {
             spawnee = Instantiate(listOfUnits[val].GetUnit(), bottomTrackSpawn);
         }
-        
+
         if (spawnee.TryGetComponent<GatheringUnit>(out _))
         {
             spawnee.GetComponent<GatheringUnit>().SpawnMe(faction, spawnOnTop, gameObject);
@@ -58,6 +61,7 @@ public class StoreManager : MonoBehaviour
         {
             spawnee.GetComponent<Unit>().Spawn(faction, spawnOnTop, gameObject);
         }
+        spawning = false;
     }
 
     void increaseFunds(string _faction, float value)

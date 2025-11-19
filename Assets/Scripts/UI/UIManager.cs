@@ -20,8 +20,7 @@ public class UIManager : MonoBehaviour
     //
     private bool isTopTrackSelected = true;
     public CommandsGroup commandsGroup;
-    private int topFloorUnitCount = 0;
-    private int bottomFloorUnitCount = 0;
+    private int topFloorUnitCount = 0, bottomFloorUnitCount = 0, maxCount = 16;
     
     void instantiate()
     {
@@ -139,7 +138,6 @@ public class UIManager : MonoBehaviour
     private void RefreshUnitDisplay()
     {
         int currentCount = isTopTrackSelected ? topFloorUnitCount : bottomFloorUnitCount;
-        int maxCount = 30; 
 
         numberOfUnitsText.text = currentCount.ToString("00") + "/" + maxCount.ToString("00");
     }

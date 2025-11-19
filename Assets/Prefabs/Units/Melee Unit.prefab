@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9203698369245467570}
   - component: {fileID: 2809851871174237694}
-  - component: {fileID: -3548914316215502464}
   - component: {fileID: 8699851151256598518}
   - component: {fileID: 6967493655634798228}
   - component: {fileID: 1954972239536813831}
@@ -68,43 +67,14 @@ MonoBehaviour:
   enemyGraphics: {fileID: 4107402372813715125}
   target: {fileID: 0}
   previousTarget: {fileID: 0}
-  detection:
+  detectionLayer:
     serializedVersion: 2
     m_Bits: 0
   targetEnemy: {fileID: 0}
   targetEnemyUnit: {fileID: 0}
   targetEnemyBuilding: {fileID: 0}
   visionAngle: 120
-  attackSound: {fileID: 8300000, guid: 6457fb0af75f03f4f919822428086dce, type: 3}
-  audioSource: {fileID: 0}
   opposingFaction: 
---- !u!54 &-3548914316215502464
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8823196419603950312}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8699851151256598518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +107,7 @@ NavMeshAgent:
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.15
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -167,7 +137,7 @@ CapsuleCollider:
   m_Radius: 0.63290316
   m_Height: 1.9976838
   m_Direction: 1
-  m_Center: {x: 0.1329031, y: 1.0202808, z: 0}
+  m_Center: {x: -0.02, y: 1.0202808, z: 0}
 --- !u!1001 &3464764721859642415
 PrefabInstance:
   m_ObjectHideFlags: 0

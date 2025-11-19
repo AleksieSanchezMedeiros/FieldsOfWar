@@ -52,9 +52,12 @@ public class NavigationAgent : MonoBehaviour
             lastcommand = command;
         }
 
-        if (command == 3 && agent.destination != myUnit.getTarget().position && myUnit.getTarget().TryGetComponent<Unit>(out _))
+        if(myUnit.getTarget() != null)
         {
-            pursueTarget();
+            if (command == 3 && myUnit.getTarget().TryGetComponent<Unit>(out _) && agent.destination != myUnit.getTarget().position)
+            {
+                pursueTarget();
+            }    
         }
 
         CheckIfReachedDestination();
@@ -75,6 +78,7 @@ public class NavigationAgent : MonoBehaviour
 
     public void setTarget(Transform enemyPosition)
     {
+        if (!enemyPosition) return;
         agent.SetDestination(enemyPosition.position);
     }
 
@@ -148,7 +152,7 @@ public class NavigationAgent : MonoBehaviour
     
 
     //These look like herd navigation AI patterns but I'm unsure of how and when to use them V - Sb
-    private void MonitorGroupAtWaypointZero()
+    /* private void MonitorGroupAtWaypointZero()
     {
         if (waypoints.Length == 0 || timerRunning) return;
 
@@ -185,5 +189,11 @@ public class NavigationAgent : MonoBehaviour
                 //lose/win screen 
             }
         }
+    } */
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, agent.stoppingDistance);
     }
 }

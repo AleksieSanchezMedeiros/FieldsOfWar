@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 8823196419603950312, guid: 5e05c85422ef78f41a501be6d213abe8, type: 3}
   cost: 22
-  timeUntilSpawn: 4
+  timeUntilSpawn: 2

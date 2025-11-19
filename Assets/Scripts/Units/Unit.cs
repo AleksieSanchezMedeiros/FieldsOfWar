@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IUnitBase
 {
+    [Header("Stats")]
+    
     public float speed, shortRange, longRange, distanceToTarget, attackCooldown;
     public int damage, health, maxHealth, command, previousCommand;
     public bool canAttack, isOnTopTrack;
@@ -9,6 +11,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     [SerializeField] GameObject playerGraphics, enemyGraphics;
     protected NavigationAgent agent;
     HealthBar healthBar;
+    [Header("Targeting")]
     [SerializeField]protected Transform target, previousTarget;
 
     void Awake()
@@ -43,7 +46,6 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     {
         command = 3;
         target = targetPosition;
-        
     }
 
     public void Attack(Unit target)
