@@ -61,6 +61,12 @@ public class Castle : Tower
         }
     }
 
+    public override void DestroyBuilding()
+    {
+        Die();
+        base.DestroyBuilding();
+    }
+
     public void Die()
     {
         CommunicationEvents.onFactionDefeated?.Invoke(faction);

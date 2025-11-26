@@ -19,6 +19,7 @@ public class LocalLevelManager : MonoBehaviour
 
     void onFactionDefeated(string faction)
     {
+        Debug.Log("TADAAA");
         if (faction == "Player")
         {
             gameEndUI.SetActive(true);

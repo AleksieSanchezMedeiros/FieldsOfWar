@@ -4055,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 2042662768}
     - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: startingFunds
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1369542252262447390, guid: 971c6dbb1de07644392c4ee6e0fbfabe, type: 3}
       propertyPath: topTrackSpawn

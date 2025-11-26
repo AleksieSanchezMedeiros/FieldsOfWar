@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    public void DestroyBuilding()
+    public virtual void DestroyBuilding()
     {
         gameObject.SetActive(false);
         Destroyed = true;

@@ -29,16 +29,6 @@ public class GameManager : MonoBehaviour
 
         public TMP_Text flipSpawnPointsText; //extra for show, to be removed later
 
-
-            
-        public void FlipSpawnPoints()
-        {
-            spawnOnTop = !spawnOnTop;
-            flipSpawnPointsText.text = spawnOnTop ? "^\n|" : "|\nv";
-            Debug.Log("Spawn points flipped. Now spawning on " + (spawnOnTop ? "top" : "bottom"));
-        }
-
-
         //used for the buttons
         public void SpawnUnit(int unit) //0 is mining, 1 is melee, 2 is ranged
         {
